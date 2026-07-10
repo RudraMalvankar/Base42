@@ -1,30 +1,52 @@
 from models.schemas import ExecutionResult, TaskContext
 from models.enums import ExecutionRoute, TaskCategory
+import ast
+import json
 
 class ConfidenceEngine:
     @staticmethod
-    def evaluate(result: ExecutionResult, context: TaskContext) -> bool:
+    def calculate_confidence(result: ExecutionResult, context: TaskContext) -> float:
         """
-        Returns True if the result is confident and trustworthy.
-        Returns False if hallucination or failure is detected (triggering an API escalation).
+        Calculates a mathematical confidence score between 0.0 and 1.0.
+        Conf = V_R (Rule Validation) * V_D (Deterministic) * V_H (Heuristic)
+        If Conf < 0.6, escalation is triggered.
         """
-        # If it already used Fireworks, we trust it
+        # API fallbacks are trusted by definition
         if result.route_taken == ExecutionRoute.FIREWORKS:
-            return True
+            return 1.0
             
         answer = result.answer.strip()
-        
-        # If the local LLM failed or threw an error
         if not answer or "error" in answer.lower():
-            return False
+            return 0.0 # V_D fails completely
             
-        # Specific check for NER: Must look like JSON or a list
-        if context.category == TaskCategory.NER:
-            if not ("[" in answer and "]" in answer):
-                return False
+        v_r = 1.0 # Rule Validation
+        v_d = 1.0 # Deterministic Validation
+        v_h = 1.0 # Heuristic Validation
+        
+        if context.category == TaskCategory.MATH:
+            try:
+                ast.literal_eval(answer)
+                v_d = 1.0
+            except (ValueError, SyntaxError):
+                v_d = 0.5 # Requires regex stripping, confidence reduced
                 
-        # Heuristic: if the answer is ridiculously long for a factual query, it's probably hallucinating
-        if context.category == TaskCategory.FACTUAL and len(answer.split()) > 100:
-            return False
-            
-        return True
+        elif context.category == TaskCategory.NER:
+            if "[" in answer and "]" in answer:
+                try:
+                    json.loads(answer[answer.find("["):answer.rfind("]")+1])
+                    v_r = 1.0
+                except json.JSONDecodeError:
+                    v_r = 0.0
+            else:
+                v_r = 0.0
+                
+        elif context.category == TaskCategory.FACTUAL:
+            if len(answer.split()) > 100:
+                v_h = 0.2
+                
+        return v_r * v_d * v_h
+
+    @staticmethod
+    def evaluate(result: ExecutionResult, context: TaskContext) -> bool:
+        confidence = ConfidenceEngine.calculate_confidence(result, context)
+        return confidence >= 0.6

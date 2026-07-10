@@ -55,7 +55,7 @@ class Base42Orchestrator:
             result = await self.api_exec.execute(context)
             
         # 6. Validate & Sanitize
-        final_result = ResultValidator.sanitize(result)
+        final_result = ResultValidator.sanitize(result, context.category)
         return final_result
 
 async def main():

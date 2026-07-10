@@ -18,8 +18,8 @@ class PythonExecutor(BaseExecutor):
         }
         
     def _eval_expr(self, node):
-        if isinstance(node, ast.Num):
-            return node.n
+        if isinstance(node, ast.Constant):
+            return node.value
         elif isinstance(node, ast.BinOp):
             return self.operators[type(node.op)](self._eval_expr(node.left), self._eval_expr(node.right))
         elif isinstance(node, ast.UnaryOp):
