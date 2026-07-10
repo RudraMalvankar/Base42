@@ -6,6 +6,8 @@ import ast
 import operator
 import re
 
+import math
+
 logger = setup_logger("python_executor")
 
 class MathSandbox:
@@ -21,18 +23,31 @@ class MathSandbox:
         ast.Mod: operator.mod,
         ast.FloorDiv: operator.floordiv
     }
+
+    MATH_FUNCTIONS = {
+        'sqrt': math.sqrt,
+        'sin': math.sin,
+        'cos': math.cos,
+        'tan': math.tan,
+        'log': math.log,
+        'log10': math.log10,
+        'pow': math.pow,
+        'abs': abs
+    }
     
     @classmethod
     def extract_equation(cls, prompt: str) -> str:
-        # Strip common natural language wrappers
+        # Prevent parsing dates (e.g. 2024-05-12) as math unless explicit words exist
+        if re.search(r'\b\d{4}-\d{2}-\d{2}\b', prompt) or re.search(r'\b\d{2}/\d{2}/\d{4}\b', prompt):
+            if not re.search(r'(?i)(calculate|compute|solve|\+)', prompt):
+                return ""
+
         clean = re.sub(r'(?i)(what is|calculate|compute|solve|find the value of|equals|answer to)', '', prompt)
         
-        # Look for the longest contiguous math expression
-        # Matches numbers, operators, parens, modulo, and spaces
-        match = re.search(r'([\d\s\+\-\*\/\(\)\.\%]{3,})', clean)
+        # Match function calls like math.sqrt(144) or pure equations
+        match = re.search(r'((?:math\.)?[a-z]{3,5}\s*\([\d\s\+\-\*\/\.\%]+\)|[\d\s\+\-\*\/\(\)\.\%]{3,})', clean, re.IGNORECASE)
         if match:
             expr = match.group(1).strip()
-            # If it's just a raw number with no operators, it's not a real math equation
             if expr and not re.fullmatch(r'[\d\.\s]+', expr):
                 return expr
         return ""
@@ -55,6 +70,17 @@ class MathSandbox:
             if type(node.op) not in cls.OPERATORS:
                 raise TypeError(f"Unsupported unary operator: {type(node.op)}")
             return cls.OPERATORS[type(node.op)](cls._eval_node(node.operand))
+        elif isinstance(node, ast.Call):
+            # Allow whitelisted math functions like sqrt(), math.sin()
+            if isinstance(node.func, ast.Name) and node.func.id in cls.MATH_FUNCTIONS:
+                func = cls.MATH_FUNCTIONS[node.func.id]
+                args = [cls._eval_node(arg) for arg in node.args]
+                return func(*args)
+            elif isinstance(node.func, ast.Attribute) and node.func.attr in cls.MATH_FUNCTIONS:
+                func = cls.MATH_FUNCTIONS[node.func.attr]
+                args = [cls._eval_node(arg) for arg in node.args]
+                return func(*args)
+            raise TypeError(f"Unsupported function call")
         else:
             raise TypeError(f"Unsupported node type: {type(node)}")
 
