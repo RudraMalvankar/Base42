@@ -43,9 +43,10 @@ class TokenPredictor:
         else:
             output_tokens = 100
             
-        # Detect potential foreign language (crude heuristic: non-ascii characters)
+        # Detect potential foreign language via density ratio instead of strict isascii()
         # Tokenizers encode non-Latin scripts inefficiently (up to 3x more tokens)
-        if not prompt.isascii():
+        non_ascii_count = sum(1 for c in prompt if ord(c) > 127)
+        if len(prompt) > 0 and (non_ascii_count / len(prompt)) > 0.05:
             output_tokens = int(output_tokens * 2.5)
             input_tokens = int(input_tokens * 2.5)
             confidence -= 0.2

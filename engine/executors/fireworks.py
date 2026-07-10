@@ -64,8 +64,19 @@ class FireworksExecutor(BaseExecutor):
             logger.info(f"Task {context.request.task_id}: Escalating to Fireworks API ({model})")
             resp = await self._post_chat(payload)
             data = resp.json()
-            answer = data["choices"][0]["message"]["content"].strip()
+            choice = data["choices"][0]
+            answer = choice["message"]["content"].strip()
             tokens = data.get("usage", {}).get("total_tokens", 0)
+            
+            # --- Output Token Validator (Truncation Recovery) ---
+            if choice.get("finish_reason") == "length":
+                logger.warning(f"Task {context.request.task_id}: Fireworks truncated output (length). Retrying with expanded limits.")
+                payload["max_tokens"] = min(max_tokens * 2, 4096)
+                resp2 = await self._post_chat(payload)
+                data2 = resp2.json()
+                answer = data2["choices"][0]["message"]["content"].strip()
+                tokens += data2.get("usage", {}).get("total_tokens", 0)
+                
         except Exception as e:
             logger.error(f"Task {context.request.task_id}: Fireworks API failed - {e}")
             answer = "API Error"
