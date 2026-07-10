@@ -34,34 +34,73 @@ class BaseValidator(ABC):
             return match.group(1).strip()
         return text
 
+class SchemaCoercer:
+    """Zero-token heuristic schema mapping for JSON."""
+    
+    COMMON_MAPPINGS = {
+        # NER hallucination mappings
+        "name": "entity",
+        "value": "entity",
+        "text": "entity",
+        "category": "type",
+        "class": "type",
+        "label": "type",
+        "entity_name": "entity",
+        "entity_type": "type"
+    }
+
+    @classmethod
+    def coerce(cls, data: dict | list, category: TaskCategory) -> dict | list:
+        if category != TaskCategory.NER:
+            return data
+            
+        def coerce_dict(d: dict):
+            new_d = {}
+            for k, v in d.items():
+                lower_k = k.lower()
+                if lower_k in cls.COMMON_MAPPINGS:
+                    new_d[cls.COMMON_MAPPINGS[lower_k]] = v
+                else:
+                    new_d[k] = v
+            return new_d
+            
+        if isinstance(data, list):
+            return [coerce_dict(item) if isinstance(item, dict) else item for item in data]
+        elif isinstance(data, dict):
+            return coerce_dict(data)
+        return data
+
 class JsonValidator(BaseValidator):
+    def __init__(self, category: TaskCategory):
+        self.category = category
+
     def validate(self, result: ExecutionResult) -> ExecutionResult:
         original = result.answer
         text = self.strip_fillers(original)
         text = self.strip_markdown_blocks(text)
         
-        # Aggressive JSON extraction (find first [ or { to last ] or })
         try:
             start_obj = text.find("{")
             start_arr = text.find("[")
-            # Get the earliest valid start bracket
             start = start_obj if (start_arr == -1 or (start_obj != -1 and start_obj < start_arr)) else start_arr
             
             end_obj = text.rfind("}")
             end_arr = text.rfind("]")
-            # Get the latest valid end bracket
             end = end_obj if (end_arr == -1 or (end_obj != -1 and end_obj > end_arr)) else end_arr
             
             if start != -1 and end != -1 and start < end:
                 json_str = text[start:end+1]
                 parsed = json.loads(json_str)
-                # Dump minified json (saves tokens on final output size constraints if any)
+                
+                # Apply structural schema coercion
+                parsed = SchemaCoercer.coerce(parsed, self.category)
+                
                 result.answer = json.dumps(parsed, separators=(',', ':'))
                 return result
         except json.JSONDecodeError:
             logger.warning(f"Failed to parse JSON for task {result.task_id}. Returning raw.")
             
-        result.answer = original # Fallback to raw if all parsing fails
+        result.answer = original
         return result
 
 class CodeValidator(BaseValidator):
@@ -74,7 +113,7 @@ class CodeValidator(BaseValidator):
 class MathValidator(BaseValidator):
     def validate(self, result: ExecutionResult) -> ExecutionResult:
         text = self.strip_fillers(result.answer)
-        # Attempt to evaluate if it's purely a numeric response
+        
         try:
             val = ast.literal_eval(text)
             if isinstance(val, (int, float)):
@@ -83,10 +122,20 @@ class MathValidator(BaseValidator):
         except (ValueError, SyntaxError):
             pass
             
-        # Fallback to extract the last number mentioned (often the final answer)
+        # Look for explicit linguistic markers denoting the final answer
+        marker_regex = r"(?:answer is|equals|=|therefore,?|result is)\s*(-?\d+(?:\.\d+)?)"
+        match = re.search(marker_regex, text, re.IGNORECASE)
+        if match:
+            result.answer = match.group(1)
+            return result
+            
+        # Fallback to pure regex search
         matches = re.findall(r'-?\d+(?:\.\d+)?', text)
         if matches:
-            result.answer = matches[-1]
+            if len(matches) == 1:
+                result.answer = matches[0]
+            else:
+                result.answer = matches[-1]
         else:
             result.answer = text
             
@@ -111,5 +160,9 @@ class ResultValidator:
     @classmethod
     def sanitize(cls, result: ExecutionResult, category: TaskCategory) -> ExecutionResult:
         validator_class = cls._validators.get(category, DefaultValidator)
-        validator = validator_class()
+        # Pass category to validators that require it
+        if validator_class == JsonValidator:
+            validator = validator_class(category)
+        else:
+            validator = validator_class()
         return validator.validate(result)
