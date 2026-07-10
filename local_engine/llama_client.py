@@ -11,9 +11,6 @@ class LocalLlamaClient:
         self.model_path = model_path
         self.llm = None
         self.loaded = False
-        
-        # We will attempt to load the model on initialization if it exists.
-        # Otherwise, the runner will know it is unavailable and fall back to API.
         self.load_model()
 
     def load_model(self) -> bool:
@@ -28,7 +25,7 @@ class LocalLlamaClient:
             # Configure llama-cpp carefully to fit in 4 GB RAM / 2 vCPU
             self.llm = Llama(
                 model_path=self.model_path,
-                n_ctx=512,         # Small context size to save RAM
+                n_ctx=1024,        # Allow slightly larger context window for code tasks
                 n_threads=2,       # Fit 2 vCPU budget
                 n_batch=256,       # Batch size for prompt processing
                 verbose=False      # Suppress verbose stderr output
@@ -48,13 +45,21 @@ class LocalLlamaClient:
         Returns a concise system prompt optimized for the local model.
         """
         if category == TaskCategory.SENTIMENT:
-            return "Classify sentiment as Positive, Negative, or Neutral. Output: classification and brief 1-sentence justification."
+            return "Classify sentiment as positive, negative, or mixed, and give a one-sentence justification."
         elif category == TaskCategory.NER:
-            return "Extract Named Entities (Person, Organization, Location, Date). Output JSON: [{\"entity\": \"...\", \"type\": \"...\"}]."
+            return "Extract named entities. Output as: Entity (TYPE), one per line."
         elif category == TaskCategory.SUMMARIZATION:
-            return "Summarize the text in exactly one sentence. Do not add intro/outro."
+            return "Summarize precisely to the requested length constraint. No filler."
+        elif category == TaskCategory.MATH:
+            return "Solve step by step internally, then output ONLY the final numeric or short-phrase answer. No explanation in the final line."
+        elif category == TaskCategory.DEBUGGING:
+            return "Identify the bug and provide the corrected function only."
+        elif category == TaskCategory.CODE_GEN:
+            return "Write a correct, well-structured Python function. Code only."
+        elif category == TaskCategory.LOGIC:
+            return "Solve the constraint puzzle. Check every condition against your candidate solution. Output only the final answer."
         else:
-            return "Answer the question directly and concisely in 1-2 sentences."
+            return "Answer factually and concisely. No preamble."
 
     def _format_prompt(self, prompt: str, category: TaskCategory) -> str:
         """
@@ -63,7 +68,7 @@ class LocalLlamaClient:
         system_prompt = self._get_system_prompt(category)
         return f"<|im_start|>system\n{system_prompt}<|im_end|>\n<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
 
-    def _run_inference_sync(self, formatted_prompt: str) -> str:
+    def _run_inference_sync(self, formatted_prompt: str, temperature: float) -> str:
         """
         Synchronous wrapper run in a background thread executor.
         """
@@ -72,13 +77,13 @@ class LocalLlamaClient:
             
         res = self.llm(
             formatted_prompt,
-            max_tokens=150,     # Limit tokens to save CPU time
-            temperature=0.1,    # Greedy decoding for factual/sentiment
+            max_tokens=256,     # Reasonable token ceiling for code fixes / NER lists
+            temperature=temperature,
             stop=["<|im_end|>", "<|im_start|>", "<|im_start|>assistant"]
         )
         return res["choices"][0]["text"].strip()
 
-    async def generate_completion_async(self, prompt: str, category: TaskCategory) -> str:
+    async def generate_completion_async(self, prompt: str, category: TaskCategory, temperature: float = 0.1) -> str:
         """
         Runs local model inference asynchronously via thread-pool executor.
         """
@@ -89,5 +94,5 @@ class LocalLlamaClient:
         
         loop = asyncio.get_running_loop()
         # Execute llama-cpp CPU-bound inference in a separate thread to prevent blocking asyncio loop
-        answer = await loop.run_in_executor(None, self._run_inference_sync, formatted_prompt)
+        answer = await loop.run_in_executor(None, self._run_inference_sync, formatted_prompt, temperature)
         return answer

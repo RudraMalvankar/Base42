@@ -60,4 +60,6 @@ results.json
 .DS_Store
 Thumbs.db
 *.pdf
+hackathon-agent/
+
 

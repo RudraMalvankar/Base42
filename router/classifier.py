@@ -2,87 +2,88 @@ import re
 from enum import Enum
 
 class TaskCategory(str, Enum):
-    FACTUAL = "factual"
-    MATH = "math"
+    FACTUAL = "factual_knowledge"
+    MATH = "math_reasoning"
     SENTIMENT = "sentiment"
     SUMMARIZATION = "summarization"
     NER = "ner"
-    DEBUGGING = "debugging"
-    LOGIC = "logic"
-    CODE_GEN = "code_gen"
+    DEBUGGING = "code_debug"
+    LOGIC = "logic_puzzle"
+    CODE_GEN = "code_generation"
+
+# Category keywords to search for
+CATEGORY_KEYWORDS = {
+    TaskCategory.MATH: [
+        r"\bhow many\b", r"\bpercent\b", r"%", r"\btotal\b", r"\bremain",
+        r"\bcalculate\b", r"\bsum\b", r"\baverage\b", r"\bprofit\b",
+        r"\bdiscount\b", r"\bratio\b",
+    ],
+    TaskCategory.SENTIMENT: [
+        r"\bsentiment\b", r"\bclassify.*review\b", r"\bpositive or negative\b",
+        r"\bopinion\b", r"\btone of this review\b", r"\bpositive, negative\b"
+    ],
+    TaskCategory.SUMMARIZATION: [
+        r"\bsummar", r"\bcondense\b", r"\bin one sentence\b", r"\bin exactly one sentence\b",
+        r"\btl;?dr\b", r"\bshorten\b",
+    ],
+    TaskCategory.NER: [
+        r"\bnamed entit", r"\bextract.*entit", r"\bpeople, organizations\b",
+        r"\bidentify.*(person|organization|location|date)\b",
+        r"\bextract all entities\b"
+    ],
+    TaskCategory.DEBUGGING: [
+        r"\bbug\b", r"\bfix\b.*\bfunction\b", r"\bfind and fix\b",
+        r"\bwhat'?s wrong with this code\b", r"\bcorrect(ed)? implementation\b",
+        r"def\s+\w+\(",
+    ],
+    TaskCategory.LOGIC: [
+        r"\beach own[s]? a different\b", r"\bwho owns\b", r"\bconstraint",
+        r"\ball conditions\b", r"\bdeduce\b", r"\bpuzzle\b",
+    ],
+    TaskCategory.CODE_GEN: [
+        r"\bwrite a (python )?function\b", r"\bimplement a function\b",
+        r"\bwrite code that\b", r"\bwrite a program\b",
+    ],
+}
+
+# The order we check them (specific first, factual/default last)
+CATEGORY_ORDER = [
+    TaskCategory.MATH,
+    TaskCategory.SENTIMENT,
+    TaskCategory.SUMMARIZATION,
+    TaskCategory.NER,
+    TaskCategory.DEBUGGING,
+    TaskCategory.LOGIC,
+    TaskCategory.CODE_GEN
+]
 
 def classify_task(prompt: str) -> TaskCategory:
     """
-    Heuristically classifies a task prompt into one of the 8 capability categories
-    based on keyword matching, regex patterns, and context.
+    Heuristically classifies a task prompt into one of the 8 capability categories.
     """
-    p_lower = prompt.lower()
-    
-    # 1. Sentiment Classification
-    sentiment_keywords = [
-        "sentiment", "classify the sentiment", "classify sentiment",
-        "review sentiment", "positive or negative", "positive, negative"
-    ]
-    if any(k in p_lower for k in sentiment_keywords):
-        return TaskCategory.SENTIMENT
-        
-    # 2. Named Entity Recognition (NER)
-    ner_keywords = [
-        "named entities", "named entity", "extract all entities",
-        "extract entities", "extract all named entities", "extract named entities"
-    ]
-    if any(k in p_lower for k in ner_keywords) or (
-        "extract" in p_lower and ("person" in p_lower or "location" in p_lower or "organization" in p_lower or "org" in p_lower)
-    ):
-        return TaskCategory.NER
-        
-    # 3. Code Debugging
-    debugging_keywords = [
-        "has a bug", "bug:", "find and fix", "correct the implementation",
-        "debugging", "debug this", "fix the bug", "correct this code"
-    ]
-    if any(k in p_lower for k in debugging_keywords) or (
-        "bug" in p_lower and ("def " in prompt or "class " in prompt or "function" in p_lower)
-    ):
-        return TaskCategory.DEBUGGING
-
-    # 4. Code Generation
-    code_gen_keywords = [
-        "write a python function", "write a function", "implement a function",
-        "write code", "python function that", "write a script", "write an algorithm",
-        "create a function", "write a program"
-    ]
-    if any(k in p_lower for k in code_gen_keywords) or (
-        "function" in p_lower and ("python" in p_lower or "code" in p_lower) and ("return" in p_lower or "write" in p_lower)
-    ):
-        return TaskCategory.CODE_GEN
-
-    # 5. Text Summarisation
-    summarization_keywords = [
-        "summarize", "summarise", "condense", "summary",
-        "in one sentence", "in exactly one sentence", "in a single sentence"
-    ]
-    if any(k in p_lower for k in summarization_keywords):
-        return TaskCategory.SUMMARIZATION
-
-    # 6. Mathematical Reasoning
-    math_keywords = [
-        "how many", "calculate", "solve the math", "arithmetic", "percentage",
-        "ratio", "multiplied by", "divided by", "math problem", "solve for"
-    ]
-    # Simple regex to detect multi-step math or numbers combined with math questions
-    has_math_ops = bool(re.search(r'\d+\s*[%+\-*/]\s*\d+', prompt))
-    has_math_words = any(k in p_lower for k in math_keywords)
-    if (has_math_words or has_math_ops) and not any(w in p_lower for w in ["python", "code", "function"]):
-        return TaskCategory.MATH
-
-    # 7. Logical / Deductive Reasoning
-    logic_keywords = [
-        "puzzle", "logic", "deduce", "deductive", "who owns", "different pet",
-        "friends", "constraint", "riddle", "truth teller", "liar"
-    ]
-    if any(k in p_lower for k in logic_keywords):
-        return TaskCategory.LOGIC
-
-    # 8. Factual Knowledge (Default)
+    text = prompt.lower()
+    for category in CATEGORY_ORDER:
+        for pattern in CATEGORY_KEYWORDS[category]:
+            if re.search(pattern, text):
+                return category
     return TaskCategory.FACTUAL
+
+def estimate_complexity(prompt: str, category: TaskCategory) -> str:
+    """
+    Estimates a task prompt's complexity level ('low', 'medium', or 'high')
+    based on length and constraint count heuristics.
+    """
+    length = len(prompt.split())
+    # Count basic logical separators as proxy for constraints
+    constraint_count = len(re.findall(r"\band\b|\bbut\b|,", prompt.lower()))
+    
+    if category == TaskCategory.LOGIC:
+        # Logic puzzles are highly complex for 3B-class models
+        return "high"
+    if category == TaskCategory.MATH and constraint_count >= 3:
+        return "high"
+    if length > 60:
+        return "high"
+    if length > 25 or constraint_count >= 2:
+        return "medium"
+    return "low"

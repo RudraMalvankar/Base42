@@ -47,7 +47,6 @@ class FireworksClient:
                     if keyword in model.lower():
                         logger.info(f"Selected premium model: {model} for category: {category}")
                         return model
-            # Fallback to the first available model
             return self.allowed_models[0]
         else:
             # Prefer smaller model to save tokens
@@ -64,25 +63,24 @@ class FireworksClient:
 
     def _get_system_prompt(self, category: TaskCategory) -> str:
         """
-        Returns a highly optimized, short system prompt designed to ensure high accuracy
-        while minimizing input/output tokens.
+        Returns a minimal, terse system prompt to reduce input token count.
         """
         if category == TaskCategory.SENTIMENT:
-            return "Classify sentiment as Positive, Negative, or Neutral. Output: classification and brief 1-sentence justification."
+            return "Classify sentiment + 1-sentence reason."
         elif category == TaskCategory.NER:
-            return "Extract Named Entities (Person, Organization, Location, Date). Output JSON: [{\"entity\": \"...\", \"type\": \"...\"}]."
+            return "Extract entities as Entity (TYPE)."
         elif category == TaskCategory.SUMMARIZATION:
-            return "Summarize the text in exactly one sentence. Do not add intro/outro."
+            return "Summarize to the exact length requested."
         elif category == TaskCategory.MATH:
-            return "Solve the math problem step-by-step. Provide the final numerical answer clearly at the end."
+            return "Solve. Output only the final answer."
         elif category == TaskCategory.DEBUGGING:
-            return "Identify the bug, explain it in 1 sentence, and output the corrected Python code block."
+            return "Fix the bug. Output corrected function only."
         elif category == TaskCategory.CODE_GEN:
-            return "Write a correct, well-structured Python function matching the spec. Return only the Python code."
+            return "Write the function. Code only, no explanation."
         elif category == TaskCategory.LOGIC:
-            return "Solve the logic puzzle step-by-step and state the final answer clearly."
+            return "Solve the puzzle. Verify all constraints. Output only the answer."
         else:
-            return "Answer the question directly and concisely in 1-2 sentences."
+            return "Answer factually. Be concise."
 
     # Retry API calls with exponential backoff for rate limits or network issues
     @retry(
@@ -105,7 +103,7 @@ class FireworksClient:
         }
         
         # Configure temperature based on need for deterministic outputs
-        temp = 0.0 if category in [TaskCategory.MATH, TaskCategory.LOGIC, TaskCategory.DEBUGGING, TaskCategory.NER, TaskCategory.SENTIMENT] else 0.3
+        temp = 0.0 if category in [TaskCategory.MATH, TaskCategory.LOGIC, TaskCategory.DEBUGGING, TaskCategory.NER, TaskCategory.SENTIMENT] else 0.2
         
         payload = {
             "model": model,
@@ -114,7 +112,7 @@ class FireworksClient:
                 {"role": "user", "content": prompt}
             ],
             "temperature": temp,
-            "max_tokens": 512  # Keep max response length constrained to optimize output token count
+            "max_tokens": 256  # constrained output length to optimize output tokens
         }
         
         async with httpx.AsyncClient() as client:

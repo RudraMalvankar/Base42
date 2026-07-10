@@ -2,11 +2,14 @@ import os
 import sys
 import json
 import asyncio
-from typing import Dict, List, Any
+import time
+from typing import Dict, Any, Optional
 from utils.logger import setup_logger
-from router.classifier import classify_task, TaskCategory
+from router.classifier import classify_task, estimate_complexity, TaskCategory
+from router.decider import decide, verify_logic_puzzle
 from api_engine.fireworks_client import FireworksClient
 from local_engine.llama_client import LocalLlamaClient
+from utils import python_executor as pyexec
 
 logger = setup_logger("runner")
 
@@ -19,6 +22,65 @@ LOCAL_INPUT_PATH = "input/tasks.json"
 LOCAL_OUTPUT_PATH = "output/results.json"
 
 CONCURRENCY_LIMIT = 5
+
+def _strip_code_fences(text: str) -> str:
+    """Removes markdown code block fences if returned by the model."""
+    text = text.strip()
+    if text.startswith("```"):
+        lines = text.split("\n")
+        lines = lines[1:] if lines[0].startswith("```") else lines
+        if lines and lines[-1].strip().startswith("```"):
+            lines = lines[:-1]
+        text = "\n".join(lines)
+    return text.strip()
+
+async def handle_local_math(prompt: str, local_client: LocalLlamaClient) -> tuple:
+    """
+    Asks the local model to convert a math word problem into a clean arithmetic formula
+    and evaluates it locally using AST. Returns (answer_str, float_result, raw_expr).
+    """
+    extraction_prompt = (
+        "Convert this word problem into a single arithmetic expression "
+        "using only numbers and + - * / ( ). Output ONLY the expression, "
+        "nothing else.\n\n" + prompt
+    )
+    expr = await local_client.generate_completion_async(extraction_prompt, TaskCategory.MATH, temperature=0.0)
+    result = pyexec.try_solve_arithmetic(expr)
+    if result is not None:
+        return str(result), result, expr
+    return None, None, expr
+
+async def handle_local_code_debug(prompt: str, local_client: LocalLlamaClient) -> tuple:
+    """
+    Extracts code block, asks local LLM to fix it, then runs smoke test checks.
+    Returns (fixed_source, ran_clean).
+    """
+    source = pyexec.extract_function_source(prompt)
+    if not source:
+        return None, False
+        
+    func_name = pyexec.find_function_name(source)
+    if not func_name:
+        return None, False
+
+    fix_prompt = (
+        f"This function has a bug:\n\n{source}\n\n"
+        "Output ONLY the corrected function definition, nothing else."
+    )
+    fixed_source = await local_client.generate_completion_async(fix_prompt, TaskCategory.DEBUGGING, temperature=0.0)
+    fixed_source = _strip_code_fences(fixed_source)
+    fixed_func_name = pyexec.find_function_name(fixed_source) or func_name
+
+    # Smoke-test with generic arguments to verify it compiles and runs without exception
+    test_args = [([1, 2, 3],), ([5],), ([-1, -5, -2],)]
+    try:
+        results = pyexec.run_function(fixed_source, fixed_func_name, test_args)
+        # Verify no runtime ERROR prefix returned
+        ran_clean = all(not str(r[1]).startswith("ERROR") for r in results)
+    except Exception:
+        ran_clean = False
+
+    return fixed_source, ran_clean
 
 async def process_task(
     task: Dict[str, Any], 
@@ -34,51 +96,98 @@ async def process_task(
         return {"task_id": task_id, "answer": ""}
 
     async with semaphore:
-        # Classify the task
+        # 1. Classify Task & Estimate Complexity
         category = classify_task(prompt)
-        logger.info(f"Task {task_id} classified as: {category}")
+        complexity = estimate_complexity(prompt, category)
+        logger.info(f"Task {task_id} classified as category={category.value} complexity={complexity}")
         
-        answer = None
+        local_answer = None
+        executed_result = None
+        second_sample = None
         
-        # Determine routing logic:
-        # Sentiment & NER -> Local if available
-        # Summarisation & Factual -> Local-first, fallback to API
-        # Math, Logic, Debugging, Code Gen -> API directly
-        
-        use_local = (
-            local_client.loaded and 
-            category in [TaskCategory.SENTIMENT, TaskCategory.NER, TaskCategory.SUMMARIZATION, TaskCategory.FACTUAL]
-        )
-        
-        if use_local:
-            try:
-                logger.info(f"Routing Task {task_id} locally...")
-                # Impose a 20-second timeout on local CPU inference
-                answer = await asyncio.wait_for(
-                    local_client.generate_completion_async(prompt, category),
-                    timeout=20.0
-                )
-                logger.info(f"Task {task_id} processed locally.")
-            except asyncio.TimeoutError:
-                logger.warning(f"Local inference timed out (20s limit) for task {task_id}. Falling back to Fireworks API.")
-            except Exception as e:
-                logger.error(f"Local inference failed for task {task_id}: {e}. Falling back to Fireworks API.")
+        # 2. Local Execution Path (if local model loaded)
+        if local_client.loaded:
+            # Category-specific routing
+            if category == TaskCategory.MATH:
+                try:
+                    # Try safe arithmetic formula execution first
+                    answer_str, result, expr = await asyncio.wait_for(
+                        handle_local_math(prompt, local_client),
+                        timeout=20.0
+                    )
+                    if result is not None:
+                        executed_result = result
+                        local_answer = answer_str
+                    else:
+                        # Fall back to standard local prompt call
+                        local_answer = await local_client.generate_completion_async(prompt, category, temperature=0.1)
+                except Exception as e:
+                    logger.warning(f"Local math handling failed/timed out for {task_id}: {e}")
+                    
+            elif category == TaskCategory.DEBUGGING:
+                try:
+                    # Try local code fix & smoke test validation
+                    fixed_source, ran_clean = await asyncio.wait_for(
+                        handle_local_code_debug(prompt, local_client),
+                        timeout=20.0
+                    )
+                    if fixed_source and ran_clean:
+                        executed_result = fixed_source
+                        local_answer = fixed_source
+                    else:
+                        local_answer = fixed_source or await local_client.generate_completion_async(prompt, category, temperature=0.1)
+                except Exception as e:
+                    logger.warning(f"Local debug handling failed/timed out for {task_id}: {e}")
+                    
+            elif category == TaskCategory.LOGIC:
+                # Logic puzzles always default escalate (3B models are too weak)
+                pass
                 
-        # Call API if local was not selected, or if local run timed out / failed
-        if answer is None:
-            try:
-                logger.info(f"Routing Task {task_id} to Fireworks API...")
-                answer = await api_client.generate_completion_async(prompt, category)
-                logger.info(f"Task {task_id} processed via Fireworks API.")
-            except Exception as e:
-                logger.error(f"Fireworks API call failed for task {task_id}: {e}")
-                # Fallback placeholder to guarantee schema validity
-                answer = "Error: Unable to generate response due to internal processing failure."
-                
-        return {"task_id": task_id, "answer": answer}
+            else:
+                # Factual, NER, Sentiment, Summarization, and Code Gen
+                try:
+                    # Run first sample
+                    local_answer = await asyncio.wait_for(
+                        local_client.generate_completion_async(prompt, category, temperature=0.1),
+                        timeout=20.0
+                    )
+                    # For medium-risk categories, spend a second local query to check self-consistency
+                    is_medium_risk = category in [TaskCategory.FACTUAL, TaskCategory.SUMMARIZATION, TaskCategory.CODE_GEN]
+                    if is_medium_risk and complexity != "high":
+                        second_sample = await asyncio.wait_for(
+                            local_client.generate_completion_async(prompt, category, temperature=0.7),
+                            timeout=20.0
+                        )
+                except Exception as e:
+                    logger.warning(f"Local prompt completion failed/timed out for {task_id}: {e}")
+
+        # 3. Confidence Decider
+        verdict = decide(category, complexity, local_answer, second_sample, executed_result)
+        
+        # If we trust the local model, return its response (costs 0 tokens!)
+        if verdict["trust_local"] and local_answer is not None:
+            logger.info(f"[{task_id}] trust=LOCAL reason={verdict['reason']}")
+            return {"task_id": task_id, "answer": local_answer}
+            
+        # 4. Escalation to Fireworks API
+        logger.info(f"[{task_id}] trust=FIREWORKS reason={verdict['reason']}")
+        try:
+            api_answer = await api_client.generate_completion_async(prompt, category)
+            
+            # Logic check sanity safeguard
+            if category == TaskCategory.LOGIC:
+                if not verify_logic_puzzle(prompt, api_answer):
+                    logger.warning(f"[{task_id}] logic answer failed name constraints check; reporting anyway.")
+                    
+            return {"task_id": task_id, "answer": api_answer}
+        except Exception as e:
+            logger.error(f"Fireworks API call failed for task {task_id}: {e}")
+            # Dynamic recovery fallback
+            fallback_ans = local_answer if local_answer is not None else "Error: Processing failure."
+            return {"task_id": task_id, "answer": fallback_ans}
 
 async def main_async():
-    logger.info("Starting General-Purpose AI Agent Runner...")
+    logger.info("Starting Hybrid-Confidence General-Purpose AI Agent...")
     
     # 1. Resolve Input/Output Paths
     input_path = DEFAULT_INPUT_PATH
@@ -91,7 +200,6 @@ async def main_async():
         
     if not os.path.exists(input_path):
         logger.error(f"Input file not found at: {input_path}")
-        # Write empty array to output to satisfy schema, and exit cleanly
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, "w") as f:
             json.dump([], f)
@@ -104,7 +212,6 @@ async def main_async():
         logger.info(f"Loaded {len(tasks)} tasks from {input_path}")
     except Exception as e:
         logger.error(f"Failed to load or parse input JSON: {e}")
-        # Exiting non-zero is preferred for malformed files
         sys.exit(1)
         
     if not isinstance(tasks, list):
@@ -112,7 +219,6 @@ async def main_async():
         sys.exit(1)
 
     # 3. Initialize Clients
-    # Look for model weights relative to the workspace directory
     model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "local_model.gguf")
     local_client = LocalLlamaClient(model_path=model_path)
     
@@ -123,6 +229,7 @@ async def main_async():
         sys.exit(1)
         
     # 4. Process Tasks concurrently
+    start_time = time.time()
     semaphore = asyncio.Semaphore(CONCURRENCY_LIMIT)
     tasks_to_run = [process_task(t, local_client, api_client, semaphore) for t in tasks]
     
@@ -131,7 +238,6 @@ async def main_async():
     # 5. Write Results
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     try:
-        # Write atomically using a temporary file
         temp_output_path = f"{output_path}.tmp"
         with open(temp_output_path, "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2)
@@ -140,7 +246,7 @@ async def main_async():
             os.remove(output_path)
             
         os.rename(temp_output_path, output_path)
-        logger.info(f"Successfully wrote {len(results)} results to {output_path}")
+        logger.info(f"Successfully wrote {len(results)} results in {time.time() - start_time:.2f}s to {output_path}")
     except Exception as e:
         logger.error(f"Failed to write results file: {e}")
         sys.exit(1)
