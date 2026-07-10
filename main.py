@@ -100,10 +100,11 @@ async def main():
     with open(output_path, "w") as f:
         json.dump(output_data, f, indent=4)
         
-    logger.info(f"Finished processing. Results written to {output_path}")
-    
-    total_tokens = sum(r.fireworks_tokens for r in results)
-    logger.info(f"Total Fireworks Tokens Used: {total_tokens}")
+    logger.info("Finished processing.", extra={"telemetry": {
+        "total_tasks": len(results),
+        "total_fireworks_tokens": total_tokens,
+        "output_path": output_path
+    }})
 
 if __name__ == "__main__":
     asyncio.run(main())
