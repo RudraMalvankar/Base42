@@ -45,6 +45,11 @@ class FireworksExecutor(BaseExecutor):
         
         system_prompt = "You are a highly efficient AI. Answer the user's prompt directly, correctly, and completely without any conversational filler like 'Here is the answer'."
         
+        # Dynamically predict tokens with a 20% safety buffer
+        max_tokens = 1024
+        if context.profile and context.profile.estimated_output_tokens:
+            max_tokens = int(context.profile.estimated_output_tokens * 1.2)
+            
         payload = {
             "model": model,
             "messages": [
@@ -52,7 +57,7 @@ class FireworksExecutor(BaseExecutor):
                 {"role": "user", "content": context.request.prompt}
             ],
             "temperature": 0.1,
-            "max_tokens": 1024
+            "max_tokens": max_tokens
         }
         
         try:

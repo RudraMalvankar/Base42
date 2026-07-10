@@ -34,7 +34,7 @@ class LocalLLMExecutor(BaseExecutor):
         else:
             logger.warning("llama-cpp-python is not installed. Local LLM will failover to Fireworks.")
 
-    def _invoke_sync(self, prompt: str) -> str:
+    def _invoke_sync(self, prompt: str, max_tokens: int) -> str:
         if not self.llm:
             raise RuntimeError("Local LLM not loaded.")
             
@@ -43,7 +43,7 @@ class LocalLLMExecutor(BaseExecutor):
                 {"role": "system", "content": "You are a concise AI. Answer directly with no filler text."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=256,
+            max_tokens=max_tokens,
             temperature=0.1
         )
         return response["choices"][0]["message"]["content"].strip()
@@ -53,12 +53,17 @@ class LocalLLMExecutor(BaseExecutor):
             # Fallback will be handled by the router/engine if this raises or returns empty
             raise RuntimeError("Local inference unavailable.")
             
+        max_tokens = 256
+        if context.profile and context.profile.estimated_output_tokens:
+            max_tokens = int(context.profile.estimated_output_tokens * 1.2)
+            max_tokens = min(max_tokens, 512)
+            
         try:
-            logger.info(f"Task {context.request.task_id}: Routing to Local LLM")
+            logger.info(f"Task {context.request.task_id}: Routing to Local LLM (max_tokens={max_tokens})")
             # Run C++ synchronous binding in a separate thread to prevent event loop blocking
             loop = asyncio.get_running_loop()
             answer = await asyncio.wait_for(
-                loop.run_in_executor(self.executor, self._invoke_sync, context.request.prompt),
+                loop.run_in_executor(self.executor, self._invoke_sync, context.request.prompt, max_tokens),
                 timeout=20.0 # Strict timeout to ensure we don't blow the 30s limit
             )
         except asyncio.TimeoutError:

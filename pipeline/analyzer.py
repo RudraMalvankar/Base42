@@ -13,6 +13,7 @@ from models.schemas import PromptProfile
 from pipeline.prompt_models import ClassificationMethod
 from pipeline.structural_extractor import StructuralExtractor
 from pipeline.semantic_classifier import SemanticClassifier
+from pipeline.token_predictor import TokenPredictor
 from core.logger import setup_logger
 
 logger = setup_logger("prompt_analyzer")
@@ -95,13 +96,14 @@ class PromptAnalyzer:
         elif primary_category == TaskCategory.LOGIC:
             reasoning_depth = 5
 
-        estimated_output = OUTPUT_TOKEN_ESTIMATES.get(primary_category, 60)
+        # --- Predict Tokens ---
+        token_prediction = TokenPredictor.predict(prompt, primary_category, features)
 
         logger.info(
             f"Prompt analyzed via {method.value} | "
             f"Category: {primary_category.value} | "
             f"Complexity: {complexity_score:.2f} | "
-            f"Structural Confidence: {features.structural_confidence:.2f}"
+            f"Expected Tokens: {token_prediction.predicted_output_tokens}"
         )
 
         return PromptProfile(
@@ -110,8 +112,8 @@ class PromptAnalyzer:
             complexity_score=complexity_score,
             reasoning_depth=reasoning_depth,
             requires_deterministic=features.has_math_expression or features.has_code_block,
-            estimated_input_tokens=features.token_estimate,
-            estimated_output_tokens=estimated_output,
+            estimated_input_tokens=token_prediction.input_tokens,
+            estimated_output_tokens=token_prediction.predicted_output_tokens,
             classification_method=method,
             # Legacy fields for compatibility with Classifier and Complexity modules
             has_code=features.has_code_block,
