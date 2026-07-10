@@ -1,52 +1,44 @@
-# Stage 1: Build & Download stage
-FROM python:3.10-slim AS builder
+# Stage 1: Build environment
+FROM python:3.11-slim as builder
 
 WORKDIR /app
 
-# Install build dependencies for compiling llama-cpp-python
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Install build dependencies for llama-cpp-python
+RUN apt-get update && apt-get install -y \
     build-essential \
-    gcc \
-    g++ \
-    make \
-    python3-dev \
-    curl \
+    cmake \
+    ninja-build \
     && rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip and install dependencies
+# Install python dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.txt
 
-# Copy dependencies needed by download_model.py
-COPY download_model.py .
-COPY utils/ utils/
-
-# Download the GGUF model weights during build time to package them inside the image
-RUN python download_model.py
-
-# Stage 2: Clean Runtime stage
-FROM python:3.10-slim
+# Stage 2: Runtime environment
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy compiled python site-packages and binaries from builder
-COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
-COPY --from=builder /usr/local/bin /usr/local/bin
+# Copy built wheels from builder
+COPY --from=builder /app/wheels /wheels
+COPY --from=builder /app/requirements.txt .
 
-# Copy codebase
+# Install the pre-built wheels
+RUN pip install --no-cache /wheels/*
+
+# Download model at build time to cache it in the image layer
+COPY download_model.py .
+RUN python download_model.py
+
+# Copy the rest of the application
+COPY core/ core/
+COPY engine/ engine/
+COPY models/ models/
+COPY pipeline/ pipeline/
 COPY main.py .
-COPY router/ router/
-COPY local_engine/ local_engine/
-COPY api_engine/ api_engine/
-COPY utils/ utils/
-COPY AGents.md .
 
-# Copy pre-downloaded model weights
-COPY --from=builder /app/models/local_model.gguf /app/models/local_model.gguf
-
-# Ensure input and output directories exist
+# Ensure input/output directories exist for local testing
 RUN mkdir -p /input /output
 
-# CMD specifies the entrypoint for the harness
+# Command to run the application
 CMD ["python", "main.py"]
