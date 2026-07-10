@@ -12,6 +12,7 @@ from engine.decision import DecisionEngine
 from engine.confidence import ConfidenceEngine
 from engine.dag import DAGEngine, DAGNode
 from pipeline.planner import TaskPlanner, ResultAggregator
+from core.telemetry import TelemetryService, TaskTrace
 from engine.executors.python import PythonExecutor
 from engine.executors.fireworks import FireworksExecutor
 from engine.executors.local_llm import LocalLLMExecutor
@@ -30,6 +31,8 @@ class Base42Orchestrator:
     async def _execute_single_route(self, context: TaskContext) -> ExecutionResult:
         """Helper to execute a single atomic task."""
         route = context.route
+        fallback_triggered = False
+        
         if route == ExecutionRoute.FIREWORKS:
             result = await self.api_exec.execute(context)
         elif route == ExecutionRoute.LOCAL_LLM:
@@ -41,6 +44,7 @@ class Base42Orchestrator:
         
         # Fallback Loop
         if not ConfidenceEngine.evaluate(final_result, context):
+            fallback_triggered = True
             logger.warning(f"Task {context.request.task_id}: Low confidence in {route.value}. Recalculating route.")
             context.failed_attempts += 1
             context.route = self.decision_engine.route(context)
@@ -54,9 +58,13 @@ class Base42Orchestrator:
                 
             final_result = ResultValidator.sanitize(result, context.category)
             
+        final_result.fallback_triggered = fallback_triggered
         return final_result
 
     async def process_task(self, request: TaskRequest) -> ExecutionResult:
+        import time
+        start_time = time.perf_counter()
+        
         # 1. Analyze
         profile = self.analyzer.analyze(request.prompt)
         context = TaskContext(request=request, profile=profile)
@@ -103,7 +111,22 @@ class Base42Orchestrator:
         
         # 4. Aggregate
         aggregator = ResultAggregator()
-        return aggregator.aggregate(request.task_id, sub_results)
+        final_result = aggregator.aggregate(request.task_id, sub_results)
+        
+        latency_ms = (time.perf_counter() - start_time) * 1000.0
+        fallback_triggered = any(getattr(r, 'fallback_triggered', False) for r in sub_results)
+        
+        trace = TaskTrace(
+            task_id=request.task_id,
+            category=context.category.value if context.category else "UNKNOWN",
+            latency_ms=latency_ms,
+            route=final_result.route_taken.value if final_result.route_taken else "UNKNOWN",
+            fallback_triggered=fallback_triggered,
+            tokens=final_result.fireworks_tokens
+        )
+        await TelemetryService.get_instance().record(trace)
+        
+        return final_result
 
 async def main():
     input_path = "/input/tasks.json"
@@ -144,14 +167,17 @@ async def main():
     # Format for AMD Grader
     output_data = [{"task_id": r.task_id, "answer": r.answer} for r in results]
     
-    with open(output_path, "w") as f:
-        json.dump(output_data, f, indent=4)
+    try:
+        with open(output_path, "w") as f:
+            json.dump(output_data, f, indent=4)
+        logger.info(f"Successfully wrote {len(output_data)} results to {output_path}")
         
-    logger.info("Finished processing.", extra={"telemetry": {
-        "total_tasks": len(results),
-        "total_fireworks_tokens": total_tokens,
-        "output_path": output_path
-    }})
+        # Dump telemetry
+        TelemetryService.get_instance().dump_report("/output/telemetry.json")
+    except Exception as e:
+        logger.error(f"Failed to write results: {e}")
+        
+    logger.info("Finished processing.")
 
 if __name__ == "__main__":
     asyncio.run(main())
