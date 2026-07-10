@@ -52,12 +52,21 @@ class Base42Orchestrator:
             result = await self.api_exec.execute(context)
             
         # 5. Evaluate Confidence
-        if not ConfidenceEngine.evaluate(result, context):
-            logger.warning(f"Task {request.task_id}: Low confidence in {route.value}. Escalating to Fireworks.")
-            result = await self.api_exec.execute(context)
-            
-        # 6. Validate & Sanitize
         final_result = ResultValidator.sanitize(result, context.category)
+        if not ConfidenceEngine.evaluate(final_result, context):
+            logger.warning(f"Task {request.task_id}: Low confidence in {route.value}. Recalculating route.")
+            context.failed_attempts += 1
+            new_route = self.decision_engine.route(context)
+            context.route = new_route
+            
+            if new_route == ExecutionRoute.FIREWORKS:
+                result = await self.api_exec.execute(context)
+            elif new_route == ExecutionRoute.LOCAL_LLM:
+                result = await self.local_exec.execute(context)
+            else:
+                result = await self.python_exec.execute(context)
+                
+            final_result = ResultValidator.sanitize(result, context.category)
         return final_result
 
 async def main():
