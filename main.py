@@ -20,6 +20,7 @@ logger = setup_logger("base42_main")
 class Base42Orchestrator:
     def __init__(self):
         self.analyzer = PromptAnalyzer()  # Loads semantic model ONCE at startup
+        self.decision_engine = DecisionEngine()
         self.python_exec = PythonExecutor()
         self.local_exec = LocalLLMExecutor(model_path="./weights/model.gguf")
         self.api_exec = FireworksExecutor()
@@ -33,9 +34,9 @@ class Base42Orchestrator:
         context.category = TaskClassifier.classify(context)
         context.complexity = ComplexityEstimator.estimate(context)
         
-        # 3. Decide Route
-        route = DecisionEngine.route(context)
-        context.route = route
+        # 3. Route (Mathematical Utility Decision Engine)
+        context.route = self.decision_engine.route(context)
+        route = context.route
         
         logger.info(f"Task {request.task_id} -> Category: {context.category.value}, Route: {route.value}")
         
