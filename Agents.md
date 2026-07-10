@@ -1,134 +1,78 @@
 # AMD Developer Hackathon (Act II) - Track 1: General-Purpose AI Agent
 
-This document outlines the detailed system architecture, routing strategy, edge-case handling, and implementation plan for building a highly optimized and accurate General-Purpose AI Agent named **Base42**.
+This document outlines the detailed system architecture, routing strategy, edge-case handling, and implementation plan for the final version of **Base42**.
 
 ---
 
 ## 1. System Architecture: Base42 AI Operating System
 
-Base42 is designed not as a simple chatbot, but as a deterministic, cost-aware AI Operating System. Its core mandate is to maximize accuracy on the AMD Hackathon Track 1 evaluation set while driving Fireworks API token consumption to absolute zero wherever possible, strictly adhering to the 4GB RAM, 2 vCPU, and 10-minute constraints.
-
-The architecture is divided into 10 enterprise-grade modules:
-1. **Prompt Analyzer**: Zero-token regex/heuristic pre-processor.
-2. **Task Classifier**: TF-IDF/Regex based routing to 8 categories.
-3. **Complexity Estimator**: Evaluates cognitive load (Easy/Medium/Hard).
-4. **Decision Engine**: Dynamic router mapping to Python, Local LLM, or Fireworks API.
-5. **Executors**: Interfaces for Python execution, Local llama.cpp inference, and Fireworks API calls.
-6. **Confidence Engine**: Evaluates local LLM hallucinations before answering.
-7. **Validator**: Final Pydantic schema checker for `results.json`.
-8. **Metrics**: Telemetry for latency and token tracking.
-9. **Caching**: Disabled for hackathon per rules, but supported via interface.
-10. **Future Improvements**: LangGraph/CrewAI readiness.
+Base42 is a deterministic, cost-aware AI Operating System. Its core mandate is to maximize accuracy on the AMD Hackathon Track 1 evaluation set while driving Fireworks API token consumption to absolute zero wherever possible, strictly adhering to the 4GB RAM, 2 vCPU, and 10-minute constraints.
 
 ### Architecture Diagram
 
 ```mermaid
 graph TD
-    A[tasks.json] --> B[Prompt Analyzer]
-    B --> C[Task Classifier]
-    C --> D[Complexity Estimator]
-    D --> E{Decision Engine}
+    A[tasks.json] --> B[Concurrency Orchestrator Semaphore: 20]
+    B --> C[Prompt Analyzer & Token Predictor]
+    C --> D[DAG Task Planner]
+    D --> E{Decision Engine Utility Equation}
     
-    E -->|Math / Easy| F[Python Executor]
-    E -->|Sentiment / NER / Factual| G[Local LLM Executor]
-    E -->|Logic / Hard / Fallback| H[Fireworks API Executor]
+    E -->|Route: Python| F[AST Math Sandbox]
+    E -->|Route: Local| G[Local 1.5B LLM ThreadPool]
+    E -->|Route: API| H[Fireworks API Async Stream]
     
-    G --> I{Confidence Engine}
-    I -->|High Confidence| J[Validator]
-    I -->|Low Confidence / Hallucination| H
+    F --> I[Result Validator & Schema Coercer]
+    G --> J{Confidence Engine}
+    H --> I
     
-    F --> J
-    H --> J
+    J -->|High Confidence| I
+    J -->|Hallucination / Breakdown| K[Fallback to API with CoT]
+    K --> H
     
-    J --> K[results.json]
+    I --> L[Telemetry Service]
+    L --> M[results.json & telemetry.json]
 ```
 
 ---
 
-## 2. Enterprise Directory Structure
+## 2. Advanced Subsystems
 
-We are utilizing a scalable, enterprise-grade directory structure:
+### The DAG Planner (Directed Acyclic Graph)
+Instead of treating all prompts as atomic, the `TaskPlanner` uses NLP dependency parsing to split multi-step instructions (e.g., "Do X then do Y"). It builds a dependency graph and injects the output of X directly into the prompt for Y.
 
-```text
-base42/
-├── .git/
-├── Agents.md               # This documentation file
-├── Dockerfile              # Multi-stage Docker build targeting linux/amd64
-├── requirements.txt        # Python dependencies
-├── core/
-│   ├── config.py           # Pydantic BaseSettings (Env vars)
-│   ├── exceptions.py       # Custom Domain Exceptions
-│   └── logger.py           # Structured JSON Logging
-├── models/
-│   ├── schemas.py          # Pydantic Task/Result schemas
-│   └── enums.py            # TaskCategory, ExecutionRoute
-├── pipeline/
-│   ├── analyzer.py         # Zero-token heuristics
-│   ├── classifier.py       # Prompt categorization
-│   ├── complexity.py       # Cognitive load estimation
-│   └── validator.py        # Output formatting & safety
-├── engine/
-│   ├── decision.py         # Routing logic
-│   ├── confidence.py       # Local LLM validation
-│   └── executors/          
-│       ├── base.py         # Executor Interface
-│       ├── python.py       # Fast-path evaluation
-│       ├── local_llm.py    # llama-cpp-python
-│       └── fireworks.py    # HTTPX client for Fireworks
-├── tests/                  # Pytest suite
-└── main.py                 # Asyncio entrypoint
-```
+### The Decision Engine
+Rather than using static if/else rules, routing is determined by a **Mathematical Utility Equation**:
+`Utility = (Base Accuracy * W_Acc) - (Cost Penalty * W_Cost) - (Complexity Penalty)`
+It recalculates utilities dynamically based on predicted token counts.
+
+### The Confidence Engine (Hallucination Detection)
+A zero-token heuristic parser that intercepts the output of the Local LLM. It calculates a confidence score based on:
+1. **Linguistic Hedging**: Scans for English, French, Spanish, and German uncertainty markers ("maybe", "je ne sais pas").
+2. **N-Gram Looping**: Detects token repetition typical in small quantized models.
+3. **Structural Failure**: Detects if JSON parsing failed.
+If confidence falls below 0.75, it rejects the Local LLM answer and escalates to the Fireworks API.
+
+### The Math Sandbox
+Raw `eval()` is a critical security vulnerability. Base42 uses `ast.parse` and a custom `NodeVisitor` to guarantee that only whitelisted numeric constants and mathematical operators (`+`, `-`, `math.sqrt`) are evaluated. This provides mathematically perfect answers at 0 token cost.
+
+### Edge-Case Resilience
+The entire orchestration loop is wrapped in a `return_exceptions=True` gather block and a global fallback shell. If the container runs out of memory, or HuggingFace goes down, or a specific task throws a ZeroDivisionError, the system catches it and guarantees that a valid `results.json` schema is still written before exit.
 
 ---
 
-## 3. Detailed Edge Case Analysis & Mitigation Strategies
+## 3. Implementation Completion Status
 
-| Edge Case | Description | Mitigation Strategy |
-| :--- | :--- | :--- |
-| **Strict Time Limit (< 30s per request)** | A request routed to the local model on 2 vCPUs may hang. | Wrap local inference in an asyncio timeout block. Fallback to Fireworks API if it exceeds 20s. |
-| **Local Model Out of Memory (OOM)** | Strict 4 GB RAM limit. | Use a 1.5B model (Q4_K_M GGUF format). Set `n_ctx=512`, `n_threads=2`. |
-| **API Rate-Limiting (429 Too Many Requests)** | Flooding the Fireworks API. | Implement `tenacity` retry decorator with exponential backoff and jitter on the `FireworksExecutor`. |
-| **Local Model Bias / Chatty Output** | 1.5B models inject conversational filler ("Here is the answer:"). | The `Validator` needs a regex stripper to isolate the core answer, preserving token efficiency. |
-| **Semaphore Deadlocks** | Mixing synchronous C++ inference (`llama.cpp`) with `asyncio`. | Isolate `llama.cpp` inference within a `ThreadPoolExecutor` to prevent blocking the async event loop. |
+All 11 architectural phases have been successfully implemented, reviewed, and deployed:
+- ✅ Phase 1: Two-Layer Semantic/Structural Routing
+- ✅ Phase 2: Mathematical Utility Decision Engine
+- ✅ Phase 3: DAG Engine & Subtask Planner
+- ✅ Phase 4: Statistical Token Predictor
+- ✅ Phase 5: Regex & Pydantic Result Validator
+- ✅ Phase 6: Zero-Token Confidence Engine
+- ✅ Phase 7: Secure AST Math Sandbox
+- ✅ Phase 8: Observability & Telemetry Service
+- ✅ Phase 9: Multi-Stage Docker Containerization
+- ✅ Phase 10: Enterprise Concurrency Stream (Semaphores)
+- ✅ Phase 11: Edge-Case Resilience (Crash Recovery)
 
----
-
-## 4. Capability-Specific Strategies
-
-### 1. Factual Knowledge
-- **Strategy**: Simple queries are routed locally. Complex queries routed to Fireworks.
-- **Prompt Optimization**: "Answer directly in 1-2 sentences. Avoid pleasantries."
-
-### 2. Mathematical Reasoning
-- **Strategy**: Try `PythonExecutor` first. If it fails or is complex, route to Fireworks (`llama-v3p1-70b-instruct`).
-
-### 3. Sentiment Classification & NER
-- **Strategy**: 100% routed to the `LocalLLMExecutor` to save Fireworks tokens.
-- **Prompt Optimization**: Force strict formatting constraints in the system prompt.
-
-### 4. Code Debugging, Code Generation & Logic
-- **Strategy**: Always route to `FireworksExecutor`. 1.5B local models are not reliable for complex logic or coding tasks, risking Accuracy Gate failure.
-
----
-
-## 5. Implementation Roadmap
-
-### Phase 1: Foundation (Completed)
-- Set up the enterprise structure (`core/`, `models/`, `pipeline/`, `engine/`).
-- Implemented zero-token processing (`analyzer.py`, `classifier.py`, `complexity.py`).
-- Implemented the `DecisionEngine`.
-
-### Phase 2: Executors (Next Steps)
-- Implement `engine/executors/base.py` interface.
-- Implement `engine/executors/python.py` for math sandboxing.
-- Implement `engine/executors/fireworks.py` with `httpx` and `tenacity`.
-- Implement `engine/executors/local_llm.py` with ThreadPool isolation.
-
-### Phase 3: Validation & Orchestration
-- Implement `engine/confidence.py` for hallucination detection.
-- Implement `pipeline/validator.py` for schema enforcement.
-- Wire everything up in `main.py` using `asyncio.Semaphore`.
-
-### Phase 4: Containerization
-- Write the multi-stage `Dockerfile`.
-- Ensure the image builds under 10GB and RAM usage stays under 4GB.
+**System is Production-Ready.**

@@ -50,8 +50,13 @@ class LocalLLMExecutor(BaseExecutor):
 
     async def execute(self, context: TaskContext) -> ExecutionResult:
         if not self.llm:
-            # Fallback will be handled by the router/engine if this raises or returns empty
-            raise RuntimeError("Local inference unavailable.")
+            logger.warning(f"Task {context.request.task_id}: Local LLM unavailable. Forcing fallback.")
+            return ExecutionResult(
+                task_id=context.request.task_id,
+                answer="",
+                route_taken=ExecutionRoute.LOCAL_LLM,
+                fallback_triggered=True
+            )
             
         max_tokens = 256
         if context.profile and context.profile.estimated_output_tokens:

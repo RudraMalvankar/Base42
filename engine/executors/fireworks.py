@@ -32,10 +32,16 @@ class FireworksExecutor(BaseExecutor):
                     return m
             return models[-1]
             
-        if "70b" in models[-1].lower() or "405b" in models[-1].lower():
-            # Use largest model for logic/code
-            return models[-1]
-        return models[0]
+        # Use smallest model for simple tasks that bypassed local LLM
+        from models.enums import TaskCategory
+        if context.category in [TaskCategory.FACTUAL, TaskCategory.SENTIMENT, TaskCategory.NER]:
+            return models[0]
+            
+        # Use largest model for complex reasoning and code
+        for m in reversed(models):
+            if "70b" in m.lower() or "405b" in m.lower() or "72b" in m.lower():
+                return m
+        return models[-1]
         
     @retry(
         stop=stop_after_attempt(3),
