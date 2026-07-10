@@ -1,55 +1,96 @@
 from .base import BaseExecutor
 from models.schemas import TaskContext, ExecutionResult
 from models.enums import ExecutionRoute
+from core.logger import setup_logger
 import ast
 import operator
 import re
 
-class PythonExecutor(BaseExecutor):
-    def __init__(self):
-        # Safe math evaluation mapping
-        self.operators = {
-            ast.Add: operator.add,
-            ast.Sub: operator.sub,
-            ast.Mult: operator.mul,
-            ast.Div: operator.truediv,
-            ast.Pow: operator.pow,
-            ast.USub: operator.neg
-        }
-        
-    def _eval_expr(self, node):
-        if isinstance(node, ast.Constant):
-            return node.value
-        elif isinstance(node, ast.BinOp):
-            return self.operators[type(node.op)](self._eval_expr(node.left), self._eval_expr(node.right))
-        elif isinstance(node, ast.UnaryOp):
-            return self.operators[type(node.op)](self._eval_expr(node.operand))
-        else:
-            raise TypeError(node)
+logger = setup_logger("python_executor")
 
+class MathSandbox:
+    """Secure deterministic evaluator for math expressions."""
+    
+    OPERATORS = {
+        ast.Add: operator.add,
+        ast.Sub: operator.sub,
+        ast.Mult: operator.mul,
+        ast.Div: operator.truediv,
+        ast.Pow: operator.pow,
+        ast.USub: operator.neg,
+        ast.Mod: operator.mod,
+        ast.FloorDiv: operator.floordiv
+    }
+    
+    @classmethod
+    def extract_equation(cls, prompt: str) -> str:
+        # Strip common natural language wrappers
+        clean = re.sub(r'(?i)(what is|calculate|compute|solve|find the value of|equals|answer to)', '', prompt)
+        
+        # Look for the longest contiguous math expression
+        # Matches numbers, operators, parens, modulo, and spaces
+        match = re.search(r'([\d\s\+\-\*\/\(\)\.\%]{3,})', clean)
+        if match:
+            expr = match.group(1).strip()
+            # If it's just a raw number with no operators, it's not a real math equation
+            if expr and not re.fullmatch(r'[\d\.\s]+', expr):
+                return expr
+        return ""
+
+    @classmethod
+    def _eval_node(cls, node):
+        if isinstance(node, ast.Constant):
+            if isinstance(node.value, (int, float, complex)):
+                return node.value
+            raise TypeError("Only numeric constants allowed")
+        elif isinstance(node, ast.BinOp):
+            if type(node.op) not in cls.OPERATORS:
+                raise TypeError(f"Unsupported operator: {type(node.op)}")
+            left = cls._eval_node(node.left)
+            right = cls._eval_node(node.right)
+            if type(node.op) in (ast.Div, ast.Mod, ast.FloorDiv) and right == 0:
+                raise ZeroDivisionError("Division by zero")
+            return cls.OPERATORS[type(node.op)](left, right)
+        elif isinstance(node, ast.UnaryOp):
+            if type(node.op) not in cls.OPERATORS:
+                raise TypeError(f"Unsupported unary operator: {type(node.op)}")
+            return cls.OPERATORS[type(node.op)](cls._eval_node(node.operand))
+        else:
+            raise TypeError(f"Unsupported node type: {type(node)}")
+
+    @classmethod
+    def evaluate(cls, equation: str) -> str:
+        try:
+            tree = ast.parse(equation, mode='eval').body
+            result = cls._eval_node(tree)
+            # Format nicely, drop .0 for integers
+            if isinstance(result, float) and result.is_integer():
+                return str(int(result))
+            return str(result)
+        except Exception as e:
+            logger.warning(f"MathSandbox failed to evaluate '{equation}': {e}")
+            raise ValueError(f"Math Error: {e}")
+
+class PythonExecutor(BaseExecutor):
     async def execute(self, context: TaskContext) -> ExecutionResult:
         prompt = context.request.prompt
         
-        # Clean the prompt to extract just the math expression
-        # E.g. "Calculate 5 + 3" -> "5+3"
-        expr_match = re.search(r'([\d\s\+\-\*\/\(\)\.]+)', prompt)
+        equation = MathSandbox.extract_equation(prompt)
         
-        if not expr_match:
+        if not equation:
+            # Empty means it was likely a word problem we failed to parse
+            logger.warning(f"Task {context.request.task_id}: Could not extract equation. Triggering API fallback.")
             return ExecutionResult(
                 task_id=context.request.task_id,
-                answer="Could not parse math expression.",
+                answer="", # Empty string triggers fallback in ConfidenceEngine
                 route_taken=ExecutionRoute.PYTHON
             )
             
-        cleaned_expr = expr_match.group(1).strip()
-        
         try:
-            # Parse the expression securely
-            tree = ast.parse(cleaned_expr, mode='eval').body
-            result = self._eval_expr(tree)
-            answer = str(result)
-        except Exception as e:
-            answer = f"Math error: {str(e)}"
+            logger.info(f"Task {context.request.task_id}: Executing math in AST Sandbox -> {equation}")
+            answer = MathSandbox.evaluate(equation)
+        except Exception:
+            answer = "" # Trigger API fallback
             
         return ExecutionResult(
             task_id=context.request.task_id,
