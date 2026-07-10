@@ -10,6 +10,8 @@ from pipeline.complexity import ComplexityEstimator
 from pipeline.validator import ResultValidator
 from engine.decision import DecisionEngine
 from engine.confidence import ConfidenceEngine
+from engine.dag import DAGEngine, DAGNode
+from pipeline.planner import TaskPlanner, ResultAggregator
 from engine.executors.python import PythonExecutor
 from engine.executors.fireworks import FireworksExecutor
 from engine.executors.local_llm import LocalLLMExecutor
@@ -25,49 +27,65 @@ class Base42Orchestrator:
         self.local_exec = LocalLLMExecutor(model_path="./weights/model.gguf")
         self.api_exec = FireworksExecutor()
         
-    async def process_task(self, request: TaskRequest) -> ExecutionResult:
-        # 1. Analyze (Cascade Classifier — structural + optional semantic)
-        profile = self.analyzer.analyze(request.prompt)
-        context = TaskContext(request=request, profile=profile)
-        
-        # 2. Classify & Estimate
-        context.category = TaskClassifier.classify(context)
-        context.complexity = ComplexityEstimator.estimate(context)
-        
-        # 3. Route (Mathematical Utility Decision Engine)
-        context.route = self.decision_engine.route(context)
+    async def _execute_single_route(self, context: TaskContext) -> ExecutionResult:
+        """Helper to execute a single atomic task."""
         route = context.route
-        
-        logger.info(f"Task {request.task_id} -> Category: {context.category.value}, Route: {route.value}")
-        
-        # 4. Execute
-        if route == ExecutionRoute.PYTHON:
-            result = await self.python_exec.execute(context)
-        elif route == ExecutionRoute.LOCAL_LLM:
-            try:
-                result = await self.local_exec.execute(context)
-            except Exception:
-                result = ExecutionResult(task_id=request.task_id, answer="", route_taken=ExecutionRoute.LOCAL_LLM)
-        else:
+        if route == ExecutionRoute.FIREWORKS:
             result = await self.api_exec.execute(context)
+        elif route == ExecutionRoute.LOCAL_LLM:
+            result = await self.local_exec.execute(context)
+        else:
+            result = await self.python_exec.execute(context)
             
-        # 5. Evaluate Confidence
         final_result = ResultValidator.sanitize(result, context.category)
+        
+        # Fallback Loop
         if not ConfidenceEngine.evaluate(final_result, context):
-            logger.warning(f"Task {request.task_id}: Low confidence in {route.value}. Recalculating route.")
+            logger.warning(f"Task {context.request.task_id}: Low confidence in {route.value}. Recalculating route.")
             context.failed_attempts += 1
-            new_route = self.decision_engine.route(context)
-            context.route = new_route
+            context.route = self.decision_engine.route(context)
             
-            if new_route == ExecutionRoute.FIREWORKS:
+            if context.route == ExecutionRoute.FIREWORKS:
                 result = await self.api_exec.execute(context)
-            elif new_route == ExecutionRoute.LOCAL_LLM:
+            elif context.route == ExecutionRoute.LOCAL_LLM:
                 result = await self.local_exec.execute(context)
             else:
                 result = await self.python_exec.execute(context)
                 
             final_result = ResultValidator.sanitize(result, context.category)
+            
         return final_result
+
+    async def process_task(self, request: TaskRequest) -> ExecutionResult:
+        # 1. Analyze
+        profile = self.analyzer.analyze(request.prompt)
+        context = TaskContext(request=request, profile=profile)
+        context.category = profile.primary_category
+        context.complexity = ComplexityEstimator.estimate(context)
+        
+        # 2. Plan (Heuristic Decomposition)
+        planner = TaskPlanner()
+        sub_tasks = planner.plan(context)
+        
+        # 3. Build DAG & Execute
+        dag = DAGEngine()
+        for st in sub_tasks:
+            st_req = TaskRequest(task_id=st.id, prompt=st.prompt)
+            st_ctx = TaskContext(request=st_req, profile=profile, category=st.category, complexity=context.complexity)
+            
+            async def _exec_node(ctx=st_ctx):
+                ctx.route = self.decision_engine.route(ctx)
+                return await self._execute_single_route(ctx)
+                
+            node = DAGNode(task_id=st.id, executable=_exec_node, context=st_ctx)
+            dag.add_node(node)
+            
+        # Execute all sub-tasks concurrently
+        sub_results = await dag.execute_graph()
+        
+        # 4. Aggregate
+        aggregator = ResultAggregator()
+        return aggregator.aggregate(request.task_id, sub_results)
 
 async def main():
     input_path = "/input/tasks.json"
