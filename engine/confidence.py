@@ -1,52 +1,70 @@
-from models.schemas import ExecutionResult, TaskContext
+import re
+from models.schemas import TaskContext, ExecutionResult
 from models.enums import ExecutionRoute, TaskCategory
-import ast
-import json
+from core.logger import setup_logger
+
+logger = setup_logger("confidence_engine")
 
 class ConfidenceEngine:
-    @staticmethod
-    def calculate_confidence(result: ExecutionResult, context: TaskContext) -> float:
-        """
-        Calculates a mathematical confidence score between 0.0 and 1.0.
-        Conf = V_R (Rule Validation) * V_D (Deterministic) * V_H (Heuristic)
-        If Conf < 0.6, escalation is triggered.
-        """
-        # API fallbacks are trusted by definition
-        if result.route_taken == ExecutionRoute.FIREWORKS:
-            return 1.0
-            
-        answer = result.answer.strip()
-        if not answer or "error" in answer.lower():
-            return 0.0 # V_D fails completely
-            
-        v_r = 1.0 # Rule Validation
-        v_d = 1.0 # Deterministic Validation
-        v_h = 1.0 # Heuristic Validation
-        
-        if context.category == TaskCategory.MATH:
-            try:
-                ast.literal_eval(answer)
-                v_d = 1.0
-            except (ValueError, SyntaxError):
-                v_d = 0.5 # Requires regex stripping, confidence reduced
-                
-        elif context.category == TaskCategory.NER:
-            if "[" in answer and "]" in answer:
-                try:
-                    json.loads(answer[answer.find("["):answer.rfind("]")+1])
-                    v_r = 1.0
-                except json.JSONDecodeError:
-                    v_r = 0.0
-            else:
-                v_r = 0.0
-                
-        elif context.category == TaskCategory.FACTUAL:
-            if len(answer.split()) > 100:
-                v_h = 0.2
-                
-        return v_r * v_d * v_h
+    """Zero-token heuristic hallucination and failure detector."""
 
-    @staticmethod
-    def evaluate(result: ExecutionResult, context: TaskContext) -> bool:
-        confidence = ConfidenceEngine.calculate_confidence(result, context)
-        return confidence >= 0.6
+    HEDGING_TERMS = re.compile(
+        r'\b(not sure|maybe|could be|might be|possibly|as an AI|unclear|don\'t know|cannot answer|hard to say)\b', 
+        re.IGNORECASE
+    )
+
+    @classmethod
+    def _calculate_hedging_penalty(cls, text: str) -> float:
+        matches = len(cls.HEDGING_TERMS.findall(text))
+        return min(0.5, matches * 0.15) # Cap penalty at 0.5
+
+    @classmethod
+    def _calculate_repetition_penalty(cls, text: str) -> float:
+        # Detect token looping (e.g. "the the the the the") which is a common failure mode for quantized small models
+        words = text.split()
+        if len(words) < 10:
+            return 0.0
+            
+        loop_count = 0
+        for i in range(len(words) - 2):
+            if words[i] == words[i+1] == words[i+2]:
+                loop_count += 1
+                
+        return min(0.6, loop_count * 0.2) # High penalty for loops
+
+    @classmethod
+    def evaluate(cls, result: ExecutionResult, context: TaskContext) -> bool:
+        # We implicitly trust Fireworks 70B and Python for this hackathon's accuracy gate
+        if result.route_taken in [ExecutionRoute.FIREWORKS, ExecutionRoute.PYTHON]:
+            return True
+
+        answer = result.answer.strip()
+        
+        # Hard failure
+        if not answer or answer == "API Error":
+            return False
+
+        confidence_score = 1.0
+
+        # 1. Structural Breakdown Penalty
+        # If NER or Logic was expected, and the validator failed to produce a valid JSON array/object
+        if context.category in [TaskCategory.NER, TaskCategory.LOGIC]:
+            if not (answer.startswith("[") or answer.startswith("{")):
+                logger.warning(f"Task {result.task_id}: Confidence drop. Local LLM failed structural JSON validation.")
+                confidence_score -= 0.4
+
+        # 2. Linguistic Hedging (Hallucination marker)
+        hedging_penalty = cls._calculate_hedging_penalty(answer)
+        confidence_score -= hedging_penalty
+
+        # 3. Repetition/Looping (Model breakdown marker)
+        rep_penalty = cls._calculate_repetition_penalty(answer)
+        confidence_score -= rep_penalty
+
+        logger.info(
+            f"Task {result.task_id}: Local LLM Confidence = {confidence_score:.2f} "
+            f"(Hedge: -{hedging_penalty:.2f}, Rep: -{rep_penalty:.2f})"
+        )
+
+        # 0.75 is a strict threshold. Any structural failure OR heavy hedging forces a fallback.
+        return confidence_score >= 0.75
