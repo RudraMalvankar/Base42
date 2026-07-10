@@ -152,12 +152,26 @@ async def main():
         tasks_data = []
 
     orchestrator = Base42Orchestrator()
-    semaphore = asyncio.Semaphore(4) # Protect memory & API limits
+    semaphore = asyncio.Semaphore(20) # Protect memory & API limits, allow 20 concurrent
 
     async def _bounded_process(task_dict):
         async with semaphore:
             request = TaskRequest(**task_dict)
-            return await orchestrator.process_task(request)
+            try:
+                # AMD Hackathon imposes a strict 30-second time limit per task.
+                # We enforce a 28-second hard timeout to guarantee we never stall the pipeline.
+                return await asyncio.wait_for(
+                    orchestrator.process_task(request),
+                    timeout=28.0
+                )
+            except asyncio.TimeoutError:
+                logger.error(f"Task {request.task_id} TIMED OUT globally (>28s). Forcing API fallback state.")
+                return ExecutionResult(
+                    task_id=request.task_id,
+                    answer="Timeout Error",
+                    route_taken=ExecutionRoute.FIREWORKS,
+                    fallback_triggered=True
+                )
 
     logger.info(f"Starting execution of {len(tasks_data)} tasks.")
     
