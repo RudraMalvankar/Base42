@@ -1,0 +1,34 @@
+[
+  {
+    "task_id": "practice-01",
+    "prompt": "What is the capital of Australia, and what body of water is it near?"
+  },
+  {
+    "task_id": "practice-02",
+    "prompt": "A store has 240 items. It sells 15% on Monday and 60 more on Tuesday. How many items remain?"
+  },
+  {
+    "task_id": "practice-03",
+    "prompt": "Classify the sentiment of this review: The battery life is great, but the screen scratches too easily."
+  },
+  {
+    "task_id": "practice-04",
+    "prompt": "Summarize the following in exactly one sentence: The web application is the core interface through which users interact with systems, services, and other users. A beautiful UI/UX is critical for retention and conversion. Ensuring that the application responds immediately, scales to millions of active sessions, and maintains zero security vulnerabilities is paramount for any business aiming to establish a premium brand."
+  },
+  {
+    "task_id": "practice-05",
+    "prompt": "Extract all named entities and their types from: Maria Sanchez joined Fireworks AI in Berlin last March."
+  },
+  {
+    "task_id": "practice-06",
+    "prompt": "This function should return the max of a list but has a bug: def get_max(nums): return nums[0]. Find and fix it."
+  },
+  {
+    "task_id": "practice-07",
+    "prompt": "Three friends, Sam, Jo, and Lee, each own a different pet: cat, dog, bird. Sam does not own the bird. Jo owns the dog. Who owns the cat?"
+  },
+  {
+    "task_id": "practice-08",
+    "prompt": "Write a Python function that returns the second-largest number in a list, handling duplicates correctly."
+  }
+]
