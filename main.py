@@ -25,7 +25,13 @@ class Base42Orchestrator:
         self.analyzer = PromptAnalyzer()  # Loads semantic model ONCE at startup
         self.decision_engine = DecisionEngine()
         self.python_exec = PythonExecutor()
-        self.local_exec = LocalLLMExecutor(model_path="./weights/model.gguf")
+        
+        # Point to the Gemma model (Supports both Docker and Local dev paths)
+        model_path = "/model/gemma-2-2b-it-Q4_K_M.gguf"
+        if not os.path.exists(model_path):
+            model_path = "./model/gemma-2-2b-it-Q4_K_M.gguf"
+            
+        self.local_exec = LocalLLMExecutor(model_path=model_path)
         self.api_exec = FireworksExecutor()
         
     async def _execute_single_route(self, context: TaskContext) -> ExecutionResult:

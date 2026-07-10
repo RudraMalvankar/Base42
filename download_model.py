@@ -1,14 +1,15 @@
 import os
 from huggingface_hub import hf_hub_download
 
-# Using Qwen 2.5 1.5B Instruct Q4 (Requires < 1.5GB RAM)
-REPO_ID = "Qwen/Qwen2.5-1.5B-Instruct-GGUF"
-FILENAME = "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+# Using Gemma-2-2B-it-GGUF to qualify for the $6,000 DeepMind Gemma Prize!
+# Q4_K_M fits well within the 4GB RAM limit.
+REPO_ID = "bartowski/gemma-2-2b-it-GGUF"
+FILENAME = "gemma-2-2b-it-Q4_K_M.gguf"
 MODEL_DIR = "/model"
 
 def main():
     os.makedirs(MODEL_DIR, exist_ok=True)
-    print(f"Downloading {FILENAME} from {REPO_ID}...")
+    print(f"Downloading {FILENAME} from {REPO_ID} (Targeting Gemma Prize)...")
     
     # hf_hub_download automatically handles retries and resuming
     download_path = hf_hub_download(
