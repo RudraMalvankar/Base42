@@ -1,23 +1,23 @@
 import os
-import httpx
+from huggingface_hub import hf_hub_download
 
-MODEL_URL = "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf"
-WEIGHTS_DIR = "./weights"
-MODEL_PATH = os.path.join(WEIGHTS_DIR, "model.gguf")
+# Using Qwen 2.5 1.5B Instruct Q4 (Requires < 1.5GB RAM)
+REPO_ID = "Qwen/Qwen2.5-1.5B-Instruct-GGUF"
+FILENAME = "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+MODEL_DIR = "/model"
 
-def download():
-    os.makedirs(WEIGHTS_DIR, exist_ok=True)
-    if os.path.exists(MODEL_PATH):
-        print("Model already exists. Skipping download.")
-        return
-        
-    print(f"Downloading model from {MODEL_URL}...")
-    with httpx.stream("GET", MODEL_URL, follow_redirects=True) as r:
-        r.raise_for_status()
-        with open(MODEL_PATH, "wb") as f:
-            for chunk in r.iter_bytes(chunk_size=8192):
-                f.write(chunk)
-    print("Download complete.")
+def main():
+    os.makedirs(MODEL_DIR, exist_ok=True)
+    print(f"Downloading {FILENAME} from {REPO_ID}...")
+    
+    # hf_hub_download automatically handles retries and resuming
+    download_path = hf_hub_download(
+        repo_id=REPO_ID, 
+        filename=FILENAME, 
+        local_dir=MODEL_DIR,
+        local_dir_use_symlinks=False
+    )
+    print(f"Successfully downloaded to: {download_path}")
 
 if __name__ == "__main__":
-    download()
+    main()
