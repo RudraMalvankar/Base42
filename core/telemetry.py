@@ -70,8 +70,13 @@ class TelemetryService:
         try:
             import os
             os.makedirs(os.path.dirname(path), exist_ok=True)
-            with open(path, "w", encoding="utf-8") as f:
+            
+            # Atomic write to prevent file corruption during container crashes
+            tmp_path = path + ".tmp"
+            with open(tmp_path, "w", encoding="utf-8") as f:
                 json.dump(report, f, indent=4)
+            os.replace(tmp_path, path)
+            
             logger.info(f"Telemetry report dumped to {path}")
         except Exception as e:
             logger.error(f"Failed to write telemetry: {e}")
