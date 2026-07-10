@@ -3,7 +3,7 @@ import asyncio
 from typing import List, Callable, Awaitable
 
 class DAGNode:
-    def __init__(self, task_id: str, executable: Callable[[TaskContext], Awaitable[ExecutionResult]], context: TaskContext):
+    def __init__(self, task_id: str, executable: Callable[['DAGNode'], Awaitable[ExecutionResult]], context: TaskContext):
         self.task_id = task_id
         self.executable = executable
         self.context = context
@@ -37,7 +37,7 @@ class DAGEngine:
             
             for node in ready_nodes:
                 pending.remove(node)
-                task = asyncio.create_task(node.executable(node.context))
+                task = asyncio.create_task(node.executable(node))
                 running_tasks[task] = node
                 
             if not running_tasks:

@@ -69,18 +69,36 @@ class Base42Orchestrator:
         
         # 3. Build DAG & Execute
         dag = DAGEngine()
+        node_map = {}
         for st in sub_tasks:
             st_req = TaskRequest(task_id=st.id, prompt=st.prompt)
             st_ctx = TaskContext(request=st_req, profile=profile, category=st.category, complexity=context.complexity)
             
-            async def _exec_node(ctx=st_ctx):
+            async def _exec_node(node_ref: DAGNode):
+                ctx = node_ref.context
+                # Dynamic Context Injection
+                if node_ref.dependencies:
+                    dep_text = "\n\n--- PREVIOUS TASK OUTPUTS ---\n"
+                    for d in node_ref.dependencies:
+                        if d.result:
+                            dep_text += f"[{d.task_id}]: {d.result.answer}\n"
+                    ctx.request.prompt += dep_text
+                    
                 ctx.route = self.decision_engine.route(ctx)
                 return await self._execute_single_route(ctx)
                 
             node = DAGNode(task_id=st.id, executable=_exec_node, context=st_ctx)
+            node_map[st.id] = node
             dag.add_node(node)
             
-        # Execute all sub-tasks concurrently
+        # Wire dependencies
+        for st in sub_tasks:
+            node = node_map[st.id]
+            for dep_id in st.dependencies:
+                if dep_id in node_map:
+                    node.add_dependency(node_map[dep_id])
+            
+        # Execute all sub-tasks concurrently/sequentially based on edges
         sub_results = await dag.execute_graph()
         
         # 4. Aggregate
