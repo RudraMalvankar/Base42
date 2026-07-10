@@ -25,6 +25,13 @@ class FireworksExecutor(BaseExecutor):
         if not models:
             raise ValueError("No ALLOWED_MODELS configured.")
             
+        # Escalation: Use the absolute largest model available on fallbacks
+        if getattr(context, "failed_attempts", 0) > 0:
+            for m in reversed(models):
+                if "405b" in m.lower() or "72b" in m.lower() or "70b" in m.lower():
+                    return m
+            return models[-1]
+            
         if "70b" in models[-1].lower() or "405b" in models[-1].lower():
             # Use largest model for logic/code
             return models[-1]
@@ -44,6 +51,9 @@ class FireworksExecutor(BaseExecutor):
         model = self._select_model(context)
         
         system_prompt = "You are a highly efficient AI. Answer the user's prompt directly, correctly, and completely without any conversational filler like 'Here is the answer'."
+        
+        if getattr(context, "failed_attempts", 0) > 0:
+            system_prompt += " NOTE: Your previous attempt failed structural validation or exhibited hallucinations. You must think carefully step-by-step, but ensure the final output strictly adheres to the originally requested format without extra conversational text."
         
         # Dynamically predict tokens with a 20% safety buffer
         max_tokens = 1024
