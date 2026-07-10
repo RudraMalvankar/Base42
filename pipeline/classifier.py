@@ -6,7 +6,7 @@ class TaskClassifier:
     @staticmethod
     def classify(context: TaskContext) -> TaskCategory:
         prompt = context.request.prompt.lower()
-        meta = context.metadata
+        meta = context.profile
         
         # Heuristic rules for classification
         if meta.has_math or re.search(r'(\+|-|\*|/|equation|calculate)', prompt):

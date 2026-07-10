@@ -6,7 +6,7 @@ class ComplexityEstimator:
     @staticmethod
     def estimate(context: TaskContext) -> ComplexityLevel:
         prompt = context.request.prompt
-        word_count = context.metadata.word_count
+        word_count = context.profile.word_count
         
         # Heuristic rules
         if word_count > 60 or context.category in [TaskCategory.LOGIC, TaskCategory.CODE_GEN]:

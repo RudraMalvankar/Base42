@@ -25,8 +25,8 @@ class Base42Orchestrator:
         
     async def process_task(self, request: TaskRequest) -> ExecutionResult:
         # 1. Analyze
-        metadata = PromptAnalyzer.analyze(request.prompt)
-        context = TaskContext(request=request, metadata=metadata)
+        profile = PromptAnalyzer.analyze(request.prompt)
+        context = TaskContext(request=request, profile=profile)
         
         # 2. Classify & Estimate
         context.category = TaskClassifier.classify(context)
