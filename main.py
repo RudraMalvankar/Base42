@@ -19,13 +19,14 @@ logger = setup_logger("base42_main")
 
 class Base42Orchestrator:
     def __init__(self):
+        self.analyzer = PromptAnalyzer()  # Loads semantic model ONCE at startup
         self.python_exec = PythonExecutor()
         self.local_exec = LocalLLMExecutor(model_path="./weights/model.gguf")
         self.api_exec = FireworksExecutor()
         
     async def process_task(self, request: TaskRequest) -> ExecutionResult:
-        # 1. Analyze
-        profile = PromptAnalyzer.analyze(request.prompt)
+        # 1. Analyze (Cascade Classifier — structural + optional semantic)
+        profile = self.analyzer.analyze(request.prompt)
         context = TaskContext(request=request, profile=profile)
         
         # 2. Classify & Estimate
