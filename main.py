@@ -26,10 +26,10 @@ class Base42Orchestrator:
         self.decision_engine = DecisionEngine()
         self.python_exec = PythonExecutor()
         
-        # Point to the Gemma model (Supports both Docker and Local dev paths)
-        model_path = "/model/gemma-2-2b-it-Q4_K_M.gguf"
+        # Point to the TinyLlama model (Supports both Docker and Local dev paths)
+        model_path = "/model/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
         if not os.path.exists(model_path):
-            model_path = "./model/gemma-2-2b-it-Q4_K_M.gguf"
+            model_path = "./model/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
             
         self.local_exec = LocalLLMExecutor(model_path=model_path)
         self.api_exec = FireworksExecutor()

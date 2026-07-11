@@ -1,10 +1,10 @@
 import os
 from huggingface_hub import hf_hub_download
 
-# Using Gemma-2-2B-it-GGUF to qualify for the $6,000 DeepMind Gemma Prize!
+# Using TinyLlama to guarantee 100% compatibility with the universal CPU binaries
 # Q4_K_M fits well within the 4GB RAM limit.
-REPO_ID = "bartowski/gemma-2-2b-it-GGUF"
-FILENAME = "gemma-2-2b-it-Q4_K_M.gguf"
+REPO_ID = "TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF"
+FILENAME = "tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
 MODEL_DIR = "/model"
 
 def main():
