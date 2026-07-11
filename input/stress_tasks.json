@@ -1,0 +1,4002 @@
+[
+  {
+    "task_id": "named-entity-recognition-1",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Provide examples. (Variant 0)"
+  },
+  {
+    "task_id": "distributed-systems-2",
+    "prompt": "Explain the Paxos consensus algorithm. (Variant 1)"
+  },
+  {
+    "task_id": "python-3",
+    "prompt": "Write a Python script to parse a CSV and filter rows. Provide examples. (Variant 2)"
+  },
+  {
+    "task_id": "math-4",
+    "prompt": "What is 15% of 850? Explain step-by-step. (Variant 3)"
+  },
+  {
+    "task_id": "python-5",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 4)"
+  },
+  {
+    "task_id": "greetings-6",
+    "prompt": "Hi there, can you help me? Focus on performance. (Variant 5)"
+  },
+  {
+    "task_id": "javascript-7",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 6)"
+  },
+  {
+    "task_id": "sentiment-analysis-8",
+    "prompt": "I am so frustrated with this buggy software! (Variant 7)"
+  },
+  {
+    "task_id": "named-entity-recognition-9",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Provide examples. (Variant 8)"
+  },
+  {
+    "task_id": "security-10",
+    "prompt": "How do you securely store passwords in a database? Explain step-by-step. (Variant 9)"
+  },
+  {
+    "task_id": "sql-11",
+    "prompt": "Write an SQL query to find the second highest salary. Provide examples. (Variant 10)"
+  },
+  {
+    "task_id": "security-12",
+    "prompt": "How do you securely store passwords in a database? (Variant 11)"
+  },
+  {
+    "task_id": "factual-qa-13",
+    "prompt": "What is photosynthesis? Provide examples. (Variant 12)"
+  },
+  {
+    "task_id": "logical-reasoning-14",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? (Variant 13)"
+  },
+  {
+    "task_id": "javascript-15",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 14)"
+  },
+  {
+    "task_id": "distributed-systems-16",
+    "prompt": "Explain the Paxos consensus algorithm. Explain step-by-step. (Variant 15)"
+  },
+  {
+    "task_id": "sentiment-analysis-17",
+    "prompt": "What a delightful experience from start to finish. Provide examples. (Variant 16)"
+  },
+  {
+    "task_id": "cloud-computing-18",
+    "prompt": "How do you set up a VPC peering connection in AWS? (Variant 17)"
+  },
+  {
+    "task_id": "security-19",
+    "prompt": "How do you securely store passwords in a database? Provide examples. (Variant 18)"
+  },
+  {
+    "task_id": "logical-reasoning-20",
+    "prompt": "If all A are B, and some B are C, are some A definitely C? (Variant 19)"
+  },
+  {
+    "task_id": "sql-21",
+    "prompt": "Write a query to group users by month of registration. Provide examples. (Variant 20)"
+  },
+  {
+    "task_id": "cloud-computing-22",
+    "prompt": "How do you set up a VPC peering connection in AWS? Explain step-by-step. (Variant 21)"
+  },
+  {
+    "task_id": "math-23",
+    "prompt": "Calculate the square root of 144 Provide examples. (Variant 22)"
+  },
+  {
+    "task_id": "sql-24",
+    "prompt": "Write an SQL query to find the second highest salary. (Variant 23)"
+  },
+  {
+    "task_id": "factual-qa-25",
+    "prompt": "What is the speed of light? Provide examples. (Variant 24)"
+  },
+  {
+    "task_id": "greetings-26",
+    "prompt": "Greetings! What can you do? Focus on performance. (Variant 25)"
+  },
+  {
+    "task_id": "math-27",
+    "prompt": "Solve for x: 2x + 5 = 15 Provide examples. (Variant 26)"
+  },
+  {
+    "task_id": "sentiment-analysis-28",
+    "prompt": "I absolutely loved the movie, it was fantastic! Explain step-by-step. (Variant 27)"
+  },
+  {
+    "task_id": "summarization-29",
+    "prompt": "TLDR for the plot of The Matrix. Provide examples. (Variant 28)"
+  },
+  {
+    "task_id": "logical-reasoning-30",
+    "prompt": "If all A are B, and some B are C, are some A definitely C? (Variant 29)"
+  },
+  {
+    "task_id": "extreme-reasoning-31",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 30)"
+  },
+  {
+    "task_id": "extreme-reasoning-32",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. (Variant 31)"
+  },
+  {
+    "task_id": "summarization-33",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. Provide examples. (Variant 32)"
+  },
+  {
+    "task_id": "python-34",
+    "prompt": "How do I use list comprehensions in Python? Explain step-by-step. (Variant 33)"
+  },
+  {
+    "task_id": "sql-35",
+    "prompt": "Write an SQL query to find the second highest salary. Provide examples. (Variant 34)"
+  },
+  {
+    "task_id": "python-36",
+    "prompt": "How do I use list comprehensions in Python? Focus on performance. (Variant 35)"
+  },
+  {
+    "task_id": "security-37",
+    "prompt": "How do you securely store passwords in a database? Provide examples. (Variant 36)"
+  },
+  {
+    "task_id": "debugging-38",
+    "prompt": "Why is this React component rendering infinitely? (Variant 37)"
+  },
+  {
+    "task_id": "python-39",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 38)"
+  },
+  {
+    "task_id": "sql-40",
+    "prompt": "How do you prevent SQL injection? Explain step-by-step. (Variant 39)"
+  },
+  {
+    "task_id": "math-41",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 40)"
+  },
+  {
+    "task_id": "math-42",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? (Variant 41)"
+  },
+  {
+    "task_id": "sentiment-analysis-43",
+    "prompt": "The service was terrible and the food was cold. Provide examples. (Variant 42)"
+  },
+  {
+    "task_id": "extreme-reasoning-44",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 43)"
+  },
+  {
+    "task_id": "summarization-45",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 44)"
+  },
+  {
+    "task_id": "debugging-46",
+    "prompt": "Fix this NullPointerException in Java. Explain step-by-step. (Variant 45)"
+  },
+  {
+    "task_id": "summarization-47",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. Provide examples. (Variant 46)"
+  },
+  {
+    "task_id": "cloud-computing-48",
+    "prompt": "How do you autoscale a stateless microservice in GCP? (Variant 47)"
+  },
+  {
+    "task_id": "cloud-computing-49",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 48)"
+  },
+  {
+    "task_id": "greetings-50",
+    "prompt": "Hello, how are you? (Variant 49)"
+  },
+  {
+    "task_id": "security-51",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 50)"
+  },
+  {
+    "task_id": "sentiment-analysis-52",
+    "prompt": "What a delightful experience from start to finish. Explain step-by-step. (Variant 51)"
+  },
+  {
+    "task_id": "cloud-computing-53",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Provide examples. (Variant 52)"
+  },
+  {
+    "task_id": "javascript-54",
+    "prompt": "Write a React component that fetches data on mount. (Variant 53)"
+  },
+  {
+    "task_id": "logical-reasoning-55",
+    "prompt": "If tomorrow is two days after Monday, what day is today? Provide examples. (Variant 54)"
+  },
+  {
+    "task_id": "cloud-computing-56",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Focus on performance. (Variant 55)"
+  },
+  {
+    "task_id": "summarization-57",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 56)"
+  },
+  {
+    "task_id": "debugging-58",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 57)"
+  },
+  {
+    "task_id": "greetings-59",
+    "prompt": "Hello, how are you? Provide examples. (Variant 58)"
+  },
+  {
+    "task_id": "debugging-60",
+    "prompt": "Debug this Python race condition in asyncio. (Variant 59)"
+  },
+  {
+    "task_id": "named-entity-recognition-61",
+    "prompt": "Find organizations in: The UN met with WHO officials in Geneva. Provide examples. (Variant 60)"
+  },
+  {
+    "task_id": "extreme-reasoning-62",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 61)"
+  },
+  {
+    "task_id": "cloud-computing-63",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 62)"
+  },
+  {
+    "task_id": "logical-reasoning-64",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... Explain step-by-step. (Variant 63)"
+  },
+  {
+    "task_id": "summarization-65",
+    "prompt": "TLDR for the plot of The Matrix. Provide examples. (Variant 64)"
+  },
+  {
+    "task_id": "summarization-66",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. Focus on performance. (Variant 65)"
+  },
+  {
+    "task_id": "summarization-67",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. Provide examples. (Variant 66)"
+  },
+  {
+    "task_id": "javascript-68",
+    "prompt": "Explain the Node.js event loop. (Variant 67)"
+  },
+  {
+    "task_id": "logical-reasoning-69",
+    "prompt": "If all A are B, and some B are C, are some A definitely C? Provide examples. (Variant 68)"
+  },
+  {
+    "task_id": "summarization-70",
+    "prompt": "Condense this legal document into plain English. Explain step-by-step. (Variant 69)"
+  },
+  {
+    "task_id": "sql-71",
+    "prompt": "Explain the difference between INNER and LEFT JOIN. Provide examples. (Variant 70)"
+  },
+  {
+    "task_id": "logical-reasoning-72",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... (Variant 71)"
+  },
+  {
+    "task_id": "summarization-73",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. Provide examples. (Variant 72)"
+  },
+  {
+    "task_id": "security-74",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. (Variant 73)"
+  },
+  {
+    "task_id": "greetings-75",
+    "prompt": "Hey, are you online? Provide examples. (Variant 74)"
+  },
+  {
+    "task_id": "factual-qa-76",
+    "prompt": "What is photosynthesis? Explain step-by-step. (Variant 75)"
+  },
+  {
+    "task_id": "cloud-computing-77",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 76)"
+  },
+  {
+    "task_id": "cloud-computing-78",
+    "prompt": "How do you set up a VPC peering connection in AWS? (Variant 77)"
+  },
+  {
+    "task_id": "named-entity-recognition-79",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Provide examples. (Variant 78)"
+  },
+  {
+    "task_id": "logical-reasoning-80",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... (Variant 79)"
+  },
+  {
+    "task_id": "sql-81",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 80)"
+  },
+  {
+    "task_id": "logical-reasoning-82",
+    "prompt": "If all A are B, and some B are C, are some A definitely C? Explain step-by-step. (Variant 81)"
+  },
+  {
+    "task_id": "sql-83",
+    "prompt": "Write an SQL query to find the second highest salary. Provide examples. (Variant 82)"
+  },
+  {
+    "task_id": "greetings-84",
+    "prompt": "Greetings! What can you do? (Variant 83)"
+  },
+  {
+    "task_id": "sentiment-analysis-85",
+    "prompt": "It was okay, nothing special but not bad either. Provide examples. (Variant 84)"
+  },
+  {
+    "task_id": "extreme-reasoning-86",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Focus on performance. (Variant 85)"
+  },
+  {
+    "task_id": "security-87",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 86)"
+  },
+  {
+    "task_id": "factual-qa-88",
+    "prompt": "Who wrote Hamlet? Explain step-by-step. (Variant 87)"
+  },
+  {
+    "task_id": "extreme-reasoning-89",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 88)"
+  },
+  {
+    "task_id": "python-90",
+    "prompt": "How do I use list comprehensions in Python? (Variant 89)"
+  },
+  {
+    "task_id": "javascript-91",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 90)"
+  },
+  {
+    "task_id": "debugging-92",
+    "prompt": "Why is this React component rendering infinitely? (Variant 91)"
+  },
+  {
+    "task_id": "security-93",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 92)"
+  },
+  {
+    "task_id": "summarization-94",
+    "prompt": "Summarize this article about climate change in one sentence... Explain step-by-step. (Variant 93)"
+  },
+  {
+    "task_id": "javascript-95",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 94)"
+  },
+  {
+    "task_id": "logical-reasoning-96",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? Focus on performance. (Variant 95)"
+  },
+  {
+    "task_id": "sentiment-analysis-97",
+    "prompt": "I absolutely loved the movie, it was fantastic! Provide examples. (Variant 96)"
+  },
+  {
+    "task_id": "factual-qa-98",
+    "prompt": "When did the Titanic sink? (Variant 97)"
+  },
+  {
+    "task_id": "system-design-99",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 98)"
+  },
+  {
+    "task_id": "summarization-100",
+    "prompt": "Summarize this article about climate change in one sentence... Explain step-by-step. (Variant 99)"
+  },
+  {
+    "task_id": "named-entity-recognition-101",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Provide examples. (Variant 100)"
+  },
+  {
+    "task_id": "sentiment-analysis-102",
+    "prompt": "What a delightful experience from start to finish. (Variant 101)"
+  },
+  {
+    "task_id": "system-design-103",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 102)"
+  },
+  {
+    "task_id": "named-entity-recognition-104",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. (Variant 103)"
+  },
+  {
+    "task_id": "system-design-105",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 104)"
+  },
+  {
+    "task_id": "summarization-106",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. Explain step-by-step. (Variant 105)"
+  },
+  {
+    "task_id": "distributed-systems-107",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. Provide examples. (Variant 106)"
+  },
+  {
+    "task_id": "logical-reasoning-108",
+    "prompt": "If all A are B, and some B are C, are some A definitely C? (Variant 107)"
+  },
+  {
+    "task_id": "extreme-reasoning-109",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 108)"
+  },
+  {
+    "task_id": "summarization-110",
+    "prompt": "TLDR for the plot of The Matrix. (Variant 109)"
+  },
+  {
+    "task_id": "named-entity-recognition-111",
+    "prompt": "List dates in: The contract was signed on 2023-10-01 and expires next Friday. Provide examples. (Variant 110)"
+  },
+  {
+    "task_id": "math-112",
+    "prompt": "What is the derivative of x^2? Explain step-by-step. (Variant 111)"
+  },
+  {
+    "task_id": "greetings-113",
+    "prompt": "Hello, how are you? Provide examples. (Variant 112)"
+  },
+  {
+    "task_id": "system-design-114",
+    "prompt": "Design a rate limiter for a public API. (Variant 113)"
+  },
+  {
+    "task_id": "javascript-115",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 114)"
+  },
+  {
+    "task_id": "logical-reasoning-116",
+    "prompt": "If all A are B, and some B are C, are some A definitely C? Focus on performance. (Variant 115)"
+  },
+  {
+    "task_id": "cloud-computing-117",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 116)"
+  },
+  {
+    "task_id": "debugging-118",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 117)"
+  },
+  {
+    "task_id": "factual-qa-119",
+    "prompt": "What is the speed of light? Provide examples. (Variant 118)"
+  },
+  {
+    "task_id": "system-design-120",
+    "prompt": "Design a chat application like WhatsApp. (Variant 119)"
+  },
+  {
+    "task_id": "factual-qa-121",
+    "prompt": "What is the capital of France? Provide examples. (Variant 120)"
+  },
+  {
+    "task_id": "debugging-122",
+    "prompt": "Find the memory leak in this C++ code... (Variant 121)"
+  },
+  {
+    "task_id": "debugging-123",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 122)"
+  },
+  {
+    "task_id": "extreme-reasoning-124",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Explain step-by-step. (Variant 123)"
+  },
+  {
+    "task_id": "greetings-125",
+    "prompt": "Hello, how are you? Provide examples. (Variant 124)"
+  },
+  {
+    "task_id": "factual-qa-126",
+    "prompt": "What is photosynthesis? Focus on performance. (Variant 125)"
+  },
+  {
+    "task_id": "summarization-127",
+    "prompt": "Summarize this article about climate change in one sentence... Provide examples. (Variant 126)"
+  },
+  {
+    "task_id": "math-128",
+    "prompt": "Calculate the square root of 144 (Variant 127)"
+  },
+  {
+    "task_id": "named-entity-recognition-129",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. Provide examples. (Variant 128)"
+  },
+  {
+    "task_id": "factual-qa-130",
+    "prompt": "Who wrote Hamlet? Explain step-by-step. (Variant 129)"
+  },
+  {
+    "task_id": "system-design-131",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 130)"
+  },
+  {
+    "task_id": "security-132",
+    "prompt": "How do you prevent XSS in a React application? (Variant 131)"
+  },
+  {
+    "task_id": "named-entity-recognition-133",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. Provide examples. (Variant 132)"
+  },
+  {
+    "task_id": "distributed-systems-134",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. (Variant 133)"
+  },
+  {
+    "task_id": "summarization-135",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 134)"
+  },
+  {
+    "task_id": "distributed-systems-136",
+    "prompt": "How does Kafka handle partition replication? Explain step-by-step. (Variant 135)"
+  },
+  {
+    "task_id": "security-137",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 136)"
+  },
+  {
+    "task_id": "named-entity-recognition-138",
+    "prompt": "Find organizations in: The UN met with WHO officials in Geneva. (Variant 137)"
+  },
+  {
+    "task_id": "extreme-reasoning-139",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 138)"
+  },
+  {
+    "task_id": "greetings-140",
+    "prompt": "Hi there, can you help me? (Variant 139)"
+  },
+  {
+    "task_id": "javascript-141",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 140)"
+  },
+  {
+    "task_id": "summarization-142",
+    "prompt": "TLDR for the plot of The Matrix. Explain step-by-step. (Variant 141)"
+  },
+  {
+    "task_id": "logical-reasoning-143",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? Provide examples. (Variant 142)"
+  },
+  {
+    "task_id": "debugging-144",
+    "prompt": "Debug this Python race condition in asyncio. (Variant 143)"
+  },
+  {
+    "task_id": "cloud-computing-145",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 144)"
+  },
+  {
+    "task_id": "factual-qa-146",
+    "prompt": "When did the Titanic sink? Focus on performance. (Variant 145)"
+  },
+  {
+    "task_id": "debugging-147",
+    "prompt": "Find the memory leak in this C++ code... Provide examples. (Variant 146)"
+  },
+  {
+    "task_id": "debugging-148",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Explain step-by-step. (Variant 147)"
+  },
+  {
+    "task_id": "sql-149",
+    "prompt": "Write a query to group users by month of registration. Provide examples. (Variant 148)"
+  },
+  {
+    "task_id": "system-design-150",
+    "prompt": "Design a distributed cache system. (Variant 149)"
+  },
+  {
+    "task_id": "javascript-151",
+    "prompt": "Write a React component that fetches data on mount. Provide examples. (Variant 150)"
+  },
+  {
+    "task_id": "sentiment-analysis-152",
+    "prompt": "It was okay, nothing special but not bad either. (Variant 151)"
+  },
+  {
+    "task_id": "math-153",
+    "prompt": "Calculate the square root of 144 Provide examples. (Variant 152)"
+  },
+  {
+    "task_id": "sentiment-analysis-154",
+    "prompt": "What a delightful experience from start to finish. Explain step-by-step. (Variant 153)"
+  },
+  {
+    "task_id": "factual-qa-155",
+    "prompt": "When did the Titanic sink? Provide examples. (Variant 154)"
+  },
+  {
+    "task_id": "debugging-156",
+    "prompt": "Find the memory leak in this C++ code... Focus on performance. (Variant 155)"
+  },
+  {
+    "task_id": "python-157",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 156)"
+  },
+  {
+    "task_id": "greetings-158",
+    "prompt": "Hi there, can you help me? (Variant 157)"
+  },
+  {
+    "task_id": "summarization-159",
+    "prompt": "Summarize this article about climate change in one sentence... Provide examples. (Variant 158)"
+  },
+  {
+    "task_id": "debugging-160",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 159)"
+  },
+  {
+    "task_id": "greetings-161",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 160)"
+  },
+  {
+    "task_id": "system-design-162",
+    "prompt": "Design a URL shortener like Bitly. (Variant 161)"
+  },
+  {
+    "task_id": "python-163",
+    "prompt": "How do I use list comprehensions in Python? Provide examples. (Variant 162)"
+  },
+  {
+    "task_id": "greetings-164",
+    "prompt": "Hello, how are you? (Variant 163)"
+  },
+  {
+    "task_id": "python-165",
+    "prompt": "How do I use list comprehensions in Python? Provide examples. (Variant 164)"
+  },
+  {
+    "task_id": "distributed-systems-166",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Explain step-by-step. (Variant 165)"
+  },
+  {
+    "task_id": "greetings-167",
+    "prompt": "Hello, how are you? Provide examples. (Variant 166)"
+  },
+  {
+    "task_id": "math-168",
+    "prompt": "What is 15% of 850? (Variant 167)"
+  },
+  {
+    "task_id": "sentiment-analysis-169",
+    "prompt": "What a delightful experience from start to finish. Provide examples. (Variant 168)"
+  },
+  {
+    "task_id": "factual-qa-170",
+    "prompt": "What is photosynthesis? (Variant 169)"
+  },
+  {
+    "task_id": "sql-171",
+    "prompt": "Explain the difference between INNER and LEFT JOIN. Provide examples. (Variant 170)"
+  },
+  {
+    "task_id": "sentiment-analysis-172",
+    "prompt": "The service was terrible and the food was cold. Explain step-by-step. (Variant 171)"
+  },
+  {
+    "task_id": "factual-qa-173",
+    "prompt": "When did the Titanic sink? Provide examples. (Variant 172)"
+  },
+  {
+    "task_id": "system-design-174",
+    "prompt": "Design a rate limiter for a public API. (Variant 173)"
+  },
+  {
+    "task_id": "security-175",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 174)"
+  },
+  {
+    "task_id": "factual-qa-176",
+    "prompt": "When did the Titanic sink? Focus on performance. (Variant 175)"
+  },
+  {
+    "task_id": "python-177",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 176)"
+  },
+  {
+    "task_id": "cloud-computing-178",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Explain step-by-step. (Variant 177)"
+  },
+  {
+    "task_id": "extreme-reasoning-179",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 178)"
+  },
+  {
+    "task_id": "python-180",
+    "prompt": "Implement a singleton pattern in Python. (Variant 179)"
+  },
+  {
+    "task_id": "factual-qa-181",
+    "prompt": "What is the capital of France? Provide examples. (Variant 180)"
+  },
+  {
+    "task_id": "summarization-182",
+    "prompt": "Condense this legal document into plain English. (Variant 181)"
+  },
+  {
+    "task_id": "logical-reasoning-183",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? Provide examples. (Variant 182)"
+  },
+  {
+    "task_id": "distributed-systems-184",
+    "prompt": "Explain eventual consistency vs strong consistency. Explain step-by-step. (Variant 183)"
+  },
+  {
+    "task_id": "sql-185",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 184)"
+  },
+  {
+    "task_id": "system-design-186",
+    "prompt": "Design a distributed cache system. Focus on performance. (Variant 185)"
+  },
+  {
+    "task_id": "math-187",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 186)"
+  },
+  {
+    "task_id": "named-entity-recognition-188",
+    "prompt": "List dates in: The contract was signed on 2023-10-01 and expires next Friday. (Variant 187)"
+  },
+  {
+    "task_id": "python-189",
+    "prompt": "Write a Python script to reverse a string. Provide examples. (Variant 188)"
+  },
+  {
+    "task_id": "greetings-190",
+    "prompt": "Hello, how are you? Explain step-by-step. (Variant 189)"
+  },
+  {
+    "task_id": "system-design-191",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 190)"
+  },
+  {
+    "task_id": "sentiment-analysis-192",
+    "prompt": "I am so frustrated with this buggy software! (Variant 191)"
+  },
+  {
+    "task_id": "distributed-systems-193",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. Provide examples. (Variant 192)"
+  },
+  {
+    "task_id": "factual-qa-194",
+    "prompt": "What is the capital of France? (Variant 193)"
+  },
+  {
+    "task_id": "security-195",
+    "prompt": "How do you securely store passwords in a database? Provide examples. (Variant 194)"
+  },
+  {
+    "task_id": "greetings-196",
+    "prompt": "Greetings! What can you do? Explain step-by-step. (Variant 195)"
+  },
+  {
+    "task_id": "factual-qa-197",
+    "prompt": "What is the speed of light? Provide examples. (Variant 196)"
+  },
+  {
+    "task_id": "javascript-198",
+    "prompt": "Implement a Promise from scratch in JS. (Variant 197)"
+  },
+  {
+    "task_id": "factual-qa-199",
+    "prompt": "What is the speed of light? Provide examples. (Variant 198)"
+  },
+  {
+    "task_id": "javascript-200",
+    "prompt": "Write a JS function to debounce an API call. (Variant 199)"
+  },
+  {
+    "task_id": "math-201",
+    "prompt": "Calculate the square root of 144 Provide examples. (Variant 200)"
+  },
+  {
+    "task_id": "sentiment-analysis-202",
+    "prompt": "It was okay, nothing special but not bad either. Explain step-by-step. (Variant 201)"
+  },
+  {
+    "task_id": "greetings-203",
+    "prompt": "Hey, are you online? Provide examples. (Variant 202)"
+  },
+  {
+    "task_id": "factual-qa-204",
+    "prompt": "Who wrote Hamlet? (Variant 203)"
+  },
+  {
+    "task_id": "distributed-systems-205",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Provide examples. (Variant 204)"
+  },
+  {
+    "task_id": "sql-206",
+    "prompt": "Optimize this slow SQL query... Focus on performance. (Variant 205)"
+  },
+  {
+    "task_id": "cloud-computing-207",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 206)"
+  },
+  {
+    "task_id": "sentiment-analysis-208",
+    "prompt": "I am so frustrated with this buggy software! Explain step-by-step. (Variant 207)"
+  },
+  {
+    "task_id": "system-design-209",
+    "prompt": "Design a URL shortener like Bitly. Provide examples. (Variant 208)"
+  },
+  {
+    "task_id": "logical-reasoning-210",
+    "prompt": "If tomorrow is two days after Monday, what day is today? (Variant 209)"
+  },
+  {
+    "task_id": "system-design-211",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 210)"
+  },
+  {
+    "task_id": "summarization-212",
+    "prompt": "Condense this legal document into plain English. (Variant 211)"
+  },
+  {
+    "task_id": "extreme-reasoning-213",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 212)"
+  },
+  {
+    "task_id": "extreme-reasoning-214",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Explain step-by-step. (Variant 213)"
+  },
+  {
+    "task_id": "distributed-systems-215",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 214)"
+  },
+  {
+    "task_id": "python-216",
+    "prompt": "How do I use list comprehensions in Python? Focus on performance. (Variant 215)"
+  },
+  {
+    "task_id": "math-217",
+    "prompt": "Calculate the square root of 144 Provide examples. (Variant 216)"
+  },
+  {
+    "task_id": "logical-reasoning-218",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? (Variant 217)"
+  },
+  {
+    "task_id": "math-219",
+    "prompt": "What is the derivative of x^2? Provide examples. (Variant 218)"
+  },
+  {
+    "task_id": "extreme-reasoning-220",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Explain step-by-step. (Variant 219)"
+  },
+  {
+    "task_id": "security-221",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 220)"
+  },
+  {
+    "task_id": "greetings-222",
+    "prompt": "Hi there, can you help me? (Variant 221)"
+  },
+  {
+    "task_id": "python-223",
+    "prompt": "Create a Python decorator that measures execution time. Provide examples. (Variant 222)"
+  },
+  {
+    "task_id": "debugging-224",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 223)"
+  },
+  {
+    "task_id": "security-225",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 224)"
+  },
+  {
+    "task_id": "greetings-226",
+    "prompt": "Good morning, AI. Explain step-by-step. (Variant 225)"
+  },
+  {
+    "task_id": "math-227",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Provide examples. (Variant 226)"
+  },
+  {
+    "task_id": "logical-reasoning-228",
+    "prompt": "Which word does not belong: Apple, Banana, Carrot, Date? (Variant 227)"
+  },
+  {
+    "task_id": "summarization-229",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 228)"
+  },
+  {
+    "task_id": "debugging-230",
+    "prompt": "Find the memory leak in this C++ code... (Variant 229)"
+  },
+  {
+    "task_id": "distributed-systems-231",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Provide examples. (Variant 230)"
+  },
+  {
+    "task_id": "distributed-systems-232",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Explain step-by-step. (Variant 231)"
+  },
+  {
+    "task_id": "python-233",
+    "prompt": "Write a Python script to parse a CSV and filter rows. Provide examples. (Variant 232)"
+  },
+  {
+    "task_id": "python-234",
+    "prompt": "Implement a singleton pattern in Python. (Variant 233)"
+  },
+  {
+    "task_id": "extreme-reasoning-235",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 234)"
+  },
+  {
+    "task_id": "extreme-reasoning-236",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Focus on performance. (Variant 235)"
+  },
+  {
+    "task_id": "extreme-reasoning-237",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 236)"
+  },
+  {
+    "task_id": "javascript-238",
+    "prompt": "Write a React component that fetches data on mount. Explain step-by-step. (Variant 237)"
+  },
+  {
+    "task_id": "named-entity-recognition-239",
+    "prompt": "Find organizations in: The UN met with WHO officials in Geneva. Provide examples. (Variant 238)"
+  },
+  {
+    "task_id": "sentiment-analysis-240",
+    "prompt": "The service was terrible and the food was cold. (Variant 239)"
+  },
+  {
+    "task_id": "greetings-241",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 240)"
+  },
+  {
+    "task_id": "javascript-242",
+    "prompt": "Implement a Promise from scratch in JS. (Variant 241)"
+  },
+  {
+    "task_id": "math-243",
+    "prompt": "Solve for x: 2x + 5 = 15 Provide examples. (Variant 242)"
+  },
+  {
+    "task_id": "greetings-244",
+    "prompt": "Hi there, can you help me? Explain step-by-step. (Variant 243)"
+  },
+  {
+    "task_id": "math-245",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Provide examples. (Variant 244)"
+  },
+  {
+    "task_id": "debugging-246",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Focus on performance. (Variant 245)"
+  },
+  {
+    "task_id": "math-247",
+    "prompt": "Solve for x: 2x + 5 = 15 Provide examples. (Variant 246)"
+  },
+  {
+    "task_id": "security-248",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. (Variant 247)"
+  },
+  {
+    "task_id": "javascript-249",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 248)"
+  },
+  {
+    "task_id": "math-250",
+    "prompt": "What is 15% of 850? Explain step-by-step. (Variant 249)"
+  },
+  {
+    "task_id": "sentiment-analysis-251",
+    "prompt": "The service was terrible and the food was cold. Provide examples. (Variant 250)"
+  },
+  {
+    "task_id": "math-252",
+    "prompt": "What is 15% of 850? (Variant 251)"
+  },
+  {
+    "task_id": "summarization-253",
+    "prompt": "Summarize this article about climate change in one sentence... Provide examples. (Variant 252)"
+  },
+  {
+    "task_id": "cloud-computing-254",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. (Variant 253)"
+  },
+  {
+    "task_id": "math-255",
+    "prompt": "Calculate the square root of 144 Provide examples. (Variant 254)"
+  },
+  {
+    "task_id": "sentiment-analysis-256",
+    "prompt": "The service was terrible and the food was cold. Explain step-by-step. (Variant 255)"
+  },
+  {
+    "task_id": "math-257",
+    "prompt": "Calculate the square root of 144 Provide examples. (Variant 256)"
+  },
+  {
+    "task_id": "python-258",
+    "prompt": "Write a Python script to reverse a string. (Variant 257)"
+  },
+  {
+    "task_id": "python-259",
+    "prompt": "Create a Python decorator that measures execution time. Provide examples. (Variant 258)"
+  },
+  {
+    "task_id": "security-260",
+    "prompt": "How do you prevent XSS in a React application? (Variant 259)"
+  },
+  {
+    "task_id": "sentiment-analysis-261",
+    "prompt": "The service was terrible and the food was cold. Provide examples. (Variant 260)"
+  },
+  {
+    "task_id": "summarization-262",
+    "prompt": "TLDR for the plot of The Matrix. Explain step-by-step. (Variant 261)"
+  },
+  {
+    "task_id": "sql-263",
+    "prompt": "Explain the difference between INNER and LEFT JOIN. Provide examples. (Variant 262)"
+  },
+  {
+    "task_id": "python-264",
+    "prompt": "Implement a singleton pattern in Python. (Variant 263)"
+  },
+  {
+    "task_id": "security-265",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 264)"
+  },
+  {
+    "task_id": "sentiment-analysis-266",
+    "prompt": "The service was terrible and the food was cold. Focus on performance. (Variant 265)"
+  },
+  {
+    "task_id": "greetings-267",
+    "prompt": "Hey, are you online? Provide examples. (Variant 266)"
+  },
+  {
+    "task_id": "distributed-systems-268",
+    "prompt": "Explain the Paxos consensus algorithm. Explain step-by-step. (Variant 267)"
+  },
+  {
+    "task_id": "math-269",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Provide examples. (Variant 268)"
+  },
+  {
+    "task_id": "summarization-270",
+    "prompt": "Summarize this article about climate change in one sentence... (Variant 269)"
+  },
+  {
+    "task_id": "named-entity-recognition-271",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Provide examples. (Variant 270)"
+  },
+  {
+    "task_id": "math-272",
+    "prompt": "Solve for x: 2x + 5 = 15 (Variant 271)"
+  },
+  {
+    "task_id": "distributed-systems-273",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 272)"
+  },
+  {
+    "task_id": "distributed-systems-274",
+    "prompt": "Explain the Paxos consensus algorithm. Explain step-by-step. (Variant 273)"
+  },
+  {
+    "task_id": "greetings-275",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 274)"
+  },
+  {
+    "task_id": "extreme-reasoning-276",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Focus on performance. (Variant 275)"
+  },
+  {
+    "task_id": "sentiment-analysis-277",
+    "prompt": "The service was terrible and the food was cold. Provide examples. (Variant 276)"
+  },
+  {
+    "task_id": "logical-reasoning-278",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... (Variant 277)"
+  },
+  {
+    "task_id": "python-279",
+    "prompt": "Write a Python script to parse a CSV and filter rows. Provide examples. (Variant 278)"
+  },
+  {
+    "task_id": "extreme-reasoning-280",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Explain step-by-step. (Variant 279)"
+  },
+  {
+    "task_id": "summarization-281",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 280)"
+  },
+  {
+    "task_id": "summarization-282",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. (Variant 281)"
+  },
+  {
+    "task_id": "python-283",
+    "prompt": "How do I use list comprehensions in Python? Provide examples. (Variant 282)"
+  },
+  {
+    "task_id": "javascript-284",
+    "prompt": "Write a JS function to debounce an API call. (Variant 283)"
+  },
+  {
+    "task_id": "debugging-285",
+    "prompt": "Debug this Python race condition in asyncio. Provide examples. (Variant 284)"
+  },
+  {
+    "task_id": "debugging-286",
+    "prompt": "Fix this NullPointerException in Java. Explain step-by-step. (Variant 285)"
+  },
+  {
+    "task_id": "distributed-systems-287",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 286)"
+  },
+  {
+    "task_id": "python-288",
+    "prompt": "How do I use list comprehensions in Python? (Variant 287)"
+  },
+  {
+    "task_id": "logical-reasoning-289",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? Provide examples. (Variant 288)"
+  },
+  {
+    "task_id": "summarization-290",
+    "prompt": "Condense this legal document into plain English. (Variant 289)"
+  },
+  {
+    "task_id": "cloud-computing-291",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 290)"
+  },
+  {
+    "task_id": "security-292",
+    "prompt": "How do you prevent XSS in a React application? Explain step-by-step. (Variant 291)"
+  },
+  {
+    "task_id": "sql-293",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 292)"
+  },
+  {
+    "task_id": "sentiment-analysis-294",
+    "prompt": "What a delightful experience from start to finish. (Variant 293)"
+  },
+  {
+    "task_id": "cloud-computing-295",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 294)"
+  },
+  {
+    "task_id": "summarization-296",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. Focus on performance. (Variant 295)"
+  },
+  {
+    "task_id": "math-297",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Provide examples. (Variant 296)"
+  },
+  {
+    "task_id": "greetings-298",
+    "prompt": "Hello, how are you? Explain step-by-step. (Variant 297)"
+  },
+  {
+    "task_id": "debugging-299",
+    "prompt": "Fix this NullPointerException in Java. Provide examples. (Variant 298)"
+  },
+  {
+    "task_id": "factual-qa-300",
+    "prompt": "What is the speed of light? (Variant 299)"
+  },
+  {
+    "task_id": "security-301",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 300)"
+  },
+  {
+    "task_id": "named-entity-recognition-302",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. (Variant 301)"
+  },
+  {
+    "task_id": "system-design-303",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 302)"
+  },
+  {
+    "task_id": "debugging-304",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Explain step-by-step. (Variant 303)"
+  },
+  {
+    "task_id": "math-305",
+    "prompt": "What is the derivative of x^2? Provide examples. (Variant 304)"
+  },
+  {
+    "task_id": "python-306",
+    "prompt": "How do I use list comprehensions in Python? Focus on performance. (Variant 305)"
+  },
+  {
+    "task_id": "extreme-reasoning-307",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 306)"
+  },
+  {
+    "task_id": "javascript-308",
+    "prompt": "Write a React component that fetches data on mount. (Variant 307)"
+  },
+  {
+    "task_id": "javascript-309",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 308)"
+  },
+  {
+    "task_id": "greetings-310",
+    "prompt": "Good morning, AI. Explain step-by-step. (Variant 309)"
+  },
+  {
+    "task_id": "javascript-311",
+    "prompt": "Explain the Node.js event loop. Provide examples. (Variant 310)"
+  },
+  {
+    "task_id": "greetings-312",
+    "prompt": "Hello, how are you? (Variant 311)"
+  },
+  {
+    "task_id": "math-313",
+    "prompt": "Solve for x: 2x + 5 = 15 Provide examples. (Variant 312)"
+  },
+  {
+    "task_id": "math-314",
+    "prompt": "What is the derivative of x^2? (Variant 313)"
+  },
+  {
+    "task_id": "greetings-315",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 314)"
+  },
+  {
+    "task_id": "math-316",
+    "prompt": "Calculate the square root of 144 Explain step-by-step. (Variant 315)"
+  },
+  {
+    "task_id": "math-317",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Provide examples. (Variant 316)"
+  },
+  {
+    "task_id": "python-318",
+    "prompt": "Write a Python script to reverse a string. (Variant 317)"
+  },
+  {
+    "task_id": "named-entity-recognition-319",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Provide examples. (Variant 318)"
+  },
+  {
+    "task_id": "sql-320",
+    "prompt": "Write a query to group users by month of registration. (Variant 319)"
+  },
+  {
+    "task_id": "system-design-321",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 320)"
+  },
+  {
+    "task_id": "python-322",
+    "prompt": "How do I use list comprehensions in Python? Explain step-by-step. (Variant 321)"
+  },
+  {
+    "task_id": "sentiment-analysis-323",
+    "prompt": "The service was terrible and the food was cold. Provide examples. (Variant 322)"
+  },
+  {
+    "task_id": "sql-324",
+    "prompt": "Write a query to group users by month of registration. (Variant 323)"
+  },
+  {
+    "task_id": "math-325",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 324)"
+  },
+  {
+    "task_id": "factual-qa-326",
+    "prompt": "When did the Titanic sink? Focus on performance. (Variant 325)"
+  },
+  {
+    "task_id": "logical-reasoning-327",
+    "prompt": "If tomorrow is two days after Monday, what day is today? Provide examples. (Variant 326)"
+  },
+  {
+    "task_id": "security-328",
+    "prompt": "What is a buffer overflow vulnerability? Explain step-by-step. (Variant 327)"
+  },
+  {
+    "task_id": "distributed-systems-329",
+    "prompt": "Explain eventual consistency vs strong consistency. Provide examples. (Variant 328)"
+  },
+  {
+    "task_id": "math-330",
+    "prompt": "What is 15% of 850? (Variant 329)"
+  },
+  {
+    "task_id": "python-331",
+    "prompt": "How do I use list comprehensions in Python? Provide examples. (Variant 330)"
+  },
+  {
+    "task_id": "summarization-332",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. (Variant 331)"
+  },
+  {
+    "task_id": "sql-333",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 332)"
+  },
+  {
+    "task_id": "greetings-334",
+    "prompt": "Hello, how are you? Explain step-by-step. (Variant 333)"
+  },
+  {
+    "task_id": "factual-qa-335",
+    "prompt": "What is photosynthesis? Provide examples. (Variant 334)"
+  },
+  {
+    "task_id": "system-design-336",
+    "prompt": "How would you design Netflix's video streaming backend? Focus on performance. (Variant 335)"
+  },
+  {
+    "task_id": "debugging-337",
+    "prompt": "Fix this NullPointerException in Java. Provide examples. (Variant 336)"
+  },
+  {
+    "task_id": "security-338",
+    "prompt": "How do you securely store passwords in a database? (Variant 337)"
+  },
+  {
+    "task_id": "debugging-339",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 338)"
+  },
+  {
+    "task_id": "logical-reasoning-340",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? Explain step-by-step. (Variant 339)"
+  },
+  {
+    "task_id": "distributed-systems-341",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 340)"
+  },
+  {
+    "task_id": "javascript-342",
+    "prompt": "How does event delegation work in the DOM? (Variant 341)"
+  },
+  {
+    "task_id": "math-343",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 342)"
+  },
+  {
+    "task_id": "javascript-344",
+    "prompt": "Write a React component that fetches data on mount. (Variant 343)"
+  },
+  {
+    "task_id": "summarization-345",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. Provide examples. (Variant 344)"
+  },
+  {
+    "task_id": "math-346",
+    "prompt": "What is 15% of 850? Explain step-by-step. (Variant 345)"
+  },
+  {
+    "task_id": "math-347",
+    "prompt": "Calculate the square root of 144 Provide examples. (Variant 346)"
+  },
+  {
+    "task_id": "factual-qa-348",
+    "prompt": "What is photosynthesis? (Variant 347)"
+  },
+  {
+    "task_id": "greetings-349",
+    "prompt": "Hello, how are you? Provide examples. (Variant 348)"
+  },
+  {
+    "task_id": "greetings-350",
+    "prompt": "Hi there, can you help me? (Variant 349)"
+  },
+  {
+    "task_id": "sentiment-analysis-351",
+    "prompt": "I absolutely loved the movie, it was fantastic! Provide examples. (Variant 350)"
+  },
+  {
+    "task_id": "math-352",
+    "prompt": "What is the derivative of x^2? Explain step-by-step. (Variant 351)"
+  },
+  {
+    "task_id": "extreme-reasoning-353",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 352)"
+  },
+  {
+    "task_id": "distributed-systems-354",
+    "prompt": "How does Kafka handle partition replication? (Variant 353)"
+  },
+  {
+    "task_id": "sentiment-analysis-355",
+    "prompt": "I am so frustrated with this buggy software! Provide examples. (Variant 354)"
+  },
+  {
+    "task_id": "debugging-356",
+    "prompt": "Why is this React component rendering infinitely? Focus on performance. (Variant 355)"
+  },
+  {
+    "task_id": "logical-reasoning-357",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... Provide examples. (Variant 356)"
+  },
+  {
+    "task_id": "factual-qa-358",
+    "prompt": "What is photosynthesis? Explain step-by-step. (Variant 357)"
+  },
+  {
+    "task_id": "greetings-359",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 358)"
+  },
+  {
+    "task_id": "python-360",
+    "prompt": "How do I use list comprehensions in Python? (Variant 359)"
+  },
+  {
+    "task_id": "javascript-361",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 360)"
+  },
+  {
+    "task_id": "cloud-computing-362",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. (Variant 361)"
+  },
+  {
+    "task_id": "debugging-363",
+    "prompt": "Why is this React component rendering infinitely? Provide examples. (Variant 362)"
+  },
+  {
+    "task_id": "factual-qa-364",
+    "prompt": "What is the capital of France? Explain step-by-step. (Variant 363)"
+  },
+  {
+    "task_id": "greetings-365",
+    "prompt": "Hey, are you online? Provide examples. (Variant 364)"
+  },
+  {
+    "task_id": "sql-366",
+    "prompt": "Write an SQL query to find the second highest salary. Focus on performance. (Variant 365)"
+  },
+  {
+    "task_id": "cloud-computing-367",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Provide examples. (Variant 366)"
+  },
+  {
+    "task_id": "named-entity-recognition-368",
+    "prompt": "Find organizations in: The UN met with WHO officials in Geneva. (Variant 367)"
+  },
+  {
+    "task_id": "extreme-reasoning-369",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 368)"
+  },
+  {
+    "task_id": "math-370",
+    "prompt": "Solve for x: 2x + 5 = 15 Explain step-by-step. (Variant 369)"
+  },
+  {
+    "task_id": "extreme-reasoning-371",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 370)"
+  },
+  {
+    "task_id": "logical-reasoning-372",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? (Variant 371)"
+  },
+  {
+    "task_id": "security-373",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 372)"
+  },
+  {
+    "task_id": "summarization-374",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. (Variant 373)"
+  },
+  {
+    "task_id": "javascript-375",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 374)"
+  },
+  {
+    "task_id": "debugging-376",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Explain step-by-step. (Variant 375)"
+  },
+  {
+    "task_id": "distributed-systems-377",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 376)"
+  },
+  {
+    "task_id": "factual-qa-378",
+    "prompt": "When did the Titanic sink? (Variant 377)"
+  },
+  {
+    "task_id": "sentiment-analysis-379",
+    "prompt": "I absolutely loved the movie, it was fantastic! Provide examples. (Variant 378)"
+  },
+  {
+    "task_id": "math-380",
+    "prompt": "What is the derivative of x^2? (Variant 379)"
+  },
+  {
+    "task_id": "extreme-reasoning-381",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 380)"
+  },
+  {
+    "task_id": "cloud-computing-382",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Explain step-by-step. (Variant 381)"
+  },
+  {
+    "task_id": "javascript-383",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 382)"
+  },
+  {
+    "task_id": "logical-reasoning-384",
+    "prompt": "If tomorrow is two days after Monday, what day is today? (Variant 383)"
+  },
+  {
+    "task_id": "greetings-385",
+    "prompt": "Hi there, can you help me? Provide examples. (Variant 384)"
+  },
+  {
+    "task_id": "math-386",
+    "prompt": "Solve for x: 2x + 5 = 15 Focus on performance. (Variant 385)"
+  },
+  {
+    "task_id": "math-387",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Provide examples. (Variant 386)"
+  },
+  {
+    "task_id": "debugging-388",
+    "prompt": "Debug this Python race condition in asyncio. Explain step-by-step. (Variant 387)"
+  },
+  {
+    "task_id": "debugging-389",
+    "prompt": "Fix this NullPointerException in Java. Provide examples. (Variant 388)"
+  },
+  {
+    "task_id": "sentiment-analysis-390",
+    "prompt": "I absolutely loved the movie, it was fantastic! (Variant 389)"
+  },
+  {
+    "task_id": "greetings-391",
+    "prompt": "Hi there, can you help me? Provide examples. (Variant 390)"
+  },
+  {
+    "task_id": "summarization-392",
+    "prompt": "Summarize this article about climate change in one sentence... (Variant 391)"
+  },
+  {
+    "task_id": "extreme-reasoning-393",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 392)"
+  },
+  {
+    "task_id": "javascript-394",
+    "prompt": "Implement a Promise from scratch in JS. Explain step-by-step. (Variant 393)"
+  },
+  {
+    "task_id": "javascript-395",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 394)"
+  },
+  {
+    "task_id": "greetings-396",
+    "prompt": "Greetings! What can you do? Focus on performance. (Variant 395)"
+  },
+  {
+    "task_id": "cloud-computing-397",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Provide examples. (Variant 396)"
+  },
+  {
+    "task_id": "summarization-398",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. (Variant 397)"
+  },
+  {
+    "task_id": "javascript-399",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 398)"
+  },
+  {
+    "task_id": "named-entity-recognition-400",
+    "prompt": "List dates in: The contract was signed on 2023-10-01 and expires next Friday. Explain step-by-step. (Variant 399)"
+  },
+  {
+    "task_id": "math-401",
+    "prompt": "Solve for x: 2x + 5 = 15 Provide examples. (Variant 400)"
+  },
+  {
+    "task_id": "cloud-computing-402",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. (Variant 401)"
+  },
+  {
+    "task_id": "debugging-403",
+    "prompt": "Why is this React component rendering infinitely? Provide examples. (Variant 402)"
+  },
+  {
+    "task_id": "python-404",
+    "prompt": "How do I use list comprehensions in Python? (Variant 403)"
+  },
+  {
+    "task_id": "greetings-405",
+    "prompt": "Hey, are you online? Provide examples. (Variant 404)"
+  },
+  {
+    "task_id": "sentiment-analysis-406",
+    "prompt": "What a delightful experience from start to finish. Explain step-by-step. (Variant 405)"
+  },
+  {
+    "task_id": "math-407",
+    "prompt": "What is the derivative of x^2? Provide examples. (Variant 406)"
+  },
+  {
+    "task_id": "math-408",
+    "prompt": "Solve for x: 2x + 5 = 15 (Variant 407)"
+  },
+  {
+    "task_id": "sentiment-analysis-409",
+    "prompt": "What a delightful experience from start to finish. Provide examples. (Variant 408)"
+  },
+  {
+    "task_id": "factual-qa-410",
+    "prompt": "When did the Titanic sink? (Variant 409)"
+  },
+  {
+    "task_id": "greetings-411",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 410)"
+  },
+  {
+    "task_id": "debugging-412",
+    "prompt": "Debug this Python race condition in asyncio. Explain step-by-step. (Variant 411)"
+  },
+  {
+    "task_id": "logical-reasoning-413",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? Provide examples. (Variant 412)"
+  },
+  {
+    "task_id": "javascript-414",
+    "prompt": "Write a React component that fetches data on mount. (Variant 413)"
+  },
+  {
+    "task_id": "named-entity-recognition-415",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Provide examples. (Variant 414)"
+  },
+  {
+    "task_id": "system-design-416",
+    "prompt": "How would you design Netflix's video streaming backend? Focus on performance. (Variant 415)"
+  },
+  {
+    "task_id": "javascript-417",
+    "prompt": "Write a React component that fetches data on mount. Provide examples. (Variant 416)"
+  },
+  {
+    "task_id": "sentiment-analysis-418",
+    "prompt": "It was okay, nothing special but not bad either. Explain step-by-step. (Variant 417)"
+  },
+  {
+    "task_id": "named-entity-recognition-419",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Provide examples. (Variant 418)"
+  },
+  {
+    "task_id": "named-entity-recognition-420",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. (Variant 419)"
+  },
+  {
+    "task_id": "python-421",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 420)"
+  },
+  {
+    "task_id": "summarization-422",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. (Variant 421)"
+  },
+  {
+    "task_id": "factual-qa-423",
+    "prompt": "What is the capital of France? Provide examples. (Variant 422)"
+  },
+  {
+    "task_id": "named-entity-recognition-424",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. Explain step-by-step. (Variant 423)"
+  },
+  {
+    "task_id": "sql-425",
+    "prompt": "Write a query to group users by month of registration. Provide examples. (Variant 424)"
+  },
+  {
+    "task_id": "security-426",
+    "prompt": "How do you securely store passwords in a database? Focus on performance. (Variant 425)"
+  },
+  {
+    "task_id": "cloud-computing-427",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Provide examples. (Variant 426)"
+  },
+  {
+    "task_id": "named-entity-recognition-428",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. (Variant 427)"
+  },
+  {
+    "task_id": "system-design-429",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 428)"
+  },
+  {
+    "task_id": "cloud-computing-430",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Explain step-by-step. (Variant 429)"
+  },
+  {
+    "task_id": "sql-431",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 430)"
+  },
+  {
+    "task_id": "logical-reasoning-432",
+    "prompt": "Which word does not belong: Apple, Banana, Carrot, Date? (Variant 431)"
+  },
+  {
+    "task_id": "factual-qa-433",
+    "prompt": "What is photosynthesis? Provide examples. (Variant 432)"
+  },
+  {
+    "task_id": "sentiment-analysis-434",
+    "prompt": "The service was terrible and the food was cold. (Variant 433)"
+  },
+  {
+    "task_id": "extreme-reasoning-435",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 434)"
+  },
+  {
+    "task_id": "factual-qa-436",
+    "prompt": "What is the capital of France? Explain step-by-step. (Variant 435)"
+  },
+  {
+    "task_id": "named-entity-recognition-437",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Provide examples. (Variant 436)"
+  },
+  {
+    "task_id": "cloud-computing-438",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. (Variant 437)"
+  },
+  {
+    "task_id": "logical-reasoning-439",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... Provide examples. (Variant 438)"
+  },
+  {
+    "task_id": "python-440",
+    "prompt": "How do I use list comprehensions in Python? (Variant 439)"
+  },
+  {
+    "task_id": "math-441",
+    "prompt": "What is the derivative of x^2? Provide examples. (Variant 440)"
+  },
+  {
+    "task_id": "math-442",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Explain step-by-step. (Variant 441)"
+  },
+  {
+    "task_id": "sentiment-analysis-443",
+    "prompt": "The service was terrible and the food was cold. Provide examples. (Variant 442)"
+  },
+  {
+    "task_id": "javascript-444",
+    "prompt": "Write a JS function to debounce an API call. (Variant 443)"
+  },
+  {
+    "task_id": "sql-445",
+    "prompt": "Write a query to group users by month of registration. Provide examples. (Variant 444)"
+  },
+  {
+    "task_id": "factual-qa-446",
+    "prompt": "Who wrote Hamlet? Focus on performance. (Variant 445)"
+  },
+  {
+    "task_id": "named-entity-recognition-447",
+    "prompt": "Find organizations in: The UN met with WHO officials in Geneva. Provide examples. (Variant 446)"
+  },
+  {
+    "task_id": "security-448",
+    "prompt": "How do you securely store passwords in a database? Explain step-by-step. (Variant 447)"
+  },
+  {
+    "task_id": "security-449",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 448)"
+  },
+  {
+    "task_id": "cloud-computing-450",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. (Variant 449)"
+  },
+  {
+    "task_id": "distributed-systems-451",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 450)"
+  },
+  {
+    "task_id": "python-452",
+    "prompt": "Implement a singleton pattern in Python. (Variant 451)"
+  },
+  {
+    "task_id": "python-453",
+    "prompt": "Create a Python decorator that measures execution time. Provide examples. (Variant 452)"
+  },
+  {
+    "task_id": "math-454",
+    "prompt": "Calculate the square root of 144 Explain step-by-step. (Variant 453)"
+  },
+  {
+    "task_id": "named-entity-recognition-455",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. Provide examples. (Variant 454)"
+  },
+  {
+    "task_id": "extreme-reasoning-456",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Focus on performance. (Variant 455)"
+  },
+  {
+    "task_id": "cloud-computing-457",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 456)"
+  },
+  {
+    "task_id": "math-458",
+    "prompt": "What is the derivative of x^2? (Variant 457)"
+  },
+  {
+    "task_id": "cloud-computing-459",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Provide examples. (Variant 458)"
+  },
+  {
+    "task_id": "greetings-460",
+    "prompt": "Greetings! What can you do? Explain step-by-step. (Variant 459)"
+  },
+  {
+    "task_id": "javascript-461",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 460)"
+  },
+  {
+    "task_id": "named-entity-recognition-462",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. (Variant 461)"
+  },
+  {
+    "task_id": "javascript-463",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 462)"
+  },
+  {
+    "task_id": "sql-464",
+    "prompt": "How do you prevent SQL injection? (Variant 463)"
+  },
+  {
+    "task_id": "sql-465",
+    "prompt": "Optimize this slow SQL query... Provide examples. (Variant 464)"
+  },
+  {
+    "task_id": "extreme-reasoning-466",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Explain step-by-step. (Variant 465)"
+  },
+  {
+    "task_id": "summarization-467",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 466)"
+  },
+  {
+    "task_id": "python-468",
+    "prompt": "Write a Python script to reverse a string. (Variant 467)"
+  },
+  {
+    "task_id": "extreme-reasoning-469",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 468)"
+  },
+  {
+    "task_id": "sentiment-analysis-470",
+    "prompt": "I absolutely loved the movie, it was fantastic! (Variant 469)"
+  },
+  {
+    "task_id": "greetings-471",
+    "prompt": "Hey, are you online? Provide examples. (Variant 470)"
+  },
+  {
+    "task_id": "factual-qa-472",
+    "prompt": "What is photosynthesis? Explain step-by-step. (Variant 471)"
+  },
+  {
+    "task_id": "debugging-473",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 472)"
+  },
+  {
+    "task_id": "distributed-systems-474",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? (Variant 473)"
+  },
+  {
+    "task_id": "factual-qa-475",
+    "prompt": "What is the capital of France? Provide examples. (Variant 474)"
+  },
+  {
+    "task_id": "math-476",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? Focus on performance. (Variant 475)"
+  },
+  {
+    "task_id": "factual-qa-477",
+    "prompt": "What is photosynthesis? Provide examples. (Variant 476)"
+  },
+  {
+    "task_id": "distributed-systems-478",
+    "prompt": "How does Kafka handle partition replication? Explain step-by-step. (Variant 477)"
+  },
+  {
+    "task_id": "python-479",
+    "prompt": "Write a Python script to reverse a string. Provide examples. (Variant 478)"
+  },
+  {
+    "task_id": "sentiment-analysis-480",
+    "prompt": "It was okay, nothing special but not bad either. (Variant 479)"
+  },
+  {
+    "task_id": "javascript-481",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 480)"
+  },
+  {
+    "task_id": "named-entity-recognition-482",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. (Variant 481)"
+  },
+  {
+    "task_id": "distributed-systems-483",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Provide examples. (Variant 482)"
+  },
+  {
+    "task_id": "sentiment-analysis-484",
+    "prompt": "I absolutely loved the movie, it was fantastic! Explain step-by-step. (Variant 483)"
+  },
+  {
+    "task_id": "system-design-485",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 484)"
+  },
+  {
+    "task_id": "system-design-486",
+    "prompt": "Design a chat application like WhatsApp. Focus on performance. (Variant 485)"
+  },
+  {
+    "task_id": "summarization-487",
+    "prompt": "Summarize this article about climate change in one sentence... Provide examples. (Variant 486)"
+  },
+  {
+    "task_id": "factual-qa-488",
+    "prompt": "When did the Titanic sink? (Variant 487)"
+  },
+  {
+    "task_id": "math-489",
+    "prompt": "What is the derivative of x^2? Provide examples. (Variant 488)"
+  },
+  {
+    "task_id": "sentiment-analysis-490",
+    "prompt": "The service was terrible and the food was cold. Explain step-by-step. (Variant 489)"
+  },
+  {
+    "task_id": "named-entity-recognition-491",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Provide examples. (Variant 490)"
+  },
+  {
+    "task_id": "python-492",
+    "prompt": "Implement a singleton pattern in Python. (Variant 491)"
+  },
+  {
+    "task_id": "security-493",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 492)"
+  },
+  {
+    "task_id": "security-494",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. (Variant 493)"
+  },
+  {
+    "task_id": "greetings-495",
+    "prompt": "Hey, are you online? Provide examples. (Variant 494)"
+  },
+  {
+    "task_id": "named-entity-recognition-496",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Explain step-by-step. (Variant 495)"
+  },
+  {
+    "task_id": "math-497",
+    "prompt": "Solve for x: 2x + 5 = 15 Provide examples. (Variant 496)"
+  },
+  {
+    "task_id": "security-498",
+    "prompt": "How do you securely store passwords in a database? (Variant 497)"
+  },
+  {
+    "task_id": "named-entity-recognition-499",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Provide examples. (Variant 498)"
+  },
+  {
+    "task_id": "logical-reasoning-500",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? (Variant 499)"
+  },
+  {
+    "task_id": "cloud-computing-501",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Provide examples. (Variant 500)"
+  },
+  {
+    "task_id": "security-502",
+    "prompt": "How do you prevent XSS in a React application? Explain step-by-step. (Variant 501)"
+  },
+  {
+    "task_id": "distributed-systems-503",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. Provide examples. (Variant 502)"
+  },
+  {
+    "task_id": "security-504",
+    "prompt": "What is a buffer overflow vulnerability? (Variant 503)"
+  },
+  {
+    "task_id": "greetings-505",
+    "prompt": "Hey, are you online? Provide examples. (Variant 504)"
+  },
+  {
+    "task_id": "named-entity-recognition-506",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Focus on performance. (Variant 505)"
+  },
+  {
+    "task_id": "javascript-507",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 506)"
+  },
+  {
+    "task_id": "python-508",
+    "prompt": "How do I use list comprehensions in Python? Explain step-by-step. (Variant 507)"
+  },
+  {
+    "task_id": "python-509",
+    "prompt": "How do I use list comprehensions in Python? Provide examples. (Variant 508)"
+  },
+  {
+    "task_id": "factual-qa-510",
+    "prompt": "What is photosynthesis? (Variant 509)"
+  },
+  {
+    "task_id": "distributed-systems-511",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 510)"
+  },
+  {
+    "task_id": "extreme-reasoning-512",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 511)"
+  },
+  {
+    "task_id": "summarization-513",
+    "prompt": "TLDR for the plot of The Matrix. Provide examples. (Variant 512)"
+  },
+  {
+    "task_id": "greetings-514",
+    "prompt": "Greetings! What can you do? Explain step-by-step. (Variant 513)"
+  },
+  {
+    "task_id": "javascript-515",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 514)"
+  },
+  {
+    "task_id": "factual-qa-516",
+    "prompt": "When did the Titanic sink? Focus on performance. (Variant 515)"
+  },
+  {
+    "task_id": "python-517",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 516)"
+  },
+  {
+    "task_id": "system-design-518",
+    "prompt": "Design a URL shortener like Bitly. (Variant 517)"
+  },
+  {
+    "task_id": "named-entity-recognition-519",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Provide examples. (Variant 518)"
+  },
+  {
+    "task_id": "javascript-520",
+    "prompt": "How does event delegation work in the DOM? Explain step-by-step. (Variant 519)"
+  },
+  {
+    "task_id": "summarization-521",
+    "prompt": "Summarize this article about climate change in one sentence... Provide examples. (Variant 520)"
+  },
+  {
+    "task_id": "factual-qa-522",
+    "prompt": "Who wrote Hamlet? (Variant 521)"
+  },
+  {
+    "task_id": "extreme-reasoning-523",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 522)"
+  },
+  {
+    "task_id": "sql-524",
+    "prompt": "Write a query to group users by month of registration. (Variant 523)"
+  },
+  {
+    "task_id": "system-design-525",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 524)"
+  },
+  {
+    "task_id": "sentiment-analysis-526",
+    "prompt": "What a delightful experience from start to finish. Explain step-by-step. (Variant 525)"
+  },
+  {
+    "task_id": "sentiment-analysis-527",
+    "prompt": "I absolutely loved the movie, it was fantastic! Provide examples. (Variant 526)"
+  },
+  {
+    "task_id": "security-528",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. (Variant 527)"
+  },
+  {
+    "task_id": "extreme-reasoning-529",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 528)"
+  },
+  {
+    "task_id": "logical-reasoning-530",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... (Variant 529)"
+  },
+  {
+    "task_id": "javascript-531",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 530)"
+  },
+  {
+    "task_id": "cloud-computing-532",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Explain step-by-step. (Variant 531)"
+  },
+  {
+    "task_id": "sentiment-analysis-533",
+    "prompt": "What a delightful experience from start to finish. Provide examples. (Variant 532)"
+  },
+  {
+    "task_id": "factual-qa-534",
+    "prompt": "What is photosynthesis? (Variant 533)"
+  },
+  {
+    "task_id": "sentiment-analysis-535",
+    "prompt": "I am so frustrated with this buggy software! Provide examples. (Variant 534)"
+  },
+  {
+    "task_id": "javascript-536",
+    "prompt": "Write a JS function to debounce an API call. Focus on performance. (Variant 535)"
+  },
+  {
+    "task_id": "named-entity-recognition-537",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Provide examples. (Variant 536)"
+  },
+  {
+    "task_id": "distributed-systems-538",
+    "prompt": "Explain eventual consistency vs strong consistency. Explain step-by-step. (Variant 537)"
+  },
+  {
+    "task_id": "factual-qa-539",
+    "prompt": "What is the speed of light? Provide examples. (Variant 538)"
+  },
+  {
+    "task_id": "named-entity-recognition-540",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. (Variant 539)"
+  },
+  {
+    "task_id": "system-design-541",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 540)"
+  },
+  {
+    "task_id": "extreme-reasoning-542",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 541)"
+  },
+  {
+    "task_id": "sql-543",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 542)"
+  },
+  {
+    "task_id": "python-544",
+    "prompt": "Implement a singleton pattern in Python. Explain step-by-step. (Variant 543)"
+  },
+  {
+    "task_id": "named-entity-recognition-545",
+    "prompt": "Find organizations in: The UN met with WHO officials in Geneva. Provide examples. (Variant 544)"
+  },
+  {
+    "task_id": "debugging-546",
+    "prompt": "Fix this NullPointerException in Java. Focus on performance. (Variant 545)"
+  },
+  {
+    "task_id": "math-547",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 546)"
+  },
+  {
+    "task_id": "math-548",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? (Variant 547)"
+  },
+  {
+    "task_id": "math-549",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 548)"
+  },
+  {
+    "task_id": "cloud-computing-550",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Explain step-by-step. (Variant 549)"
+  },
+  {
+    "task_id": "system-design-551",
+    "prompt": "Design a URL shortener like Bitly. Provide examples. (Variant 550)"
+  },
+  {
+    "task_id": "extreme-reasoning-552",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 551)"
+  },
+  {
+    "task_id": "logical-reasoning-553",
+    "prompt": "If tomorrow is two days after Monday, what day is today? Provide examples. (Variant 552)"
+  },
+  {
+    "task_id": "sql-554",
+    "prompt": "Write a query to group users by month of registration. (Variant 553)"
+  },
+  {
+    "task_id": "greetings-555",
+    "prompt": "Hi there, can you help me? Provide examples. (Variant 554)"
+  },
+  {
+    "task_id": "debugging-556",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 555)"
+  },
+  {
+    "task_id": "python-557",
+    "prompt": "Write a Python script to parse a CSV and filter rows. Provide examples. (Variant 556)"
+  },
+  {
+    "task_id": "named-entity-recognition-558",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. (Variant 557)"
+  },
+  {
+    "task_id": "factual-qa-559",
+    "prompt": "When did the Titanic sink? Provide examples. (Variant 558)"
+  },
+  {
+    "task_id": "greetings-560",
+    "prompt": "Hi there, can you help me? (Variant 559)"
+  },
+  {
+    "task_id": "sentiment-analysis-561",
+    "prompt": "It was okay, nothing special but not bad either. Provide examples. (Variant 560)"
+  },
+  {
+    "task_id": "javascript-562",
+    "prompt": "Write a React component that fetches data on mount. Explain step-by-step. (Variant 561)"
+  },
+  {
+    "task_id": "python-563",
+    "prompt": "Create a Python decorator that measures execution time. Provide examples. (Variant 562)"
+  },
+  {
+    "task_id": "system-design-564",
+    "prompt": "How would you design Netflix's video streaming backend? (Variant 563)"
+  },
+  {
+    "task_id": "summarization-565",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 564)"
+  },
+  {
+    "task_id": "summarization-566",
+    "prompt": "Summarize this article about climate change in one sentence... Focus on performance. (Variant 565)"
+  },
+  {
+    "task_id": "sentiment-analysis-567",
+    "prompt": "The service was terrible and the food was cold. Provide examples. (Variant 566)"
+  },
+  {
+    "task_id": "security-568",
+    "prompt": "How do you securely store passwords in a database? Explain step-by-step. (Variant 567)"
+  },
+  {
+    "task_id": "logical-reasoning-569",
+    "prompt": "Which word does not belong: Apple, Banana, Carrot, Date? Provide examples. (Variant 568)"
+  },
+  {
+    "task_id": "named-entity-recognition-570",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. (Variant 569)"
+  },
+  {
+    "task_id": "sql-571",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 570)"
+  },
+  {
+    "task_id": "summarization-572",
+    "prompt": "Summarize this article about climate change in one sentence... (Variant 571)"
+  },
+  {
+    "task_id": "summarization-573",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. Provide examples. (Variant 572)"
+  },
+  {
+    "task_id": "logical-reasoning-574",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... Explain step-by-step. (Variant 573)"
+  },
+  {
+    "task_id": "summarization-575",
+    "prompt": "Summarize the key takeaways from the Agile Manifesto. Provide examples. (Variant 574)"
+  },
+  {
+    "task_id": "sql-576",
+    "prompt": "How do you prevent SQL injection? Focus on performance. (Variant 575)"
+  },
+  {
+    "task_id": "summarization-577",
+    "prompt": "Condense this legal document into plain English. Provide examples. (Variant 576)"
+  },
+  {
+    "task_id": "python-578",
+    "prompt": "Implement a singleton pattern in Python. (Variant 577)"
+  },
+  {
+    "task_id": "sentiment-analysis-579",
+    "prompt": "It was okay, nothing special but not bad either. Provide examples. (Variant 578)"
+  },
+  {
+    "task_id": "security-580",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Explain step-by-step. (Variant 579)"
+  },
+  {
+    "task_id": "distributed-systems-581",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 580)"
+  },
+  {
+    "task_id": "greetings-582",
+    "prompt": "Hey, are you online? (Variant 581)"
+  },
+  {
+    "task_id": "distributed-systems-583",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. Provide examples. (Variant 582)"
+  },
+  {
+    "task_id": "debugging-584",
+    "prompt": "Fix this NullPointerException in Java. (Variant 583)"
+  },
+  {
+    "task_id": "extreme-reasoning-585",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 584)"
+  },
+  {
+    "task_id": "debugging-586",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 585)"
+  },
+  {
+    "task_id": "extreme-reasoning-587",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 586)"
+  },
+  {
+    "task_id": "python-588",
+    "prompt": "Write a Python script to reverse a string. (Variant 587)"
+  },
+  {
+    "task_id": "math-589",
+    "prompt": "What is the derivative of x^2? Provide examples. (Variant 588)"
+  },
+  {
+    "task_id": "sql-590",
+    "prompt": "Write an SQL query to find the second highest salary. (Variant 589)"
+  },
+  {
+    "task_id": "summarization-591",
+    "prompt": "TLDR for the plot of The Matrix. Provide examples. (Variant 590)"
+  },
+  {
+    "task_id": "math-592",
+    "prompt": "What is 15% of 850? Explain step-by-step. (Variant 591)"
+  },
+  {
+    "task_id": "python-593",
+    "prompt": "Write a Python script to reverse a string. Provide examples. (Variant 592)"
+  },
+  {
+    "task_id": "greetings-594",
+    "prompt": "Hey, are you online? (Variant 593)"
+  },
+  {
+    "task_id": "debugging-595",
+    "prompt": "Why is this React component rendering infinitely? Provide examples. (Variant 594)"
+  },
+  {
+    "task_id": "greetings-596",
+    "prompt": "Hi there, can you help me? Focus on performance. (Variant 595)"
+  },
+  {
+    "task_id": "extreme-reasoning-597",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 596)"
+  },
+  {
+    "task_id": "greetings-598",
+    "prompt": "Good morning, AI. Explain step-by-step. (Variant 597)"
+  },
+  {
+    "task_id": "python-599",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 598)"
+  },
+  {
+    "task_id": "javascript-600",
+    "prompt": "How does event delegation work in the DOM? (Variant 599)"
+  },
+  {
+    "task_id": "sentiment-analysis-601",
+    "prompt": "What a delightful experience from start to finish. Provide examples. (Variant 600)"
+  },
+  {
+    "task_id": "system-design-602",
+    "prompt": "How would you design Netflix's video streaming backend? (Variant 601)"
+  },
+  {
+    "task_id": "debugging-603",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 602)"
+  },
+  {
+    "task_id": "summarization-604",
+    "prompt": "TLDR for the plot of The Matrix. Explain step-by-step. (Variant 603)"
+  },
+  {
+    "task_id": "math-605",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 604)"
+  },
+  {
+    "task_id": "distributed-systems-606",
+    "prompt": "Explain eventual consistency vs strong consistency. Focus on performance. (Variant 605)"
+  },
+  {
+    "task_id": "system-design-607",
+    "prompt": "Design a URL shortener like Bitly. Provide examples. (Variant 606)"
+  },
+  {
+    "task_id": "distributed-systems-608",
+    "prompt": "Explain the Paxos consensus algorithm. (Variant 607)"
+  },
+  {
+    "task_id": "distributed-systems-609",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 608)"
+  },
+  {
+    "task_id": "sql-610",
+    "prompt": "Explain the difference between INNER and LEFT JOIN. Explain step-by-step. (Variant 609)"
+  },
+  {
+    "task_id": "summarization-611",
+    "prompt": "Give me a bulleted summary of the 2008 financial crisis. Provide examples. (Variant 610)"
+  },
+  {
+    "task_id": "security-612",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. (Variant 611)"
+  },
+  {
+    "task_id": "factual-qa-613",
+    "prompt": "When did the Titanic sink? Provide examples. (Variant 612)"
+  },
+  {
+    "task_id": "distributed-systems-614",
+    "prompt": "How does Kafka handle partition replication? (Variant 613)"
+  },
+  {
+    "task_id": "system-design-615",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 614)"
+  },
+  {
+    "task_id": "logical-reasoning-616",
+    "prompt": "A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much is the ball? Explain step-by-step. (Variant 615)"
+  },
+  {
+    "task_id": "javascript-617",
+    "prompt": "Write a React component that fetches data on mount. Provide examples. (Variant 616)"
+  },
+  {
+    "task_id": "factual-qa-618",
+    "prompt": "What is the capital of France? (Variant 617)"
+  },
+  {
+    "task_id": "sentiment-analysis-619",
+    "prompt": "I am so frustrated with this buggy software! Provide examples. (Variant 618)"
+  },
+  {
+    "task_id": "sentiment-analysis-620",
+    "prompt": "I am so frustrated with this buggy software! (Variant 619)"
+  },
+  {
+    "task_id": "greetings-621",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 620)"
+  },
+  {
+    "task_id": "extreme-reasoning-622",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Explain step-by-step. (Variant 621)"
+  },
+  {
+    "task_id": "debugging-623",
+    "prompt": "Fix this NullPointerException in Java. Provide examples. (Variant 622)"
+  },
+  {
+    "task_id": "greetings-624",
+    "prompt": "Greetings! What can you do? (Variant 623)"
+  },
+  {
+    "task_id": "factual-qa-625",
+    "prompt": "What is the capital of France? Provide examples. (Variant 624)"
+  },
+  {
+    "task_id": "greetings-626",
+    "prompt": "Hi there, can you help me? Focus on performance. (Variant 625)"
+  },
+  {
+    "task_id": "debugging-627",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 626)"
+  },
+  {
+    "task_id": "greetings-628",
+    "prompt": "Hey, are you online? Explain step-by-step. (Variant 627)"
+  },
+  {
+    "task_id": "javascript-629",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 628)"
+  },
+  {
+    "task_id": "logical-reasoning-630",
+    "prompt": "Which word does not belong: Apple, Banana, Carrot, Date? (Variant 629)"
+  },
+  {
+    "task_id": "cloud-computing-631",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 630)"
+  },
+  {
+    "task_id": "factual-qa-632",
+    "prompt": "What is photosynthesis? (Variant 631)"
+  },
+  {
+    "task_id": "distributed-systems-633",
+    "prompt": "Explain eventual consistency vs strong consistency. Provide examples. (Variant 632)"
+  },
+  {
+    "task_id": "summarization-634",
+    "prompt": "TLDR for the plot of The Matrix. Explain step-by-step. (Variant 633)"
+  },
+  {
+    "task_id": "security-635",
+    "prompt": "How do you prevent XSS in a React application? Provide examples. (Variant 634)"
+  },
+  {
+    "task_id": "cloud-computing-636",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Focus on performance. (Variant 635)"
+  },
+  {
+    "task_id": "python-637",
+    "prompt": "Implement a singleton pattern in Python. Provide examples. (Variant 636)"
+  },
+  {
+    "task_id": "security-638",
+    "prompt": "How do you securely store passwords in a database? (Variant 637)"
+  },
+  {
+    "task_id": "math-639",
+    "prompt": "What is 15% of 850? Provide examples. (Variant 638)"
+  },
+  {
+    "task_id": "extreme-reasoning-640",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Explain step-by-step. (Variant 639)"
+  },
+  {
+    "task_id": "named-entity-recognition-641",
+    "prompt": "List dates in: The contract was signed on 2023-10-01 and expires next Friday. Provide examples. (Variant 640)"
+  },
+  {
+    "task_id": "security-642",
+    "prompt": "How do you securely store passwords in a database? (Variant 641)"
+  },
+  {
+    "task_id": "python-643",
+    "prompt": "Write a Python script to parse a CSV and filter rows. Provide examples. (Variant 642)"
+  },
+  {
+    "task_id": "factual-qa-644",
+    "prompt": "What is the speed of light? (Variant 643)"
+  },
+  {
+    "task_id": "sql-645",
+    "prompt": "Optimize this slow SQL query... Provide examples. (Variant 644)"
+  },
+  {
+    "task_id": "python-646",
+    "prompt": "Write a Python script to reverse a string. Explain step-by-step. (Variant 645)"
+  },
+  {
+    "task_id": "factual-qa-647",
+    "prompt": "Who wrote Hamlet? Provide examples. (Variant 646)"
+  },
+  {
+    "task_id": "summarization-648",
+    "prompt": "TLDR for the plot of The Matrix. (Variant 647)"
+  },
+  {
+    "task_id": "sql-649",
+    "prompt": "How do you prevent SQL injection? Provide examples. (Variant 648)"
+  },
+  {
+    "task_id": "debugging-650",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 649)"
+  },
+  {
+    "task_id": "sql-651",
+    "prompt": "Optimize this slow SQL query... Provide examples. (Variant 650)"
+  },
+  {
+    "task_id": "debugging-652",
+    "prompt": "Why is this React component rendering infinitely? Explain step-by-step. (Variant 651)"
+  },
+  {
+    "task_id": "cloud-computing-653",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 652)"
+  },
+  {
+    "task_id": "extreme-reasoning-654",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 653)"
+  },
+  {
+    "task_id": "sql-655",
+    "prompt": "Write a query to group users by month of registration. Provide examples. (Variant 654)"
+  },
+  {
+    "task_id": "named-entity-recognition-656",
+    "prompt": "Extract locations: I traveled from New York to Tokyo via London. Focus on performance. (Variant 655)"
+  },
+  {
+    "task_id": "javascript-657",
+    "prompt": "Write a JS function to debounce an API call. Provide examples. (Variant 656)"
+  },
+  {
+    "task_id": "math-658",
+    "prompt": "What is 15% of 850? Explain step-by-step. (Variant 657)"
+  },
+  {
+    "task_id": "javascript-659",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 658)"
+  },
+  {
+    "task_id": "cloud-computing-660",
+    "prompt": "How do you set up a VPC peering connection in AWS? (Variant 659)"
+  },
+  {
+    "task_id": "security-661",
+    "prompt": "How do you prevent XSS in a React application? Provide examples. (Variant 660)"
+  },
+  {
+    "task_id": "javascript-662",
+    "prompt": "Implement a Promise from scratch in JS. (Variant 661)"
+  },
+  {
+    "task_id": "extreme-reasoning-663",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 662)"
+  },
+  {
+    "task_id": "extreme-reasoning-664",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Explain step-by-step. (Variant 663)"
+  },
+  {
+    "task_id": "cloud-computing-665",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 664)"
+  },
+  {
+    "task_id": "javascript-666",
+    "prompt": "Implement a Promise from scratch in JS. Focus on performance. (Variant 665)"
+  },
+  {
+    "task_id": "javascript-667",
+    "prompt": "Implement a Promise from scratch in JS. Provide examples. (Variant 666)"
+  },
+  {
+    "task_id": "debugging-668",
+    "prompt": "Find the memory leak in this C++ code... (Variant 667)"
+  },
+  {
+    "task_id": "javascript-669",
+    "prompt": "How does event delegation work in the DOM? Provide examples. (Variant 668)"
+  },
+  {
+    "task_id": "system-design-670",
+    "prompt": "Design a URL shortener like Bitly. Explain step-by-step. (Variant 669)"
+  },
+  {
+    "task_id": "factual-qa-671",
+    "prompt": "Who wrote Hamlet? Provide examples. (Variant 670)"
+  },
+  {
+    "task_id": "system-design-672",
+    "prompt": "Design a rate limiter for a public API. (Variant 671)"
+  },
+  {
+    "task_id": "sql-673",
+    "prompt": "Write an SQL query to find the second highest salary. Provide examples. (Variant 672)"
+  },
+  {
+    "task_id": "greetings-674",
+    "prompt": "Greetings! What can you do? (Variant 673)"
+  },
+  {
+    "task_id": "cloud-computing-675",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Provide examples. (Variant 674)"
+  },
+  {
+    "task_id": "logical-reasoning-676",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... Explain step-by-step. (Variant 675)"
+  },
+  {
+    "task_id": "system-design-677",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 676)"
+  },
+  {
+    "task_id": "logical-reasoning-678",
+    "prompt": "Solve this logic puzzle: Three friends live in three houses... (Variant 677)"
+  },
+  {
+    "task_id": "logical-reasoning-679",
+    "prompt": "Which word does not belong: Apple, Banana, Carrot, Date? Provide examples. (Variant 678)"
+  },
+  {
+    "task_id": "distributed-systems-680",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. (Variant 679)"
+  },
+  {
+    "task_id": "cloud-computing-681",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 680)"
+  },
+  {
+    "task_id": "greetings-682",
+    "prompt": "Hello, how are you? Explain step-by-step. (Variant 681)"
+  },
+  {
+    "task_id": "summarization-683",
+    "prompt": "TLDR for the plot of The Matrix. Provide examples. (Variant 682)"
+  },
+  {
+    "task_id": "javascript-684",
+    "prompt": "Write a JS function to debounce an API call. (Variant 683)"
+  },
+  {
+    "task_id": "summarization-685",
+    "prompt": "Summarize this article about climate change in one sentence... Provide examples. (Variant 684)"
+  },
+  {
+    "task_id": "math-686",
+    "prompt": "Calculate the square root of 144 Focus on performance. (Variant 685)"
+  },
+  {
+    "task_id": "greetings-687",
+    "prompt": "Good morning, AI. Provide examples. (Variant 686)"
+  },
+  {
+    "task_id": "distributed-systems-688",
+    "prompt": "How does Kafka handle partition replication? Explain step-by-step. (Variant 687)"
+  },
+  {
+    "task_id": "security-689",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 688)"
+  },
+  {
+    "task_id": "math-690",
+    "prompt": "If I travel 60 mph for 2.5 hours, how far do I go? (Variant 689)"
+  },
+  {
+    "task_id": "named-entity-recognition-691",
+    "prompt": "Extract entities from: Tim Cook announced the new Apple iPhone in Cupertino on September 12th. Provide examples. (Variant 690)"
+  },
+  {
+    "task_id": "factual-qa-692",
+    "prompt": "What is the speed of light? (Variant 691)"
+  },
+  {
+    "task_id": "greetings-693",
+    "prompt": "Greetings! What can you do? Provide examples. (Variant 692)"
+  },
+  {
+    "task_id": "debugging-694",
+    "prompt": "Why is this React component rendering infinitely? Explain step-by-step. (Variant 693)"
+  },
+  {
+    "task_id": "extreme-reasoning-695",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 694)"
+  },
+  {
+    "task_id": "cloud-computing-696",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Focus on performance. (Variant 695)"
+  },
+  {
+    "task_id": "named-entity-recognition-697",
+    "prompt": "Identify people in: Elon Musk and Mark Zuckerberg might fight. Provide examples. (Variant 696)"
+  },
+  {
+    "task_id": "cloud-computing-698",
+    "prompt": "How do you set up a VPC peering connection in AWS? (Variant 697)"
+  },
+  {
+    "task_id": "math-699",
+    "prompt": "Solve for x: 2x + 5 = 15 Provide examples. (Variant 698)"
+  },
+  {
+    "task_id": "cloud-computing-700",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Explain step-by-step. (Variant 699)"
+  },
+  {
+    "task_id": "security-701",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 700)"
+  },
+  {
+    "task_id": "security-702",
+    "prompt": "What is a buffer overflow vulnerability? (Variant 701)"
+  },
+  {
+    "task_id": "cloud-computing-703",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 702)"
+  },
+  {
+    "task_id": "security-704",
+    "prompt": "What is a buffer overflow vulnerability? (Variant 703)"
+  },
+  {
+    "task_id": "cloud-computing-705",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 704)"
+  },
+  {
+    "task_id": "security-706",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Explain step-by-step. (Variant 705)"
+  },
+  {
+    "task_id": "security-707",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 706)"
+  },
+  {
+    "task_id": "system-design-708",
+    "prompt": "Design a chat application like WhatsApp. (Variant 707)"
+  },
+  {
+    "task_id": "debugging-709",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 708)"
+  },
+  {
+    "task_id": "system-design-710",
+    "prompt": "Design a chat application like WhatsApp. (Variant 709)"
+  },
+  {
+    "task_id": "debugging-711",
+    "prompt": "Find the memory leak in this C++ code... Provide examples. (Variant 710)"
+  },
+  {
+    "task_id": "debugging-712",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 711)"
+  },
+  {
+    "task_id": "distributed-systems-713",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 712)"
+  },
+  {
+    "task_id": "system-design-714",
+    "prompt": "How would you design Netflix's video streaming backend? (Variant 713)"
+  },
+  {
+    "task_id": "distributed-systems-715",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 714)"
+  },
+  {
+    "task_id": "security-716",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Focus on performance. (Variant 715)"
+  },
+  {
+    "task_id": "cloud-computing-717",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 716)"
+  },
+  {
+    "task_id": "cloud-computing-718",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Explain step-by-step. (Variant 717)"
+  },
+  {
+    "task_id": "distributed-systems-719",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 718)"
+  },
+  {
+    "task_id": "distributed-systems-720",
+    "prompt": "Explain the Paxos consensus algorithm. (Variant 719)"
+  },
+  {
+    "task_id": "system-design-721",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 720)"
+  },
+  {
+    "task_id": "system-design-722",
+    "prompt": "Design a rate limiter for a public API. (Variant 721)"
+  },
+  {
+    "task_id": "distributed-systems-723",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 722)"
+  },
+  {
+    "task_id": "debugging-724",
+    "prompt": "Fix this NullPointerException in Java. Explain step-by-step. (Variant 723)"
+  },
+  {
+    "task_id": "security-725",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 724)"
+  },
+  {
+    "task_id": "distributed-systems-726",
+    "prompt": "Explain eventual consistency vs strong consistency. Focus on performance. (Variant 725)"
+  },
+  {
+    "task_id": "distributed-systems-727",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 726)"
+  },
+  {
+    "task_id": "security-728",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. (Variant 727)"
+  },
+  {
+    "task_id": "system-design-729",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 728)"
+  },
+  {
+    "task_id": "debugging-730",
+    "prompt": "Fix this NullPointerException in Java. Explain step-by-step. (Variant 729)"
+  },
+  {
+    "task_id": "system-design-731",
+    "prompt": "Design a URL shortener like Bitly. Provide examples. (Variant 730)"
+  },
+  {
+    "task_id": "security-732",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. (Variant 731)"
+  },
+  {
+    "task_id": "debugging-733",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 732)"
+  },
+  {
+    "task_id": "cloud-computing-734",
+    "prompt": "How do you autoscale a stateless microservice in GCP? (Variant 733)"
+  },
+  {
+    "task_id": "system-design-735",
+    "prompt": "Design a URL shortener like Bitly. Provide examples. (Variant 734)"
+  },
+  {
+    "task_id": "debugging-736",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Explain step-by-step. (Variant 735)"
+  },
+  {
+    "task_id": "system-design-737",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 736)"
+  },
+  {
+    "task_id": "cloud-computing-738",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. (Variant 737)"
+  },
+  {
+    "task_id": "system-design-739",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 738)"
+  },
+  {
+    "task_id": "cloud-computing-740",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. (Variant 739)"
+  },
+  {
+    "task_id": "distributed-systems-741",
+    "prompt": "Explain eventual consistency vs strong consistency. Provide examples. (Variant 740)"
+  },
+  {
+    "task_id": "cloud-computing-742",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Explain step-by-step. (Variant 741)"
+  },
+  {
+    "task_id": "debugging-743",
+    "prompt": "Fix this NullPointerException in Java. Provide examples. (Variant 742)"
+  },
+  {
+    "task_id": "security-744",
+    "prompt": "What is a buffer overflow vulnerability? (Variant 743)"
+  },
+  {
+    "task_id": "system-design-745",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 744)"
+  },
+  {
+    "task_id": "debugging-746",
+    "prompt": "Why is this React component rendering infinitely? Focus on performance. (Variant 745)"
+  },
+  {
+    "task_id": "cloud-computing-747",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 746)"
+  },
+  {
+    "task_id": "cloud-computing-748",
+    "prompt": "How do you set up a VPC peering connection in AWS? Explain step-by-step. (Variant 747)"
+  },
+  {
+    "task_id": "cloud-computing-749",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 748)"
+  },
+  {
+    "task_id": "security-750",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. (Variant 749)"
+  },
+  {
+    "task_id": "debugging-751",
+    "prompt": "Debug this Python race condition in asyncio. Provide examples. (Variant 750)"
+  },
+  {
+    "task_id": "system-design-752",
+    "prompt": "Design a URL shortener like Bitly. (Variant 751)"
+  },
+  {
+    "task_id": "distributed-systems-753",
+    "prompt": "Explain eventual consistency vs strong consistency. Provide examples. (Variant 752)"
+  },
+  {
+    "task_id": "security-754",
+    "prompt": "How do you securely store passwords in a database? Explain step-by-step. (Variant 753)"
+  },
+  {
+    "task_id": "system-design-755",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 754)"
+  },
+  {
+    "task_id": "system-design-756",
+    "prompt": "How would you design Netflix's video streaming backend? Focus on performance. (Variant 755)"
+  },
+  {
+    "task_id": "debugging-757",
+    "prompt": "Why is this React component rendering infinitely? Provide examples. (Variant 756)"
+  },
+  {
+    "task_id": "system-design-758",
+    "prompt": "Design a URL shortener like Bitly. (Variant 757)"
+  },
+  {
+    "task_id": "system-design-759",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 758)"
+  },
+  {
+    "task_id": "debugging-760",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 759)"
+  },
+  {
+    "task_id": "system-design-761",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 760)"
+  },
+  {
+    "task_id": "cloud-computing-762",
+    "prompt": "How do you autoscale a stateless microservice in GCP? (Variant 761)"
+  },
+  {
+    "task_id": "debugging-763",
+    "prompt": "Why is this React component rendering infinitely? Provide examples. (Variant 762)"
+  },
+  {
+    "task_id": "system-design-764",
+    "prompt": "How would you design Netflix's video streaming backend? (Variant 763)"
+  },
+  {
+    "task_id": "security-765",
+    "prompt": "How do you securely store passwords in a database? Provide examples. (Variant 764)"
+  },
+  {
+    "task_id": "security-766",
+    "prompt": "How do you prevent XSS in a React application? Explain step-by-step. (Variant 765)"
+  },
+  {
+    "task_id": "cloud-computing-767",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Provide examples. (Variant 766)"
+  },
+  {
+    "task_id": "system-design-768",
+    "prompt": "Design a chat application like WhatsApp. (Variant 767)"
+  },
+  {
+    "task_id": "security-769",
+    "prompt": "How do you securely store passwords in a database? Provide examples. (Variant 768)"
+  },
+  {
+    "task_id": "debugging-770",
+    "prompt": "Debug this Python race condition in asyncio. (Variant 769)"
+  },
+  {
+    "task_id": "debugging-771",
+    "prompt": "Why is this React component rendering infinitely? Provide examples. (Variant 770)"
+  },
+  {
+    "task_id": "debugging-772",
+    "prompt": "Debug this Python race condition in asyncio. Explain step-by-step. (Variant 771)"
+  },
+  {
+    "task_id": "cloud-computing-773",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 772)"
+  },
+  {
+    "task_id": "system-design-774",
+    "prompt": "Design a chat application like WhatsApp. (Variant 773)"
+  },
+  {
+    "task_id": "system-design-775",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 774)"
+  },
+  {
+    "task_id": "security-776",
+    "prompt": "How do you prevent XSS in a React application? Focus on performance. (Variant 775)"
+  },
+  {
+    "task_id": "system-design-777",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 776)"
+  },
+  {
+    "task_id": "distributed-systems-778",
+    "prompt": "Explain eventual consistency vs strong consistency. Explain step-by-step. (Variant 777)"
+  },
+  {
+    "task_id": "security-779",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 778)"
+  },
+  {
+    "task_id": "cloud-computing-780",
+    "prompt": "How do you set up a VPC peering connection in AWS? (Variant 779)"
+  },
+  {
+    "task_id": "system-design-781",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 780)"
+  },
+  {
+    "task_id": "system-design-782",
+    "prompt": "Design a URL shortener like Bitly. (Variant 781)"
+  },
+  {
+    "task_id": "distributed-systems-783",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 782)"
+  },
+  {
+    "task_id": "system-design-784",
+    "prompt": "How would you design Netflix's video streaming backend? Explain step-by-step. (Variant 783)"
+  },
+  {
+    "task_id": "cloud-computing-785",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 784)"
+  },
+  {
+    "task_id": "security-786",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Focus on performance. (Variant 785)"
+  },
+  {
+    "task_id": "debugging-787",
+    "prompt": "Debug this Python race condition in asyncio. Provide examples. (Variant 786)"
+  },
+  {
+    "task_id": "debugging-788",
+    "prompt": "Find the memory leak in this C++ code... (Variant 787)"
+  },
+  {
+    "task_id": "distributed-systems-789",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 788)"
+  },
+  {
+    "task_id": "debugging-790",
+    "prompt": "Fix this NullPointerException in Java. Explain step-by-step. (Variant 789)"
+  },
+  {
+    "task_id": "cloud-computing-791",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 790)"
+  },
+  {
+    "task_id": "debugging-792",
+    "prompt": "Find the memory leak in this C++ code... (Variant 791)"
+  },
+  {
+    "task_id": "system-design-793",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 792)"
+  },
+  {
+    "task_id": "debugging-794",
+    "prompt": "Fix this NullPointerException in Java. (Variant 793)"
+  },
+  {
+    "task_id": "cloud-computing-795",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Provide examples. (Variant 794)"
+  },
+  {
+    "task_id": "debugging-796",
+    "prompt": "Debug this Python race condition in asyncio. Explain step-by-step. (Variant 795)"
+  },
+  {
+    "task_id": "security-797",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 796)"
+  },
+  {
+    "task_id": "cloud-computing-798",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. (Variant 797)"
+  },
+  {
+    "task_id": "distributed-systems-799",
+    "prompt": "Explain eventual consistency vs strong consistency. Provide examples. (Variant 798)"
+  },
+  {
+    "task_id": "system-design-800",
+    "prompt": "Design a chat application like WhatsApp. (Variant 799)"
+  },
+  {
+    "task_id": "security-801",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 800)"
+  },
+  {
+    "task_id": "system-design-802",
+    "prompt": "Design a URL shortener like Bitly. Explain step-by-step. (Variant 801)"
+  },
+  {
+    "task_id": "system-design-803",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 802)"
+  },
+  {
+    "task_id": "distributed-systems-804",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. (Variant 803)"
+  },
+  {
+    "task_id": "debugging-805",
+    "prompt": "Debug this Python race condition in asyncio. Provide examples. (Variant 804)"
+  },
+  {
+    "task_id": "distributed-systems-806",
+    "prompt": "Explain eventual consistency vs strong consistency. Focus on performance. (Variant 805)"
+  },
+  {
+    "task_id": "security-807",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 806)"
+  },
+  {
+    "task_id": "security-808",
+    "prompt": "What is a buffer overflow vulnerability? Explain step-by-step. (Variant 807)"
+  },
+  {
+    "task_id": "distributed-systems-809",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Provide examples. (Variant 808)"
+  },
+  {
+    "task_id": "debugging-810",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 809)"
+  },
+  {
+    "task_id": "system-design-811",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 810)"
+  },
+  {
+    "task_id": "cloud-computing-812",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. (Variant 811)"
+  },
+  {
+    "task_id": "distributed-systems-813",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 812)"
+  },
+  {
+    "task_id": "debugging-814",
+    "prompt": "Find the memory leak in this C++ code... Explain step-by-step. (Variant 813)"
+  },
+  {
+    "task_id": "distributed-systems-815",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 814)"
+  },
+  {
+    "task_id": "security-816",
+    "prompt": "What is a buffer overflow vulnerability? Focus on performance. (Variant 815)"
+  },
+  {
+    "task_id": "distributed-systems-817",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Provide examples. (Variant 816)"
+  },
+  {
+    "task_id": "debugging-818",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 817)"
+  },
+  {
+    "task_id": "system-design-819",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 818)"
+  },
+  {
+    "task_id": "cloud-computing-820",
+    "prompt": "How do you set up a VPC peering connection in AWS? Explain step-by-step. (Variant 819)"
+  },
+  {
+    "task_id": "system-design-821",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 820)"
+  },
+  {
+    "task_id": "system-design-822",
+    "prompt": "How would you design Netflix's video streaming backend? (Variant 821)"
+  },
+  {
+    "task_id": "debugging-823",
+    "prompt": "Why is this React component rendering infinitely? Provide examples. (Variant 822)"
+  },
+  {
+    "task_id": "cloud-computing-824",
+    "prompt": "How do you autoscale a stateless microservice in GCP? (Variant 823)"
+  },
+  {
+    "task_id": "debugging-825",
+    "prompt": "Debug this Python race condition in asyncio. Provide examples. (Variant 824)"
+  },
+  {
+    "task_id": "cloud-computing-826",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Explain step-by-step. (Variant 825)"
+  },
+  {
+    "task_id": "debugging-827",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 826)"
+  },
+  {
+    "task_id": "system-design-828",
+    "prompt": "Design a distributed cache system. (Variant 827)"
+  },
+  {
+    "task_id": "system-design-829",
+    "prompt": "Design a rate limiter for a public API. Provide examples. (Variant 828)"
+  },
+  {
+    "task_id": "debugging-830",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 829)"
+  },
+  {
+    "task_id": "system-design-831",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 830)"
+  },
+  {
+    "task_id": "distributed-systems-832",
+    "prompt": "How does Kafka handle partition replication? Explain step-by-step. (Variant 831)"
+  },
+  {
+    "task_id": "system-design-833",
+    "prompt": "How would you design Netflix's video streaming backend? Provide examples. (Variant 832)"
+  },
+  {
+    "task_id": "cloud-computing-834",
+    "prompt": "How do you autoscale a stateless microservice in GCP? (Variant 833)"
+  },
+  {
+    "task_id": "cloud-computing-835",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Provide examples. (Variant 834)"
+  },
+  {
+    "task_id": "system-design-836",
+    "prompt": "How would you design Netflix's video streaming backend? Focus on performance. (Variant 835)"
+  },
+  {
+    "task_id": "cloud-computing-837",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Provide examples. (Variant 836)"
+  },
+  {
+    "task_id": "debugging-838",
+    "prompt": "Debug this Python race condition in asyncio. Explain step-by-step. (Variant 837)"
+  },
+  {
+    "task_id": "distributed-systems-839",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. Provide examples. (Variant 838)"
+  },
+  {
+    "task_id": "distributed-systems-840",
+    "prompt": "Discuss CAP theorem in the context of Cassandra. (Variant 839)"
+  },
+  {
+    "task_id": "debugging-841",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 840)"
+  },
+  {
+    "task_id": "security-842",
+    "prompt": "What is a buffer overflow vulnerability? (Variant 841)"
+  },
+  {
+    "task_id": "debugging-843",
+    "prompt": "Find the memory leak in this C++ code... Provide examples. (Variant 842)"
+  },
+  {
+    "task_id": "security-844",
+    "prompt": "How do you securely store passwords in a database? Explain step-by-step. (Variant 843)"
+  },
+  {
+    "task_id": "cloud-computing-845",
+    "prompt": "Write an IAM policy that restricts S3 access to a specific IP. Provide examples. (Variant 844)"
+  },
+  {
+    "task_id": "distributed-systems-846",
+    "prompt": "Explain eventual consistency vs strong consistency. Focus on performance. (Variant 845)"
+  },
+  {
+    "task_id": "security-847",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 846)"
+  },
+  {
+    "task_id": "cloud-computing-848",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. (Variant 847)"
+  },
+  {
+    "task_id": "cloud-computing-849",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 848)"
+  },
+  {
+    "task_id": "security-850",
+    "prompt": "How do you prevent XSS in a React application? Explain step-by-step. (Variant 849)"
+  },
+  {
+    "task_id": "distributed-systems-851",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 850)"
+  },
+  {
+    "task_id": "debugging-852",
+    "prompt": "Find the memory leak in this C++ code... (Variant 851)"
+  },
+  {
+    "task_id": "cloud-computing-853",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 852)"
+  },
+  {
+    "task_id": "debugging-854",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 853)"
+  },
+  {
+    "task_id": "cloud-computing-855",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 854)"
+  },
+  {
+    "task_id": "security-856",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Explain step-by-step. (Variant 855)"
+  },
+  {
+    "task_id": "cloud-computing-857",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 856)"
+  },
+  {
+    "task_id": "debugging-858",
+    "prompt": "Find the memory leak in this C++ code... (Variant 857)"
+  },
+  {
+    "task_id": "distributed-systems-859",
+    "prompt": "Explain eventual consistency vs strong consistency. Provide examples. (Variant 858)"
+  },
+  {
+    "task_id": "cloud-computing-860",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. (Variant 859)"
+  },
+  {
+    "task_id": "distributed-systems-861",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 860)"
+  },
+  {
+    "task_id": "distributed-systems-862",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? Explain step-by-step. (Variant 861)"
+  },
+  {
+    "task_id": "system-design-863",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 862)"
+  },
+  {
+    "task_id": "system-design-864",
+    "prompt": "How would you design Netflix's video streaming backend? (Variant 863)"
+  },
+  {
+    "task_id": "system-design-865",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 864)"
+  },
+  {
+    "task_id": "cloud-computing-866",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Focus on performance. (Variant 865)"
+  },
+  {
+    "task_id": "security-867",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 866)"
+  },
+  {
+    "task_id": "system-design-868",
+    "prompt": "Design a rate limiter for a public API. Explain step-by-step. (Variant 867)"
+  },
+  {
+    "task_id": "security-869",
+    "prompt": "What is a buffer overflow vulnerability? Provide examples. (Variant 868)"
+  },
+  {
+    "task_id": "cloud-computing-870",
+    "prompt": "How do you autoscale a stateless microservice in GCP? (Variant 869)"
+  },
+  {
+    "task_id": "system-design-871",
+    "prompt": "Design a chat application like WhatsApp. Provide examples. (Variant 870)"
+  },
+  {
+    "task_id": "system-design-872",
+    "prompt": "Design a distributed cache system. (Variant 871)"
+  },
+  {
+    "task_id": "system-design-873",
+    "prompt": "Design a distributed cache system. Provide examples. (Variant 872)"
+  },
+  {
+    "task_id": "debugging-874",
+    "prompt": "Fix this NullPointerException in Java. Explain step-by-step. (Variant 873)"
+  },
+  {
+    "task_id": "security-875",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. Provide examples. (Variant 874)"
+  },
+  {
+    "task_id": "distributed-systems-876",
+    "prompt": "Explain the Paxos consensus algorithm. Focus on performance. (Variant 875)"
+  },
+  {
+    "task_id": "security-877",
+    "prompt": "How do you prevent XSS in a React application? Provide examples. (Variant 876)"
+  },
+  {
+    "task_id": "debugging-878",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 877)"
+  },
+  {
+    "task_id": "debugging-879",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 878)"
+  },
+  {
+    "task_id": "debugging-880",
+    "prompt": "Fix this NullPointerException in Java. Explain step-by-step. (Variant 879)"
+  },
+  {
+    "task_id": "debugging-881",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 880)"
+  },
+  {
+    "task_id": "distributed-systems-882",
+    "prompt": "Explain the Paxos consensus algorithm. (Variant 881)"
+  },
+  {
+    "task_id": "security-883",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 882)"
+  },
+  {
+    "task_id": "distributed-systems-884",
+    "prompt": "Explain the Paxos consensus algorithm. (Variant 883)"
+  },
+  {
+    "task_id": "security-885",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Provide examples. (Variant 884)"
+  },
+  {
+    "task_id": "cloud-computing-886",
+    "prompt": "Explain cold starts in AWS Lambda and how to mitigate them. Explain step-by-step. (Variant 885)"
+  },
+  {
+    "task_id": "debugging-887",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Provide examples. (Variant 886)"
+  },
+  {
+    "task_id": "distributed-systems-888",
+    "prompt": "What is split-brain in a distributed cluster and how do you fix it? (Variant 887)"
+  },
+  {
+    "task_id": "distributed-systems-889",
+    "prompt": "Explain the Paxos consensus algorithm. Provide examples. (Variant 888)"
+  },
+  {
+    "task_id": "system-design-890",
+    "prompt": "How would you design Netflix's video streaming backend? (Variant 889)"
+  },
+  {
+    "task_id": "distributed-systems-891",
+    "prompt": "How does Kafka handle partition replication? Provide examples. (Variant 890)"
+  },
+  {
+    "task_id": "security-892",
+    "prompt": "Explain how a CSRF attack works and how to prevent it. Explain step-by-step. (Variant 891)"
+  },
+  {
+    "task_id": "cloud-computing-893",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 892)"
+  },
+  {
+    "task_id": "security-894",
+    "prompt": "Explain the OAuth 2.0 authorization code flow. (Variant 893)"
+  },
+  {
+    "task_id": "cloud-computing-895",
+    "prompt": "How do you autoscale a stateless microservice in GCP? Provide examples. (Variant 894)"
+  },
+  {
+    "task_id": "debugging-896",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? Focus on performance. (Variant 895)"
+  },
+  {
+    "task_id": "debugging-897",
+    "prompt": "Find the memory leak in this C++ code... Provide examples. (Variant 896)"
+  },
+  {
+    "task_id": "system-design-898",
+    "prompt": "Design a distributed cache system. Explain step-by-step. (Variant 897)"
+  },
+  {
+    "task_id": "cloud-computing-899",
+    "prompt": "How do you set up a VPC peering connection in AWS? Provide examples. (Variant 898)"
+  },
+  {
+    "task_id": "debugging-900",
+    "prompt": "Why is my CSS flexbox layout breaking on mobile? (Variant 899)"
+  },
+  {
+    "task_id": "cloud-computing-901",
+    "prompt": "Explain the difference between Kubernetes NodePort and LoadBalancer. Provide examples. (Variant 900)"
+  },
+  {
+    "task_id": "extreme-reasoning-902",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. (Variant 901)"
+  },
+  {
+    "task_id": "extreme-reasoning-903",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 902)"
+  },
+  {
+    "task_id": "extreme-reasoning-904",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Explain step-by-step. (Variant 903)"
+  },
+  {
+    "task_id": "extreme-reasoning-905",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 904)"
+  },
+  {
+    "task_id": "extreme-reasoning-906",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Focus on performance. (Variant 905)"
+  },
+  {
+    "task_id": "extreme-reasoning-907",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 906)"
+  },
+  {
+    "task_id": "extreme-reasoning-908",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. (Variant 907)"
+  },
+  {
+    "task_id": "extreme-reasoning-909",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 908)"
+  },
+  {
+    "task_id": "extreme-reasoning-910",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Explain step-by-step. (Variant 909)"
+  },
+  {
+    "task_id": "extreme-reasoning-911",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 910)"
+  },
+  {
+    "task_id": "extreme-reasoning-912",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. (Variant 911)"
+  },
+  {
+    "task_id": "extreme-reasoning-913",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 912)"
+  },
+  {
+    "task_id": "extreme-reasoning-914",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 913)"
+  },
+  {
+    "task_id": "extreme-reasoning-915",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 914)"
+  },
+  {
+    "task_id": "extreme-reasoning-916",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Explain step-by-step. (Variant 915)"
+  },
+  {
+    "task_id": "extreme-reasoning-917",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 916)"
+  },
+  {
+    "task_id": "extreme-reasoning-918",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. (Variant 917)"
+  },
+  {
+    "task_id": "extreme-reasoning-919",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 918)"
+  },
+  {
+    "task_id": "extreme-reasoning-920",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 919)"
+  },
+  {
+    "task_id": "extreme-reasoning-921",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 920)"
+  },
+  {
+    "task_id": "extreme-reasoning-922",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Explain step-by-step. (Variant 921)"
+  },
+  {
+    "task_id": "extreme-reasoning-923",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 922)"
+  },
+  {
+    "task_id": "extreme-reasoning-924",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 923)"
+  },
+  {
+    "task_id": "extreme-reasoning-925",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 924)"
+  },
+  {
+    "task_id": "extreme-reasoning-926",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Focus on performance. (Variant 925)"
+  },
+  {
+    "task_id": "extreme-reasoning-927",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 926)"
+  },
+  {
+    "task_id": "extreme-reasoning-928",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Explain step-by-step. (Variant 927)"
+  },
+  {
+    "task_id": "extreme-reasoning-929",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 928)"
+  },
+  {
+    "task_id": "extreme-reasoning-930",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. (Variant 929)"
+  },
+  {
+    "task_id": "extreme-reasoning-931",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 930)"
+  },
+  {
+    "task_id": "extreme-reasoning-932",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 931)"
+  },
+  {
+    "task_id": "extreme-reasoning-933",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 932)"
+  },
+  {
+    "task_id": "extreme-reasoning-934",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Explain step-by-step. (Variant 933)"
+  },
+  {
+    "task_id": "extreme-reasoning-935",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 934)"
+  },
+  {
+    "task_id": "extreme-reasoning-936",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Focus on performance. (Variant 935)"
+  },
+  {
+    "task_id": "extreme-reasoning-937",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 936)"
+  },
+  {
+    "task_id": "extreme-reasoning-938",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. (Variant 937)"
+  },
+  {
+    "task_id": "extreme-reasoning-939",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 938)"
+  },
+  {
+    "task_id": "extreme-reasoning-940",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Explain step-by-step. (Variant 939)"
+  },
+  {
+    "task_id": "extreme-reasoning-941",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 940)"
+  },
+  {
+    "task_id": "extreme-reasoning-942",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. (Variant 941)"
+  },
+  {
+    "task_id": "extreme-reasoning-943",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 942)"
+  },
+  {
+    "task_id": "extreme-reasoning-944",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 943)"
+  },
+  {
+    "task_id": "extreme-reasoning-945",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 944)"
+  },
+  {
+    "task_id": "extreme-reasoning-946",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Explain step-by-step. (Variant 945)"
+  },
+  {
+    "task_id": "extreme-reasoning-947",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 946)"
+  },
+  {
+    "task_id": "extreme-reasoning-948",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 947)"
+  },
+  {
+    "task_id": "extreme-reasoning-949",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 948)"
+  },
+  {
+    "task_id": "extreme-reasoning-950",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 949)"
+  },
+  {
+    "task_id": "extreme-reasoning-951",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 950)"
+  },
+  {
+    "task_id": "extreme-reasoning-952",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Explain step-by-step. (Variant 951)"
+  },
+  {
+    "task_id": "extreme-reasoning-953",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 952)"
+  },
+  {
+    "task_id": "extreme-reasoning-954",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. (Variant 953)"
+  },
+  {
+    "task_id": "extreme-reasoning-955",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 954)"
+  },
+  {
+    "task_id": "extreme-reasoning-956",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Focus on performance. (Variant 955)"
+  },
+  {
+    "task_id": "extreme-reasoning-957",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 956)"
+  },
+  {
+    "task_id": "extreme-reasoning-958",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Explain step-by-step. (Variant 957)"
+  },
+  {
+    "task_id": "extreme-reasoning-959",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 958)"
+  },
+  {
+    "task_id": "extreme-reasoning-960",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 959)"
+  },
+  {
+    "task_id": "extreme-reasoning-961",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 960)"
+  },
+  {
+    "task_id": "extreme-reasoning-962",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 961)"
+  },
+  {
+    "task_id": "extreme-reasoning-963",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 962)"
+  },
+  {
+    "task_id": "extreme-reasoning-964",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Explain step-by-step. (Variant 963)"
+  },
+  {
+    "task_id": "extreme-reasoning-965",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 964)"
+  },
+  {
+    "task_id": "extreme-reasoning-966",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Focus on performance. (Variant 965)"
+  },
+  {
+    "task_id": "extreme-reasoning-967",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 966)"
+  },
+  {
+    "task_id": "extreme-reasoning-968",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 967)"
+  },
+  {
+    "task_id": "extreme-reasoning-969",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 968)"
+  },
+  {
+    "task_id": "extreme-reasoning-970",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Explain step-by-step. (Variant 969)"
+  },
+  {
+    "task_id": "extreme-reasoning-971",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 970)"
+  },
+  {
+    "task_id": "extreme-reasoning-972",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 971)"
+  },
+  {
+    "task_id": "extreme-reasoning-973",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 972)"
+  },
+  {
+    "task_id": "extreme-reasoning-974",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 973)"
+  },
+  {
+    "task_id": "extreme-reasoning-975",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 974)"
+  },
+  {
+    "task_id": "extreme-reasoning-976",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Explain step-by-step. (Variant 975)"
+  },
+  {
+    "task_id": "extreme-reasoning-977",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 976)"
+  },
+  {
+    "task_id": "extreme-reasoning-978",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. (Variant 977)"
+  },
+  {
+    "task_id": "extreme-reasoning-979",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 978)"
+  },
+  {
+    "task_id": "extreme-reasoning-980",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 979)"
+  },
+  {
+    "task_id": "extreme-reasoning-981",
+    "prompt": "Implement a custom memory allocator in C/C++ that prevents fragmentation and includes a basic garbage collection mechanism. Explain the pointer arithmetic, metadata overhead, and thread-safety considerations. Provide examples. (Variant 980)"
+  },
+  {
+    "task_id": "extreme-reasoning-982",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Explain step-by-step. (Variant 981)"
+  },
+  {
+    "task_id": "extreme-reasoning-983",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 982)"
+  },
+  {
+    "task_id": "extreme-reasoning-984",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. (Variant 983)"
+  },
+  {
+    "task_id": "extreme-reasoning-985",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Provide examples. (Variant 984)"
+  },
+  {
+    "task_id": "extreme-reasoning-986",
+    "prompt": "A Kubernetes cluster is experiencing cascading failures due to OOMKills, DNS resolution timeouts, and persistent volume detach errors. Outline your step-by-step forensic debugging process, the kubectl commands you would run, and the architecture changes to prevent this. Focus on performance. (Variant 985)"
+  },
+  {
+    "task_id": "extreme-reasoning-987",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 986)"
+  },
+  {
+    "task_id": "extreme-reasoning-988",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Explain step-by-step. (Variant 987)"
+  },
+  {
+    "task_id": "extreme-reasoning-989",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 988)"
+  },
+  {
+    "task_id": "extreme-reasoning-990",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. (Variant 989)"
+  },
+  {
+    "task_id": "extreme-reasoning-991",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 990)"
+  },
+  {
+    "task_id": "extreme-reasoning-992",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. (Variant 991)"
+  },
+  {
+    "task_id": "extreme-reasoning-993",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability. Provide examples. (Variant 992)"
+  },
+  {
+    "task_id": "extreme-reasoning-994",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Explain step-by-step. (Variant 993)"
+  },
+  {
+    "task_id": "extreme-reasoning-995",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 994)"
+  },
+  {
+    "task_id": "extreme-reasoning-996",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Focus on performance. (Variant 995)"
+  },
+  {
+    "task_id": "extreme-reasoning-997",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Provide examples. (Variant 996)"
+  },
+  {
+    "task_id": "extreme-reasoning-998",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. (Variant 997)"
+  },
+  {
+    "task_id": "extreme-reasoning-999",
+    "prompt": "Design a globally distributed lock manager for a multi-region database. Handle network partitions, clock drift (Spanner/TrueTime constraints), and node crashes. Provide the algorithm for lock acquisition and release. Provide examples. (Variant 998)"
+  },
+  {
+    "task_id": "extreme-reasoning-1000",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode. Explain step-by-step. (Variant 999)"
+  }
+]
