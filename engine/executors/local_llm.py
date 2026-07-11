@@ -17,7 +17,8 @@ class LocalLLMExecutor(BaseExecutor):
     def __init__(self, model_path: str = "./weights/model.gguf"):
         self.model_path = model_path
         self.llm = None
-        self.executor = ThreadPoolExecutor(max_workers=2) # Prevent asyncio deadlock
+        # Must be exactly 1 to prevent C++ GGML tensor corruption (llama.cpp is not thread-safe for concurrent generation)
+        self.executor = ThreadPoolExecutor(max_workers=1) 
         
         if HAS_LLAMA:
             try:
