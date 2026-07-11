@@ -16,11 +16,22 @@ class ScoringWeights:
     fireworks_cost_weight: float = 50.0
 
 class ExecutorScorer(ABC):
+    """
+    Abstract base class for calculating the mathematical Utility Score of an execution route.
+    
+    The Utility Score determines the absolute optimal execution path (Local, API, or Python)
+    by weighing the Base Accuracy against Cost Penalties and Complexity Penalties.
+    Highest utility wins.
+    """
     def __init__(self, weights: ScoringWeights):
         self.weights = weights
         
     @abstractmethod
     def calculate_utility(self, context: TaskContext) -> float:
+        """
+        Calculates the Utility Score for a specific task context.
+        Returns a float where > 0 represents viability, and -1.0 represents a hard veto.
+        """
         pass
 
 class PythonScorer(ExecutorScorer):

@@ -6,7 +6,17 @@ from core.logger import setup_logger
 logger = setup_logger("confidence_engine")
 
 class ConfidenceEngine:
-    """Zero-token heuristic hallucination and failure detector."""
+    """
+    Zero-token heuristic hallucination and structural failure detector.
+    
+    This engine intercepts outputs from all executors before finalizing results.
+    It calculates a confidence score (0.0 to 1.0) based on three core heuristics:
+    1. Multi-lingual Linguistic Hedging (Detects uncertainty markers in 4 languages)
+    2. N-Gram Looping (Detects token repetition characteristic of quantized model degradation)
+    3. Structural & Parsing Failure (e.g. blank outputs or failed code generation)
+    
+    If confidence falls below the threshold (0.75), the result is rejected and escalated.
+    """
 
     HEDGING_TERMS = re.compile(
         r'\b('
