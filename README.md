@@ -35,17 +35,22 @@ graph TD
     subgraph Execution & Validation
     G --> J(Deterministic Output)
     H --> K{Zero-Token Confidence Engine}
-    I --> L(Proprietary Output)
+    I --> L{Zero-Token Confidence Engine}
     
-    K -->|Passes Regex Heuristics| J
-    K -->|Fails: Hedging/Looping| M[Failover Recovery]
+    K -->|Passes| J
+    K -->|Fails: Hedging/Looping| M[Flash Failover Recovery]
     M -->|Dynamic Re-Route| I
+    
+    L -->|Passes| N(Proprietary Output)
+    L -->|Fails: Validation Drop| O[Pro Reasoning Failover]
+    O -->|Escalate| P[Fireworks API: DeepSeek-V4-Pro]
+    P --> N
     end
     
-    J --> N[Result Validator]
-    L --> N
-    N --> O[(results.json)]
-    N --> P[(telemetry.json)]
+    J --> Q[Result Validator]
+    N --> Q
+    Q --> R[(results.json)]
+    Q --> S[(telemetry.json)]
 ```
 
 ---
@@ -63,35 +68,33 @@ Utility = (Base Accuracy * W_Acc) - (Cost Penalty * W_Cost) - (Complexity Penalt
 * **The `Cost Penalty` Trap:** The engine heavily penalizes Fireworks API execution based on predicted token counts. Because `fireworks_cost_weight` is set to `50.0`, the Fireworks API begins with a massive negative utility score. 
 * **The Result:** The engine *aggressively* forces all basic language tasks to the Local LLM, actively shielding the API from wasteful queries.
 
-### 3. The Zero-Token Confidence Engine & Fallback Mechanism
-Running a highly quantized 1.5B/2B model locally carries severe hallucination risks. The Confidence Engine intercepts the Local LLM's output *before* it is returned and applies a strict, mathematical penalty for:
-1. **Linguistic Hedging:** Detects uncertainty markers across English, French, Spanish, and German (e.g., *"I'm not sure", "maybe", "je ne sais pas"*).
-2. **N-Gram Looping:** Detects rapid token repetition typical in small quantized models under context stress.
-3. **Structural Breakdown:** Detects if forced JSON/List outputs drop their brackets.
+### 3. The Zero-Token Confidence Engine & 2-Stage Failover Mechanism
+Running a highly quantized 1.5B/2B model locally carries severe hallucination risks. The Confidence Engine intercepts the model's output *before* it is returned and applies a strict, mathematical penalty for linguistic hedging and structural breakdown.
 
-**The Recovery Flow:**
-If confidence drops below `0.75`, the engine safely discards the local output, registers a `failed_attempts > 0` context, and triggers the **DeepSeek-V4 Serverless Failover**. The Decision Engine recalculates utility, sees the failure state, overrides the cost penalty, and correctly routes the task to the Fireworks API.
+**The 2-Stage Recovery Flow:**
+1. **Stage 1 (Local to Flash):** If the Local LLM confidence drops below `0.75`, the engine safely discards the local output, registers `failed_attempts = 1`, and triggers the **DeepSeek-V4-Flash Failover**. 
+2. **Stage 2 (Flash to Pro):** If `DeepSeek-V4-Flash` hallucinates or fails structural validation, the engine registers `failed_attempts = 2` and triggers the ultimate failover to **DeepSeek-V4-Pro**—deploying expensive reasoning *only* when the fast API model fails.
 
 ```mermaid
 sequenceDiagram
     participant User
     participant Orchestrator
     participant Local_LLM
-    participant ConfidenceEngine
-    participant Fireworks_API
+    participant Fireworks_Flash
+    participant Fireworks_Pro
     
     User->>Orchestrator: "Design a distributed rate limiter."
-    Orchestrator->>Local_LLM: Attempt local inference
-    Local_LLM-->>ConfidenceEngine: Returns hallucinated/weak answer
-    ConfidenceEngine->>ConfidenceEngine: Scans for Hedging & Structure
-    ConfidenceEngine-->>Orchestrator: Score: 0.40 (FAIL)
-    Orchestrator->>Fireworks_API: Trigger Fallback & Route to DeepSeek
-    Fireworks_API-->>Orchestrator: Returns High-Quality Architecture
-    Orchestrator-->>User: Validated JSON Response
+    Orchestrator->>Local_LLM: Attempt local inference (0 Tokens)
+    Local_LLM-->>Orchestrator: Hallucinated Output
+    Orchestrator->>Fireworks_Flash: Stage 1 Fallback (DeepSeek-V4-Flash)
+    Fireworks_Flash-->>Orchestrator: Failed JSON Validation
+    Orchestrator->>Fireworks_Pro: Stage 2 Fallback (DeepSeek-V4-Pro)
+    Fireworks_Pro-->>Orchestrator: Validated Enterprise Architecture
+    Orchestrator-->>User: Final Output
 ```
 
-### 4. DeepSeek-V4 Serverless Failover & Self-Healing
-When complex queries (like Systems Architecture or Code Generation) are routed to Fireworks, they can easily exceed standard output limits. 
+### 4. DeepSeek Serverless Integration & Self-Healing
+When complex queries are routed to Fireworks, they can easily exceed standard output limits. 
 * *Self-Healing:* If `fireworks.py` hits an output token limit, the executor natively intercepts the `"finish_reason": "length"` API flag. It dynamically rebuilds the payload, allocates an expanded `max_tokens=4096` ceiling, and executes a seamless retry without crashing the pipeline.
 * *System Prompt Optimization:* Conversational pleasantries (*"Here is the architecture you requested..."*) waste up to 10 tokens per generation. Base42 aggressively sanitizes the system prompt to forbid this, saving massive amounts of tokens at scale.
 
