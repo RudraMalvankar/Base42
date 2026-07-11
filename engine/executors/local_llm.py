@@ -70,7 +70,7 @@ class LocalLLMExecutor(BaseExecutor):
             loop = asyncio.get_running_loop()
             answer = await asyncio.wait_for(
                 loop.run_in_executor(self.executor, self._invoke_sync, context.request.prompt, max_tokens),
-                timeout=20.0 # Strict timeout to ensure we don't blow the 30s limit
+                timeout=10.0 # Dropped to 10s so API fallback has 18s to rescue the task before global 28s timeout
             )
         except asyncio.TimeoutError:
             logger.error(f"Task {context.request.task_id}: Local LLM timed out (>20s)")
