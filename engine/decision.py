@@ -57,6 +57,10 @@ class LocalLLMScorer(ExecutorScorer):
         if profile.estimated_input_tokens + profile.estimated_output_tokens > self.max_context:
             logger.warning(f"Local LLM vetoed: Context overflow")
             return -1.0
+            
+        if context.category == TaskCategory.ARCHITECTURE:
+            logger.info("Local LLM vetoed: Architecture design is too complex.")
+            return -1.0
 
         base_accuracy = 0.0
         for category_str, probability in profile.task_types:

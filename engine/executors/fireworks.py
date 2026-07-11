@@ -40,15 +40,13 @@ class FireworksExecutor(BaseExecutor):
     async def execute(self, context: TaskContext) -> ExecutionResult:
         model = self._select_model(context)
         
-        system_prompt = "You are a highly efficient AI. Answer the user's prompt directly, correctly, and completely without any conversational filler like 'Here is the answer'."
+        system_prompt = "You are a highly efficient AI. Output ONLY the final answer. Do not use conversational filler, do not say 'Here is...', and do not explain your steps unless explicitly requested."
         
         if getattr(context, "failed_attempts", 0) > 0:
-            system_prompt += " NOTE: Your previous attempt failed structural validation or exhibited hallucinations. You must think carefully step-by-step, but ensure the final output strictly adheres to the originally requested format without extra conversational text."
+            system_prompt += " NOTE: Your previous attempt failed validation. Think carefully, but ensure the final output strictly adheres to the requested format without extra conversational text."
         
-        # Dynamically predict tokens with a 20% safety buffer
-        max_tokens = 1024
-        if context.profile and context.profile.estimated_output_tokens:
-            max_tokens = int(context.profile.estimated_output_tokens * 1.2)
+        # Static max_tokens allocation to prevent truncation retries and latency spikes
+        max_tokens = 4096
             
         payload = {
             "model": model,

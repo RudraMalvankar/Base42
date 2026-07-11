@@ -30,4 +30,7 @@ class TaskClassifier:
         if meta.has_code or re.search(r'(write.*code|generate.*python|script)', prompt):
             return TaskCategory.CODE_GEN
             
+        if re.search(r'(design.*system|architecture|distributed.*system|compare.*database|infrastructure|pseudocode)', prompt):
+            return TaskCategory.ARCHITECTURE
+            
         return TaskCategory.FACTUAL
