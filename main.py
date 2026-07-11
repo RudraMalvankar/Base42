@@ -42,7 +42,12 @@ class Base42Orchestrator:
         if route == ExecutionRoute.FIREWORKS:
             result = await self.api_exec.execute(context)
         elif route == ExecutionRoute.LOCAL_LLM:
-            result = await self.local_exec.execute(context)
+            try:
+                result = await self.local_exec.execute(context)
+            except Exception as e:
+                logger.warning(f"Task {context.request.task_id}: Local LLM crashed/timed out ({e}). Bypassing to Fireworks API.")
+                result = await self.api_exec.execute(context)
+                fallback_triggered = True
         else:
             result = await self.python_exec.execute(context)
             
