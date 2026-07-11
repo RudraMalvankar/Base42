@@ -157,11 +157,33 @@ Because the Local LLM was strictly locked to a **single thread** to prevent C++ 
 2. **Dynamic Auto-Escalation:** The remaining **958 tasks** breached the `asyncio.wait_for(timeout=20.0)` limit. Instead of crashing, the system dynamically canceled them and instantly escalated them to the DeepSeek Fireworks API!
 
 #### Final Execution (Where tasks were actually solved):
-* **DeepSeek API:** 971 tasks (Auto-scaled across 20 concurrent threads to beat the clock)
-* **AST Math Sandbox:** 15 tasks (Solved locally, instant execution)
-* **Local TinyLlama:** 14 tasks (Solved locally on CPU)
+| Execution Engine | Tasks Solved | Total Time Taken | Tokens Burned | API Cost |
+| :--- | :--- | :--- | :--- | :--- |
+| **Local TinyLlama (CPU)** | 14 | ~28s | **0** | **$0.00** |
+| **Python AST Sandbox** | 15 | ~0.2s | **0** | **$0.00** |
+| **DeepSeek API (Cloud)** | 971 | ~2.5m | 450,723 | Premium |
 
 **Final Conclusion:** The system successfully balanced **Cost**, **Thread-Safety**, and **Strict Time Limits**. It proved 100% resilience against hardware thread-locking and timeout deadlocks.
+
+---
+
+## ⚙️ Advanced Configuration (Changing the Local LLM)
+
+By default, Base42 uses **TinyLlama-1.1B** because it guarantees 100% thread-safety and cross-hardware compatibility on universally stable `llama.cpp` binaries without exceeding the 4GB RAM limit. 
+
+If you wish to change the local model to something more powerful (like Google's **Gemma-2** or **Qwen-1.5**), you can easily do so:
+
+1. Open `download_model.py`
+2. Change the HuggingFace `REPO_ID` and `FILENAME` variables:
+```python
+# Example: Upgrading to Gemma-2-2B
+REPO_ID = "bartowski/gemma-2-2b-it-GGUF"
+FILENAME = "gemma-2-2b-it-Q4_K_M.gguf"
+```
+3. Open `main.py` and update the `model_path` string to point to the newly downloaded `.gguf` file.
+4. Rebuild the docker image `docker build -t base42 .`
+
+*(Note: Ensure that any new model you use is in the `Q4_K_M` quantized format so it successfully fits within the strict 4GB Hackathon RAM limit!)*
 
 ---
 > Architected and Developed by **Rudra Malvankar**
