@@ -8,73 +8,108 @@ It achieves this by deploying a strict **Local-First, Three-Tier Execution Casca
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Master Architecture & Token Flow
 
 Base42 rejects the standard pattern of routing every prompt to an expensive LLM. Instead, it uses a zero-cost heuristic router to trap deterministic tasks locally, saving the premium API for extreme-complexity edge cases.
 
+### The Orchestration DAG
+This diagram represents the exact chronological flow of a task entering the engine. 
+
 ```mermaid
 graph TD
-    A[tasks.json] --> B[Concurrency Orchestrator Semaphore: 20]
-    B --> C[Prompt Analyzer & Token Predictor]
-    C --> D[Task Planner & Structural Extractor]
-    D --> E{Decision Engine Utility Equation}
+    A([Incoming Request: tasks.json]) -->|Task String| B[Concurrency Semaphore 20x]
+    B --> C[Prompt Analyzer & Classifier]
     
-    E -->|Route 1: Math| F[Python AST Math Sandbox]
-    E -->|Route 2: Heuristics| G[Local Gemma-2B GGUF]
-    E -->|Route 3: Complex| H[Fireworks API]
+    subgraph Token Prediction Layer
+    C -->|Extract Features| D[Structural Heuristics]
+    D -->|Calculate Depth| E[Token Predictor]
+    end
     
-    F --> I[Result Validator & Schema Coercer]
-    G --> J{Zero-Token Confidence Engine}
+    subgraph Decision Engine
+    E --> F{Mathematical Utility Routing}
+    F -->|Utility > 0.9| G[Python AST Sandbox]
+    F -->|Utility > 0.3| H[Local LLM: Gemma 2B GGUF]
+    F -->|Utility < 0| I[Fireworks API: DeepSeek-V4-Flash]
+    end
     
-    J -->|High Confidence| I
-    J -->|Hallucination / Breakdown| K[Failover to DeepSeek-V4]
-    K --> H
+    subgraph Execution & Validation
+    G --> J(Deterministic Output)
+    H --> K{Zero-Token Confidence Engine}
+    I --> L(Proprietary Output)
     
-    H --> I
-    I --> L[Telemetry Service]
-    L --> M[results.json & telemetry.json]
+    K -->|Passes Regex Heuristics| J
+    K -->|Fails: Hedging/Looping| M[Failover Recovery]
+    M -->|Dynamic Re-Route| I
+    end
+    
+    J --> N[Result Validator]
+    L --> N
+    N --> O[(results.json)]
+    N --> P[(telemetry.json)]
 ```
 
-### 1. The Decision Engine (Utility Routing)
-Instead of static `if/else` rules, Base42 dynamically routes tasks using a **Mathematical Utility Equation**:
-`Utility = (Base Accuracy * W_Acc) - (Cost Penalty * W_Cost) - (Complexity Penalty)`
-By heavily weighting the `Cost Penalty`, the engine aggressively forces all basic language tasks to the Local LLM, actively shielding the Fireworks API from wasteful queries.
+---
 
-### 2. The Zero-Token Confidence Engine
-Running a small, 1.5B quantized model locally carries hallucination risks. The Confidence Engine intercepts the Local LLM's output and applies a strict, regex-based heuristic penalty for:
-- **Linguistic Hedging:** Detects uncertainty markers across English, French, Spanish, and German (e.g., *"I'm not sure", "maybe", "je ne sais pas"*).
-- **N-Gram Looping:** Detects token repetition typical in small quantized models under stress.
-- **Structural Failures:** Detects if forced JSON schemas drop their brackets.
+## 🧠 Subsystem Deep Dives
 
-If confidence falls below `0.75`, the engine safely discards the local output and seamlessly falls back to the Fireworks API.
+### 1. The Prompt Analyzer & Classifier
+Before a single token is generated, Base42 analyzes the prompt using zero-cost Python heuristics. It identifies `has_code_block`, `has_math_expression`, and `logical_operator_count`. It classifies the prompt into one of 8 distinct categories (`FACTUAL`, `LOGIC`, `MATH`, `DEBUGGING`, `ARCHITECTURE`, etc.) in `<5ms`.
 
-### 3. DeepSeek-V4 Serverless Failover
-When a task is deemed too complex for the Local LLM (e.g., System Architecture, Code Generation), or if the Local LLM fails the Confidence Check, Base42 escalates to **DeepSeek-V4-Flash** via the Fireworks API. 
-* *Self-Healing:* If the complex task hits the API output token limit, the executor intercepts the `length` truncation finish-reason and automatically retries the task with an expanded `max_tokens=4096` bound.
+### 2. The Mathematical Decision Engine
+Instead of static `if/else` rules, Base42 dynamically routes tasks using a continuous **Utility Equation**:
+```math
+Utility = (Base Accuracy * W_Acc) - (Cost Penalty * W_Cost) - (Complexity Penalty)
+```
+* **The `Cost Penalty` Trap:** The engine heavily penalizes Fireworks API execution based on predicted token counts. Because `fireworks_cost_weight` is set to `50.0`, the Fireworks API begins with a massive negative utility score. 
+* **The Result:** The engine *aggressively* forces all basic language tasks to the Local LLM, actively shielding the API from wasteful queries.
 
-### 4. The Deterministic Math Sandbox
-Passing simple math equations to a 70B LLM is a massive waste of resources. Base42 uses a custom `ast.parse` `NodeVisitor` to securely extract and solve arithmetic constraints locally using pure Python. **Result: 100% accuracy, 0 tokens used, 0ms latency.**
+### 3. The Zero-Token Confidence Engine & Fallback Mechanism
+Running a highly quantized 1.5B/2B model locally carries severe hallucination risks. The Confidence Engine intercepts the Local LLM's output *before* it is returned and applies a strict, mathematical penalty for:
+1. **Linguistic Hedging:** Detects uncertainty markers across English, French, Spanish, and German (e.g., *"I'm not sure", "maybe", "je ne sais pas"*).
+2. **N-Gram Looping:** Detects rapid token repetition typical in small quantized models under context stress.
+3. **Structural Breakdown:** Detects if forced JSON/List outputs drop their brackets.
+
+**The Recovery Flow:**
+If confidence drops below `0.75`, the engine safely discards the local output, registers a `failed_attempts > 0` context, and triggers the **DeepSeek-V4 Serverless Failover**. The Decision Engine recalculates utility, sees the failure state, overrides the cost penalty, and correctly routes the task to the Fireworks API.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Orchestrator
+    participant Local_LLM
+    participant ConfidenceEngine
+    participant Fireworks_API
+    
+    User->>Orchestrator: "Design a distributed rate limiter."
+    Orchestrator->>Local_LLM: Attempt local inference
+    Local_LLM-->>ConfidenceEngine: Returns hallucinated/weak answer
+    ConfidenceEngine->>ConfidenceEngine: Scans for Hedging & Structure
+    ConfidenceEngine-->>Orchestrator: Score: 0.40 (FAIL)
+    Orchestrator->>Fireworks_API: Trigger Fallback & Route to DeepSeek
+    Fireworks_API-->>Orchestrator: Returns High-Quality Architecture
+    Orchestrator-->>User: Validated JSON Response
+```
+
+### 4. DeepSeek-V4 Serverless Failover & Self-Healing
+When complex queries (like Systems Architecture or Code Generation) are routed to Fireworks, they can easily exceed standard output limits. 
+* *Self-Healing:* If `fireworks.py` hits an output token limit, the executor natively intercepts the `"finish_reason": "length"` API flag. It dynamically rebuilds the payload, allocates an expanded `max_tokens=4096` ceiling, and executes a seamless retry without crashing the pipeline.
+* *System Prompt Optimization:* Conversational pleasantries (*"Here is the architecture you requested..."*) waste up to 10 tokens per generation. Base42 aggressively sanitizes the system prompt to forbid this, saving massive amounts of tokens at scale.
+
+### 5. The Deterministic Math Sandbox
+Passing simple math equations to a 70B LLM is an inexcusable waste of tokens and latency. Base42 uses a custom `ast.parse` `NodeVisitor` to securely extract and solve arithmetic constraints locally using pure Python. **Result: 100% accuracy, 0 tokens used, 0ms latency.**
 
 ---
 
-## 📈 Performance Benchmarks
+## 📊 Track 1 Token Benchmarking
 
-In extreme-difficulty benchmarking against standard API-only routing architecture, the Base42 Hybrid Orchestrator delivered exceptional enterprise value:
+In extreme-difficulty benchmarking against standard API-only routing architecture, the Base42 Hybrid Orchestrator delivered exceptional enterprise value by trapping basic requests locally:
 
-| Metric | API-Only Architecture | Base42 Architecture | Result |
-| :--- | :--- | :--- | :--- |
-| **Tasks routed to Fireworks API** | 100% | **12.5%** | 87.5% API Call Reduction |
-| **Tasks resolved locally (0 Tokens)** | 0% | **87.5%** | Massive Credit Savings |
-| **Average Task Latency** | ~2.6s | **~722ms** | Faster UX |
-| **Total Benchmark Token Usage** | ~1,200 tokens | **176 tokens** | **85.3% Token Reduction** |
+| Architecture | Tasks Routed to Fireworks API | Tasks Resolved Locally (0 Tokens) | Total Benchmark Token Usage | Average System Latency |
+| :--- | :--- | :--- | :--- | :--- |
+| **Standard API-First** | 100% | 0% | ~1,200 tokens | ~2.6s |
+| **Base42 Hybrid Cascade** | **12.5%** | **87.5%** | **176 tokens** | **~722ms** |
 
----
-
-## 🛠️ Critical Design Decisions
-
-1. **System Prompt Optimization:** Standard RLHF models output conversational pleasantries (*"Here is the architecture you requested..."*). Base42 strictly sanitizes the system prompt to forbid this, saving 5-10 tokens per generation.
-2. **Aggressive RAM Management:** Because the grading VM provides only 4GB of RAM, the `llama-cpp-python` instance is explicitly initialized with `n_threads=2` and `n_ctx=512`.
-3. **Fail-Safe Crash Recovery:** The AMD Hackathon enforces a strict 30-second time limit per task. Base42 wraps the execution loop in a strict `28.0s` global timeout and uses `asyncio.gather(return_exceptions=True)`. Even if the local model stalls or OOMs, the pipeline safely catches the error and writes a valid `results.json` to prevent scoring zero.
+**Total Impact: 85.3% reduction in Fireworks API token consumption.**
 
 ---
 
@@ -93,6 +128,9 @@ docker run --rm \
   -v $(pwd)/output:/output \
   -e FIREWORKS_API_KEY="your_api_key" \
   -e FIREWORKS_BASE_URL="https://api.fireworks.ai/inference/v1" \
-  -e ALLOWED_MODELS="accounts/fireworks/models/deepseek-v4-flash" \
+  -e ALLOWED_MODELS="accounts/fireworks/models/deepseek-v4-flash,accounts/fireworks/models/deepseek-v4-pro" \
   base42
 ```
+
+---
+> Architected and Developed by **Rudra Malvankar**
