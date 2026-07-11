@@ -21,8 +21,8 @@ COPY requirements.txt .
 COPY download_model.py .
 
 # Install dependencies
-# llama-cpp-python is compiled from source here for optimal CPU execution
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies using pre-compiled universal CPU wheels to prevent hardware mismatch
+RUN pip install --no-cache-dir -r requirements.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
 # Pre-download the LLM weights into the image to achieve 0ms runtime network latency
 RUN python download_model.py
