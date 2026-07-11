@@ -17,11 +17,11 @@ class BaseValidator(ABC):
     def strip_fillers(self, text: str) -> str:
         # Aggressively remove conversational filler
         fillers = [
-            r"^(?i)here is the.*?:?\s*\n*",
-            r"^(?i)sure,.*?:?\s*\n*",
-            r"^(?i)the answer is:?\s*\n*",
-            r"^(?i)certainly!.*?:?\s*\n*",
-            r"^(?i)here is your.*?:?\s*\n*"
+            r"(?i)^here is the.*?:?\s*\n*",
+            r"(?i)^sure,.*?:?\s*\n*",
+            r"(?i)^the answer is:?\s*\n*",
+            r"(?i)^certainly!.*?:?\s*\n*",
+            r"(?i)^here is your.*?:?\s*\n*"
         ]
         for filler in fillers:
             text = re.sub(filler, "", text).strip()
@@ -144,8 +144,6 @@ class MathValidator(BaseValidator):
 class DefaultValidator(BaseValidator):
     def validate(self, result: ExecutionResult) -> ExecutionResult:
         result.answer = self.strip_fillers(result.answer)
-        if not result.answer:
-            result.answer = "Failed to generate an answer."
         return result
 
 class ResultValidator:

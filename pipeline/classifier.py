@@ -1,4 +1,4 @@
-from models.schemas import TaskContext, AnalyzerMetadata
+from models.schemas import TaskContext, PromptProfile
 from models.enums import TaskCategory
 import re
 

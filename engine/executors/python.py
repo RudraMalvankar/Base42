@@ -108,8 +108,9 @@ class PythonExecutor(BaseExecutor):
             logger.warning(f"Task {context.request.task_id}: Could not extract equation. Triggering API fallback.")
             return ExecutionResult(
                 task_id=context.request.task_id,
-                answer="", # Empty string triggers fallback in ConfidenceEngine
-                route_taken=ExecutionRoute.PYTHON
+                answer="",
+                route_taken=ExecutionRoute.PYTHON,
+                fallback_triggered=True
             )
             
         try:
@@ -121,5 +122,6 @@ class PythonExecutor(BaseExecutor):
         return ExecutionResult(
             task_id=context.request.task_id,
             answer=answer,
-            route_taken=ExecutionRoute.PYTHON
+            route_taken=ExecutionRoute.PYTHON,
+            fallback_triggered=(answer == "")
         )
