@@ -40,7 +40,7 @@ class ConfidenceEngine:
     def evaluate(cls, result: ExecutionResult, context: TaskContext) -> bool:
         # We implicitly trust Python for this hackathon's accuracy gate as it is deterministic
         if result.route_taken == ExecutionRoute.PYTHON:
-            return True
+            return bool(result.answer.strip())
 
         answer = result.answer.strip()
         
