@@ -13,7 +13,7 @@ class ScoringWeights:
     local_reasoning_penalty: float = 0.1
     fireworks_base_acc: float = 0.99
     fireworks_ambiguity_penalty: float = 0.2
-    fireworks_cost_weight: float = 1.0
+    fireworks_cost_weight: float = 50.0
 
 class ExecutorScorer(ABC):
     def __init__(self, weights: ScoringWeights):

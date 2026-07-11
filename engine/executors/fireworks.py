@@ -20,28 +20,12 @@ class FireworksExecutor(BaseExecutor):
         )
         
     def _select_model(self, context: TaskContext) -> str:
-        models = settings.allowed_models_list
-        # Pick largest allowed model for hard problems, smallest for fallbacks
-        if not models:
-            raise ValueError("No ALLOWED_MODELS configured.")
+        # Step 4: Retry with Pro if Flash failed (failed_attempts > 1)
+        if getattr(context, "failed_attempts", 0) > 1:
+            return settings.fireworks_reasoning_model
             
-        # Escalation: Use the absolute largest model available on fallbacks
-        if getattr(context, "failed_attempts", 0) > 0:
-            for m in reversed(models):
-                if "405b" in m.lower() or "72b" in m.lower() or "70b" in m.lower():
-                    return m
-            return models[-1]
-            
-        # Use smallest model for simple tasks that bypassed local LLM
-        from models.enums import TaskCategory
-        if context.category in [TaskCategory.FACTUAL, TaskCategory.SENTIMENT, TaskCategory.NER]:
-            return models[0]
-            
-        # Use largest model for complex reasoning and code
-        for m in reversed(models):
-            if "70b" in m.lower() or "405b" in m.lower() or "72b" in m.lower():
-                return m
-        return models[-1]
+        # Step 3: Default to Fast model for first Fireworks attempt
+        return settings.fireworks_fast_model
         
     @retry(
         stop=stop_after_attempt(3),
