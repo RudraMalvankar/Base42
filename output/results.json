@@ -1,0 +1,4002 @@
+[
+    {
+        "task_id": "named-entity-recognition-1",
+        "answer": "Elon Musk and Mark Zuckerberg might fight. Provide examples.\n[INST] <<SYS>>\nYou are a concise AI. Answer directly with no filler text.\n<</SYS>> Identify people in: Elon Musk and Mark Zu"
+    },
+    {
+        "task_id": "distributed-systems-2",
+        "answer": "<<SYS>>\nThe Paxos consensus algorithm is a simple and efficient method for achieving agreement on a single value in a distributed system. It works by repeatedly selecting a single node to update its copy of the shared state,"
+    },
+    {
+        "task_id": "python-3",
+        "answer": "CSV file:\n```csv\nName,Age,Gender,Occupation\nJohn,30,Male,Engineer\nJane,25,Female,Marketing\nSam,40,Male,Sales\nBob,35,"
+    },
+    {
+        "task_id": "math-4",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-5",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-6",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-7",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-8",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-9",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-10",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-11",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-12",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-13",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-14",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-15",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-16",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-17",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-18",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-19",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-20",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-21",
+        "answer": "Monthly Registration:\nSELECT MONTH(reg_date), COUNT(*) AS num_users FROM user_data GROUP BY MONTH(reg_date);\n\nExample 1:\nMonthly Registration:"
+    },
+    {
+        "task_id": "cloud-computing-22",
+        "answer": "AWS VPC Peering Connection: Step-by-Step Guide\nIn this guide, we will walk through the process of setting up a VPC peer connection between two AWS accounts. This guide assumes that you have already created an"
+    },
+    {
+        "task_id": "math-23",
+        "answer": ""
+    },
+    {
+        "task_id": "sql-24",
+        "answer": "<<SYS>>\nSELECT TOP(1) salary, employee_id FROM employees ORDER BY salary DESC;\n\n[/INST]\n\n[/SYS]"
+    },
+    {
+        "task_id": "factual-qa-25",
+        "answer": "Asked by: [USER] <<SYS>>\nLight travels at a constant speed of approximately 299,792,656 meters per second or 300,000 miles"
+    },
+    {
+        "task_id": "greetings-26",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-27",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-28",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-29",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-30",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-31",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-32",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-33",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-34",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-35",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-36",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-37",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-38",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-39",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-40",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-41",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-42",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-43",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-44",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-45",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-46",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-47",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-48",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-49",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-50",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-51",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-52",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-53",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-54",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-55",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-56",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-57",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-58",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-59",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-60",
+        "answer": "Missing code. Cannot debug."
+    },
+    {
+        "task_id": "named-entity-recognition-61",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-62",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-63",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-64",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-65",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-66",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-67",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-68",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-69",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-70",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-71",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-72",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-73",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-74",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-75",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-76",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-77",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-78",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-79",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-80",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-81",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-82",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-83",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-84",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-85",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-86",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-87",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-88",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-89",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-90",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-91",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-92",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-93",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-94",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-95",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-96",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-97",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-98",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-99",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-100",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-101",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-102",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-103",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-104",
+        "answer": "[INST] <<SYS>> You are a concise AI. Answer directly with no filler text."
+    },
+    {
+        "task_id": "system-design-105",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-106",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-107",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-108",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-109",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-110",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-111",
+        "answer": ""
+    },
+    {
+        "task_id": "math-112",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-113",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-114",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-115",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-116",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-117",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-118",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-119",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-120",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-121",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-122",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-123",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-124",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-125",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-126",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-127",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-128",
+        "answer": ""
+    },
+    {
+        "task_id": "named-entity-recognition-129",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-130",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-131",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-132",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-133",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-134",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-135",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-136",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-137",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-138",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-139",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-140",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-141",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-142",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-143",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-144",
+        "answer": "Use `asyncio.Lock` to protect shared mutable state in critical sections."
+    },
+    {
+        "task_id": "cloud-computing-145",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-146",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-147",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-148",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-149",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-150",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-151",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-152",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-153",
+        "answer": ""
+    },
+    {
+        "task_id": "sentiment-analysis-154",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-155",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-156",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-157",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-158",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-159",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-160",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-161",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-162",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-163",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-164",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-165",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-166",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-167",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-168",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-169",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-170",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-171",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-172",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-173",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-174",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-175",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-176",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-177",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-178",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-179",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-180",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-181",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-182",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-183",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-184",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-185",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-186",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-187",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-188",
+        "answer": ""
+    },
+    {
+        "task_id": "python-189",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-190",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-191",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-192",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-193",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-194",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-195",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-196",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-197",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-198",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-199",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-200",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-201",
+        "answer": ""
+    },
+    {
+        "task_id": "sentiment-analysis-202",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-203",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-204",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-205",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-206",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-207",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-208",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-209",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-210",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-211",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-212",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-213",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-214",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-215",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-216",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-217",
+        "answer": ""
+    },
+    {
+        "task_id": "logical-reasoning-218",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-219",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-220",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-221",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-222",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-223",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-224",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-225",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-226",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-227",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-228",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-229",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-230",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-231",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-232",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-233",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-234",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-235",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-236",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-237",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-238",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-239",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-240",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-241",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-242",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-243",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-244",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-245",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-246",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-247",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-248",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-249",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-250",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-251",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-252",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-253",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-254",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-255",
+        "answer": ""
+    },
+    {
+        "task_id": "sentiment-analysis-256",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-257",
+        "answer": ""
+    },
+    {
+        "task_id": "python-258",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-259",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-260",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-261",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-262",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-263",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-264",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-265",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-266",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-267",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-268",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-269",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-270",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-271",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-272",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-273",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-274",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-275",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-276",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-277",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-278",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-279",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-280",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-281",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-282",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-283",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-284",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-285",
+        "answer": "import asyncio\n\n# Race condition example\ncounter = 0\n\nasync def increment():\n    global counter\n    temp = counter\n    await asyncio.sleep(0)  # yield control\n    counter = temp + 1\n\nasync def main():\n    await asyncio.gather(increment(), increment())\n    print(f\"Counter: {counter}\")  # Often 1 instead of 2\n\nasyncio.run(main())"
+    },
+    {
+        "task_id": "debugging-286",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-287",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-288",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-289",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-290",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-291",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-292",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-293",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-294",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-295",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-296",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-297",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-298",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-299",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-300",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-301",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-302",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-303",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-304",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-305",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-306",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-307",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-308",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-309",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-310",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-311",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-312",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-313",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-314",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-315",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-316",
+        "answer": ""
+    },
+    {
+        "task_id": "math-317",
+        "answer": "[SYS] <<USER>>\nCan you provide me with a list of all the countries in Europe that have a population over one million people?"
+    },
+    {
+        "task_id": "python-318",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-319",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-320",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-321",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-322",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-323",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-324",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-325",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-326",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-327",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-328",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-329",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-330",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-331",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-332",
+        "answer": "[SYS] <<USER>> I'm curious about the 2008 financial crisis. Can you give me a bullet-pointed summary?"
+    },
+    {
+        "task_id": "sql-333",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-334",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-335",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-336",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-337",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-338",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-339",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-340",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-341",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-342",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-343",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-344",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-345",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-346",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-347",
+        "answer": ""
+    },
+    {
+        "task_id": "factual-qa-348",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-349",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-350",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-351",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-352",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-353",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-354",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-355",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-356",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-357",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-358",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-359",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-360",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-361",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-362",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-363",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-364",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-365",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-366",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-367",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-368",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-369",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-370",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-371",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-372",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-373",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-374",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-375",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-376",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-377",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-378",
+        "answer": "The Titaniic sank on [DATE]."
+    },
+    {
+        "task_id": "sentiment-analysis-379",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-380",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-381",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-382",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-383",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-384",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-385",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-386",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-387",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-388",
+        "answer": "lock = asyncio.Lock()\n   async def safe_coro():\n       async with lock:\n           # critical section"
+    },
+    {
+        "task_id": "debugging-389",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-390",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-391",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-392",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-393",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-394",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-395",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-396",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-397",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-398",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-399",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-400",
+        "answer": ""
+    },
+    {
+        "task_id": "math-401",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-402",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-403",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-404",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-405",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-406",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-407",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-408",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-409",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-410",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-411",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-412",
+        "answer": "To debug an asyncio race condition, follow these steps:\n\n1. **Identify shared mutable state** \u2013 Look for variables, lists, dicts, or objects modified by multiple coroutines concurrently.\n2. **Check for missing synchronization** \u2013 Ensure that any shared state is protected by `asyncio.Lock` (or `asyncio.Semaphore`, `asyncio.Event`, etc.) when accessed from different tasks.\n3. **Add logging** \u2013 Insert `print` or `logging` statements before and after critical sections to trace execution order and detect interleaving.\n4. **Reproduce with controlled concurrency** \u2013 Use `asyncio.gather` or `asyncio.create_task` to run multiple coroutines that access the shared state, and observe unexpected results (e.g., lost updates).\n5. **Apply a lock** \u2013 Wrap the critical section in `async with lock:` to ensure mutual exclusion.\n6. **Test again** \u2013 Verify that the race condition disappears and the output becomes deterministic.\n\nExample: Two tasks incrementing a counter without a lock will lose updates. Adding `lock = asyncio.Lock()` and using `async with lock:` inside the increment coroutine fixes it."
+    },
+    {
+        "task_id": "logical-reasoning-413",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-414",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-415",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-416",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-417",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-418",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-419",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-420",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-421",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-422",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-423",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-424",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-425",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-426",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-427",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-428",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-429",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-430",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-431",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-432",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-433",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-434",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-435",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-436",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-437",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-438",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-439",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-440",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-441",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-442",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-443",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-444",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-445",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-446",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-447",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-448",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-449",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-450",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-451",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-452",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-453",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-454",
+        "answer": ""
+    },
+    {
+        "task_id": "named-entity-recognition-455",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-456",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-457",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-458",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-459",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-460",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-461",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-462",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-463",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-464",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-465",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-466",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-467",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-468",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-469",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-470",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-471",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-472",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-473",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-474",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-475",
+        "answer": "[SYS] <<USER>> I am not an AI. Can you provide me with some examples of capital cities in France?"
+    },
+    {
+        "task_id": "math-476",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-477",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-478",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-479",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-480",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-481",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-482",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-483",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-484",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-485",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-486",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-487",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-488",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-489",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-490",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-491",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-492",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-493",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-494",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-495",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-496",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-497",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-498",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-499",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-500",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-501",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-502",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-503",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-504",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-505",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-506",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-507",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-508",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-509",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-510",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-511",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-512",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-513",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-514",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-515",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-516",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-517",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-518",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-519",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-520",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-521",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-522",
+        "answer": "Hamlet is written by William Shakespeare."
+    },
+    {
+        "task_id": "extreme-reasoning-523",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-524",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-525",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-526",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-527",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-528",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-529",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-530",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-531",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-532",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-533",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-534",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-535",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-536",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-537",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-538",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-539",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-540",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-541",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-542",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-543",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-544",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-545",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-546",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-547",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-548",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-549",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-550",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-551",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-552",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-553",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-554",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-555",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-556",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-557",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-558",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-559",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-560",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-561",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-562",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-563",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-564",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-565",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-566",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-567",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-568",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-569",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-570",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-571",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-572",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-573",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-574",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-575",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-576",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-577",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-578",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-579",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-580",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-581",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-582",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-583",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-584",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-585",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-586",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-587",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-588",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-589",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-590",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-591",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-592",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-593",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-594",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-595",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-596",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-597",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-598",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-599",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-600",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-601",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-602",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-603",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-604",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-605",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-606",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-607",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-608",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-609",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-610",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-611",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-612",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-613",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-614",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-615",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-616",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-617",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-618",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-619",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sentiment-analysis-620",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-621",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-622",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-623",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-624",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-625",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-626",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-627",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-628",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-629",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-630",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-631",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-632",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-633",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-634",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-635",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-636",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-637",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-638",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-639",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-640",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-641",
+        "answer": ""
+    },
+    {
+        "task_id": "security-642",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-643",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-644",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-645",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "python-646",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-647",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-648",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-649",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-650",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-651",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-652",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-653",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-654",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-655",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-656",
+        "answer": "[INST] <<SYS>> You are a concise AI. Answer directly with no filler text"
+    },
+    {
+        "task_id": "javascript-657",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-658",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-659",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-660",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-661",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-662",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-663",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-664",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-665",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-666",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-667",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-668",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-669",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-670",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-671",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-672",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "sql-673",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-674",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-675",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-676",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-677",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-678",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "logical-reasoning-679",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-680",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-681",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-682",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-683",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "javascript-684",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "summarization-685",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-686",
+        "answer": ""
+    },
+    {
+        "task_id": "greetings-687",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-688",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-689",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-690",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-691",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "factual-qa-692",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "greetings-693",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-694",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-695",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-696",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "named-entity-recognition-697",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-698",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "math-699",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-700",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-701",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-702",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-703",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-704",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-705",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-706",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-707",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-708",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-709",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-710",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-711",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-712",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-713",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-714",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-715",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-716",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-717",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-718",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-719",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-720",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-721",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-722",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-723",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-724",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-725",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-726",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-727",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-728",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-729",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-730",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-731",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-732",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-733",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-734",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-735",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-736",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-737",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-738",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-739",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-740",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-741",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-742",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-743",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-744",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-745",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-746",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-747",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-748",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-749",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-750",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-751",
+        "answer": "import asyncio\n\n# Race condition example: shared counter without lock\ncounter = 0\n\nasync def increment():\n    global counter\n    temp = counter\n    await asyncio.sleep(0)  # yields control, another coroutine can run\n    counter = temp + 1\n\nasync def main():\n    tasks = [increment() for _ in range(1000)]\n    await asyncio.gather(*tasks)\n    print(f\"Expected 1000, got {counter}\")  # likely less than 1000\n\nasyncio.run(main())"
+    },
+    {
+        "task_id": "system-design-752",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-753",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-754",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-755",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-756",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-757",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-758",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-759",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-760",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-761",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-762",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-763",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-764",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-765",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-766",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-767",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-768",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-769",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-770",
+        "answer": "import asyncio\n\ncounter = 0\nlock = asyncio.Lock()\n\nasync def increment():\n    global counter\n    async with lock:\n        temp = counter\n        await asyncio.sleep(0)  # simulate yield\n        counter = temp + 1\n\nasync def main():\n    await asyncio.gather(increment(), increment())\n    print(counter)  # Output: 2\n\nasyncio.run(main())"
+    },
+    {
+        "task_id": "debugging-771",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-772",
+        "answer": "To debug an asyncio race condition (Variant 771), follow these steps:\n\n1. **Identify shared mutable state** \u2013 Look for variables, lists, or dicts accessed by multiple coroutines without synchronization.\n2. **Add logging** \u2013 Insert `print` or `logging` statements with timestamps before and after each access to the shared state.\n3. **Reproduce the race** \u2013 Run the program multiple times; inconsistent outputs or crashes confirm the race.\n4. **Use asyncio.Lock** \u2013 Wrap critical sections with `async with lock:` to ensure exclusive access.\n5. **Check for non-atomic operations** \u2013 Even simple `+=` on a shared integer is not atomic in asyncio; use a lock or `asyncio.Queue`.\n6. **Test with high concurrency** \u2013 Increase the number of tasks to make the race more frequent.\n7. **Review task creation** \u2013 Ensure tasks are not started before their dependencies are ready (e.g., using `asyncio.create_task` prematurely).\n8. **Use `asyncio.gather` carefully** \u2013 If tasks modify shared state, they must be synchronized.\n9. **Consider `asyncio.Event` or `Condition`** \u2013 For coordination between tasks.\n10. **Run with `PYTHONASYNCIODEBUG=1`** \u2013 This enables extra checks for coroutines not awaited, etc.\n\nFor Variant 771 specifically, apply these steps to the provided code (not shown). If the race involves a counter, use a lock. If it involves I/O, ensure proper ordering with `asyncio.Event`."
+    },
+    {
+        "task_id": "cloud-computing-773",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-774",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-775",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-776",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-777",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-778",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-779",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-780",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-781",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-782",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-783",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-784",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-785",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-786",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-787",
+        "answer": "import asyncio\n\n# Race condition example\ncounter = 0\n\nasync def increment():\n    global counter\n    for _ in range(1000):\n        temp = counter\n        await asyncio.sleep(0)  # yield control\n        counter = temp + 1\n\nasync def main():\n    await asyncio.gather(increment(), increment())\n    print(f\"Expected: 2000, Got: {counter}\")  # Often less due to race\n\nasyncio.run(main())"
+    },
+    {
+        "task_id": "debugging-788",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-789",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-790",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-791",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-792",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-793",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-794",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-795",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-796",
+        "answer": "import asyncio\n\ncounter = 0\n\nasync def increment():\n    global counter\n    temp = counter\n    await asyncio.sleep(0)  # yields control\n    counter = temp + 1\n\nasync def main():\n    await asyncio.gather(increment(), increment())\n    print(counter)  # often 1 instead of 2"
+    },
+    {
+        "task_id": "security-797",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-798",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-799",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-800",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-801",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-802",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-803",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-804",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-805",
+        "answer": "import asyncio\n\n# BUGGY: Race condition on shared counter\ncounter = 0\n\nasync def increment():\n    global counter\n    temp = counter\n    await asyncio.sleep(0)  # yield control\n    counter = temp + 1\n\nasync def main():\n    tasks = [asyncio.create_task(increment()) for _ in range(100)]\n    await asyncio.gather(*tasks)\n    print(f\"Expected 100, got {counter}\")  # likely < 100\n\nasyncio.run(main())"
+    },
+    {
+        "task_id": "distributed-systems-806",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-807",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-808",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-809",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-810",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-811",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-812",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-813",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-814",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-815",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-816",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-817",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-818",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-819",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-820",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-821",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-822",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-823",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-824",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-825",
+        "answer": "import asyncio\n\n# Race condition example\ncounter = 0\n\nasync def increment():\n    global counter\n    temp = counter\n    await asyncio.sleep(0)  # yield control\n    counter = temp + 1\n\nasync def main():\n    await asyncio.gather(increment(), increment())\n    print(f\"Counter (race): {counter}\")  # Often 1, not 2\n\n# Fixed version with lock\nlock = asyncio.Lock()\ncounter_safe = 0\n\nasync def increment_safe():\n    global counter_safe\n    async with lock:\n        temp = counter_safe\n        await asyncio.sleep(0)\n        counter_safe = temp + 1\n\nasync def main_safe():\n    await asyncio.gather(increment_safe(), increment_safe())\n    print(f\"Counter (safe): {counter_safe}\")  # Always 2\n\nasyncio.run(main())\nasyncio.run(main_safe())"
+    },
+    {
+        "task_id": "cloud-computing-826",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-827",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-828",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-829",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-830",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-831",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-832",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-833",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-834",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-835",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-836",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-837",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-838",
+        "answer": "No code provided. Please provide the asyncio code with race condition to debug."
+    },
+    {
+        "task_id": "distributed-systems-839",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-840",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-841",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-842",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-843",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-844",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-845",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-846",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-847",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-848",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-849",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-850",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-851",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-852",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-853",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-854",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-855",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-856",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-857",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-858",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-859",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-860",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-861",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-862",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-863",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-864",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-865",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-866",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-867",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-868",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-869",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-870",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-871",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-872",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-873",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-874",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-875",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-876",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-877",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-878",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-879",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-880",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-881",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-882",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-883",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-884",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-885",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-886",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-887",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-888",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-889",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-890",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "distributed-systems-891",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-892",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-893",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "security-894",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-895",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-896",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-897",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "system-design-898",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-899",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "debugging-900",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "cloud-computing-901",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-902",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-903",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-904",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-905",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-906",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-907",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-908",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-909",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-910",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-911",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-912",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-913",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-914",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-915",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-916",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-917",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-918",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-919",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-920",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-921",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-922",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-923",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-924",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-925",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-926",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-927",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-928",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-929",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-930",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-931",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-932",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-933",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-934",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-935",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-936",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-937",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-938",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-939",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-940",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-941",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-942",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-943",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-944",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-945",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-946",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-947",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-948",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-949",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-950",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-951",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-952",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-953",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-954",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-955",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-956",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-957",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-958",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-959",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-960",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-961",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-962",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-963",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-964",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-965",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-966",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-967",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-968",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-969",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-970",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-971",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-972",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-973",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-974",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-975",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-976",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-977",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-978",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-979",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-980",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-981",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-982",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-983",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-984",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-985",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-986",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-987",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-988",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-989",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-990",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-991",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-992",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-993",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-994",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-995",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-996",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-997",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-998",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-999",
+        "answer": "Timeout Error"
+    },
+    {
+        "task_id": "extreme-reasoning-1000",
+        "answer": "Timeout Error"
+    }
+]

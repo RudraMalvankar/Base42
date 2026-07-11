@@ -1,0 +1,350 @@
+{
+    "summary": {
+        "total_tasks": 42,
+        "api_fallbacks": 0,
+        "total_tokens": 7211,
+        "routes": {
+            "local_llm": 14,
+            "python": 15,
+            "fireworks": 13
+        }
+    },
+    "traces": [
+        {
+            "task_id": "named-entity-recognition-1",
+            "category": "factual",
+            "latency_ms": 8652.525372000127,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "distributed-systems-2",
+            "category": "factual",
+            "latency_ms": 12437.454980999973,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "python-3",
+            "category": "factual",
+            "latency_ms": 17071.725017000063,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-23",
+            "category": "math",
+            "latency_ms": 3.5959820006610244,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "sql-21",
+            "category": "factual",
+            "latency_ms": 17129.109819000405,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "cloud-computing-22",
+            "category": "factual",
+            "latency_ms": 17912.085325999215,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "sql-24",
+            "category": "factual",
+            "latency_ms": 16565.397350999774,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "factual-qa-25",
+            "category": "factual",
+            "latency_ms": 18151.273324999238,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "debugging-60",
+            "category": "code_gen",
+            "latency_ms": 4161.47260499929,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 515
+        },
+        {
+            "task_id": "named-entity-recognition-111",
+            "category": "math",
+            "latency_ms": 16.018842999983463,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "named-entity-recognition-104",
+            "category": "ner",
+            "latency_ms": 19472.47066,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-128",
+            "category": "math",
+            "latency_ms": 2.094069000122545,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "debugging-144",
+            "category": "code_gen",
+            "latency_ms": 5238.322858999709,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 677
+        },
+        {
+            "task_id": "math-153",
+            "category": "math",
+            "latency_ms": 2.307490000021062,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "named-entity-recognition-188",
+            "category": "math",
+            "latency_ms": 1.0349820004194044,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-201",
+            "category": "math",
+            "latency_ms": 1.771339999322663,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-217",
+            "category": "math",
+            "latency_ms": 0.8672690000821603,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-255",
+            "category": "math",
+            "latency_ms": 18.32686600027955,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-257",
+            "category": "math",
+            "latency_ms": 2.2109769997769035,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "debugging-285",
+            "category": "code_gen",
+            "latency_ms": 6247.780424000666,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 377
+        },
+        {
+            "task_id": "math-316",
+            "category": "math",
+            "latency_ms": 3.153953999571968,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-317",
+            "category": "factual",
+            "latency_ms": 19469.545820999883,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-347",
+            "category": "math",
+            "latency_ms": 3.1963539995558676,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "summarization-332",
+            "category": "factual",
+            "latency_ms": 19858.303357000295,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "debugging-388",
+            "category": "code_gen",
+            "latency_ms": 12754.354337999757,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 864
+        },
+        {
+            "task_id": "factual-qa-378",
+            "category": "factual",
+            "latency_ms": 18642.315377999694,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "named-entity-recognition-400",
+            "category": "math",
+            "latency_ms": 1.3049059998593293,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "debugging-412",
+            "category": "code_gen",
+            "latency_ms": 5914.662643999691,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 794
+        },
+        {
+            "task_id": "math-454",
+            "category": "math",
+            "latency_ms": 1.6090919998532627,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "factual-qa-475",
+            "category": "factual",
+            "latency_ms": 19864.12526499953,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "factual-qa-522",
+            "category": "factual",
+            "latency_ms": 18759.286315999816,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "named-entity-recognition-641",
+            "category": "math",
+            "latency_ms": 1.3874090000172146,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "named-entity-recognition-656",
+            "category": "ner",
+            "latency_ms": 19026.20300000035,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "math-686",
+            "category": "math",
+            "latency_ms": 1.1748980004995246,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "debugging-751",
+            "category": "code_gen",
+            "latency_ms": 5864.533926000149,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 459
+        },
+        {
+            "task_id": "debugging-770",
+            "category": "code_gen",
+            "latency_ms": 3573.826648999784,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 415
+        },
+        {
+            "task_id": "debugging-772",
+            "category": "code_gen",
+            "latency_ms": 4201.366866000171,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 633
+        },
+        {
+            "task_id": "debugging-787",
+            "category": "code_gen",
+            "latency_ms": 2868.958226000359,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 397
+        },
+        {
+            "task_id": "debugging-796",
+            "category": "code_gen",
+            "latency_ms": 5485.213775000375,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 890
+        },
+        {
+            "task_id": "debugging-805",
+            "category": "code_gen",
+            "latency_ms": 7307.714118000149,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 474
+        },
+        {
+            "task_id": "debugging-825",
+            "category": "code_gen",
+            "latency_ms": 2467.1076419999736,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 373
+        },
+        {
+            "task_id": "debugging-838",
+            "category": "code_gen",
+            "latency_ms": 2451.4024410000275,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 343
+        }
+    ]
+}
