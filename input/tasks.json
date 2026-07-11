@@ -1,34 +1,34 @@
 [
   {
-    "task_id": "practice-01",
-    "prompt": "What is the capital of Australia, and what body of water is it near?"
+    "task_id": "hard-01",
+    "prompt": "Design a distributed rate limiter capable of handling 100 million requests per minute across multiple data centers. Compare Token Bucket, Leaky Bucket, Sliding Window, and Fixed Window approaches. Recommend the best architecture, discuss CAP theorem implications, failure scenarios, consistency trade-offs, and provide high-level pseudocode."
   },
   {
-    "task_id": "practice-02",
-    "prompt": "A store has 240 items. It sells 15% on Monday and 60 more on Tuesday. How many items remain?"
+    "task_id": "hard-02",
+    "prompt": "You are given a legacy Python microservice with race conditions, deadlocks, memory leaks, and intermittent failures under high concurrency. Explain every issue you expect, propose a refactored architecture using async programming, provide corrected production-ready code, and explain why each change improves scalability."
   },
   {
-    "task_id": "practice-03",
-    "prompt": "Classify the sentiment of this review: The battery life is great, but the screen scratches too easily."
+    "task_id": "hard-03",
+    "prompt": "Solve this logic puzzle: Five engineers (Alice, Bob, Carol, David, and Emma) each work on one unique project (AI, Cloud, Robotics, Security, and IoT), use one unique programming language (Python, Rust, Go, Java, and C++), and work in one unique city (Tokyo, London, Berlin, Toronto, and Bangalore). Given twelve constraints... [add 10\u201315 constraints]. Determine every engineer's project, language, and city, showing your reasoning step by step."
   },
   {
-    "task_id": "practice-04",
-    "prompt": "Summarize the following in exactly one sentence: The web application is the core interface through which users interact with systems, services, and other users. A beautiful UI/UX is critical for retention and conversion. Ensuring that the application responds immediately, scales to millions of active sessions, and maintains zero security vulnerabilities is paramount for any business aiming to establish a premium brand."
+    "task_id": "hard-04",
+    "prompt": "Write a production-ready Python implementation of an LRU Cache supporting O(1) get and put operations using a hash map and doubly linked list. Include unit tests, explain time complexity, space complexity, edge cases, and compare it with LFU Cache."
   },
   {
-    "task_id": "practice-05",
-    "prompt": "Extract all named entities and their types from: Maria Sanchez joined Fireworks AI in Berlin last March."
+    "task_id": "hard-05",
+    "prompt": "Compare PostgreSQL, MongoDB, Cassandra, and DynamoDB for an event discovery platform expected to handle 500 million users worldwide. Discuss consistency models, indexing, replication, partitioning, query optimization, disaster recovery, costs, and provide a complete system architecture."
   },
   {
-    "task_id": "practice-06",
-    "prompt": "This function should return the max of a list but has a bug: def get_max(nums): return nums[0]. Find and fix it."
+    "task_id": "hard-06",
+    "prompt": "Explain how transformer attention works from first principles. Derive the scaled dot-product attention equation mathematically, explain why scaling is required, discuss multi-head attention, positional embeddings, and compare with recurrent neural networks."
   },
   {
-    "task_id": "practice-07",
-    "prompt": "Three friends, Sam, Jo, and Lee, each own a different pet: cat, dog, bird. Sam does not own the bird. Jo owns the dog. Who owns the cat?"
+    "task_id": "hard-07",
+    "prompt": "Given a repository with 100,000 Python files, design an AI-powered static analysis engine capable of detecting security vulnerabilities, dead code, dependency cycles, and architectural violations. Describe the complete architecture, algorithms, data structures, indexing strategy, and complexity analysis."
   },
   {
-    "task_id": "practice-08",
-    "prompt": "Write a Python function that returns the second-largest number in a list, handling duplicates correctly."
+    "task_id": "hard-08",
+    "prompt": "Design a production-grade AI orchestration engine similar to OpenAI's internal routing system. It should dynamically select between local models, serverless models, and deterministic tools using confidence estimation, latency prediction, cost estimation, and historical routing statistics. Explain every subsystem in detail."
   }
 ]

@@ -25,4 +25,5 @@ async def test_python_executor_invalid_math():
     executor = PythonExecutor()
     result = await executor.execute(ctx)
     
-    assert "Could not parse" in result.answer or "error" in result.answer.lower()
+    assert result.answer == ""
+    assert result.fallback_triggered is True
