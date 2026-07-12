@@ -42,12 +42,15 @@ class FireworksExecutor(BaseExecutor):
         
         from config import FeatureFlags
         if FeatureFlags.ENABLE_SHORT_FIREWORKS_PROMPTS:
-            system_prompt = "Output ONLY final answer. No filler."
+            system_prompt = "Output ONLY final answer. No filler. Provide explanations only if explicitly requested."
         else:
             system_prompt = "You are a highly efficient AI. Output ONLY the final answer. Do not use conversational filler, do not say 'Here is...', and do not explain your steps unless explicitly requested."
             
         if FeatureFlags.ENABLE_RESPONSE_COMPRESSION:
-            system_prompt += " Be extremely concise. Output only the direct answer. No markdown. No explanations. No chain of thought. Use JSON only if explicitly requested."
+            if context.category.value in ["factual", "qa", "definition"]:
+                system_prompt += " Be extremely concise. Output only the direct answer. No markdown or filler. Only provide explanations if the prompt specifically asks for them."
+            elif context.category.value not in ["sentiment", "ner", "code_gen", "architecture"]:
+                system_prompt += " Be extremely concise. Output only the direct answer. No markdown. No explanations. No chain of thought. Use JSON only if explicitly requested."
         
         if getattr(context, "failed_attempts", 0) > 0:
             system_prompt += " Retry: Follow format strictly. No filler."
@@ -55,7 +58,7 @@ class FireworksExecutor(BaseExecutor):
         # Static max_tokens allocation to prevent truncation retries and latency spikes
         if FeatureFlags.ENABLE_DYNAMIC_MAX_TOKENS and getattr(context, "profile", None) and getattr(context.profile, "estimated_output_tokens", 0) > 0:
             max_tokens = int(context.profile.estimated_output_tokens * 1.5)
-            max_tokens = min(max(max_tokens, 64), 4096)
+            max_tokens = min(max(max_tokens, 256), 4096)
         else:
             max_tokens = 4096
             

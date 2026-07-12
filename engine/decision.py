@@ -69,11 +69,14 @@ class LocalLLMScorer(ExecutorScorer):
             logger.warning(f"Local LLM vetoed: Context overflow")
             return -1.0
             
-        # STRICT 2vCPU HACKATHON BOTTLENECK FIX:
-        # The C++ Local LLM blocks a physical thread. If we route Factual/Summarization here, 
-        # the 1000-task queue will take 20+ minutes and fail the 10-minute Hackathon limit.
-        # We exclusively restrict Local LLM to the absolute fastest tasks (NER & Sentiment)
-        if context.category not in [TaskCategory.SENTIMENT, TaskCategory.NER]:
+        from config import FeatureFlags
+        allowed_categories = []
+        if FeatureFlags.ENABLE_LOCAL_FACTUAL:
+            allowed_categories.append(TaskCategory.FACTUAL)
+        if FeatureFlags.ENABLE_LOCAL_SUMMARIZATION:
+            allowed_categories.append(TaskCategory.SUMMARIZATION)
+            
+        if context.category not in allowed_categories:
             return -1.0
 
         base_accuracy = 0.0

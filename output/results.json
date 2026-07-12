@@ -1,42 +1,42 @@
 [
     {
         "task_id": "T01",
-        "answer": "Timeout Error"
+        "answer": "<<SYS>> You are a concise AI. Answer directly with no filler text."
     },
     {
         "task_id": "T01b",
-        "answer": "Timeout Error"
+        "answer": "<<SYS>> You are a concise AI. Answer directly with no filler text."
     },
     {
         "task_id": "T01c",
-        "answer": "Timeout Error"
+        "answer": "<<SYS>>\nRAM (Random Access Memory) is used to store temporary data while processing instructions, while ROM (Read Only Memory) is used to store permanent data that cannot be changed or erased. RAM is volatile, meaning it loses its contents when the power goes off, whereas ROM is non-volatile and remains intact even if the power goes out."
     },
     {
         "task_id": "T02",
-        "answer": "Timeout Error"
+        "answer": "1672"
     },
     {
         "task_id": "T02b",
-        "answer": "Timeout Error"
+        "answer": "1.875 cups, $4.50"
     },
     {
         "task_id": "T03",
-        "answer": "Timeout Error"
+        "answer": "Positive: Despite delivery issues, the product functioned well and customer support resolved the problem quickly, leaving a favorable impression."
     },
     {
         "task_id": "T03b",
-        "answer": "Timeout Error"
+        "answer": "Positive: Despite minor packaging issues, the user emphasizes the device is flawless and quick to set up."
     },
     {
         "task_id": "T04",
-        "answer": "Timeout Error"
+        "answer": "Machine learning is used in healthcare for diagnosis, treatment planning, and patient monitoring, analyzing medical images and electronic health records to detect patterns. However, concerns about interpretability, privacy, bias, and liability persist, while regulatory frameworks struggle to keep pace with deployment."
     },
     {
         "task_id": "T04b",
-        "answer": "Timeout Error"
+        "answer": "- Remote work improves flexibility, reduces commute, and enhances work-life balance.\n- Challenges include collaboration difficulties, culture erosion, and blurred boundaries.\n- Companies invest in digital tools and repurpose offices for social creativity."
     },
     {
         "task_id": "T05",
-        "answer": "Timeout Error"
+        "answer": "March 15 2023: DATE, Sundar Pichai: PERSON, Google: ORGANIZATION, Zurich: LOCATION, ETH Zurich: ORGANIZATION"
     }
 ]

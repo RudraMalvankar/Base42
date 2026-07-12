@@ -1,9 +1,93 @@
 {
     "summary": {
-        "total_tasks": 0,
-        "api_fallbacks": 0,
-        "total_tokens": 0,
-        "routes": {}
+        "total_tasks": 10,
+        "api_fallbacks": 2,
+        "total_tokens": 1822,
+        "routes": {
+            "fireworks": 7,
+            "local_llm": 3
+        }
     },
-    "traces": []
+    "traces": [
+        {
+            "task_id": "T02",
+            "category": "math",
+            "latency_ms": 1530.2497840002616,
+            "route": "fireworks",
+            "fallback_triggered": true,
+            "tokens": 209
+        },
+        {
+            "task_id": "T02b",
+            "category": "math",
+            "latency_ms": 2429.4712979990436,
+            "route": "fireworks",
+            "fallback_triggered": true,
+            "tokens": 361
+        },
+        {
+            "task_id": "T01b",
+            "category": "factual",
+            "latency_ms": 6054.711341999791,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "T01",
+            "category": "factual",
+            "latency_ms": 6245.5365839996375,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "T03",
+            "category": "sentiment",
+            "latency_ms": 3457.5725560007413,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 210
+        },
+        {
+            "task_id": "T04",
+            "category": "summarization",
+            "latency_ms": 1271.5151599986712,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 281
+        },
+        {
+            "task_id": "T04b",
+            "category": "summarization",
+            "latency_ms": 2445.604225998977,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 389
+        },
+        {
+            "task_id": "T03b",
+            "category": "sentiment",
+            "latency_ms": 4232.257498999388,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 195
+        },
+        {
+            "task_id": "T05",
+            "category": "ner",
+            "latency_ms": 3217.556429999604,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 177
+        },
+        {
+            "task_id": "T01c",
+            "category": "factual",
+            "latency_ms": 14960.273601000154,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
+        }
+    ]
 }

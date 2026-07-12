@@ -114,6 +114,11 @@ class MathValidator(BaseValidator):
     def validate(self, result: ExecutionResult) -> ExecutionResult:
         text = self.strip_fillers(result.answer)
         
+        # Preserve structured answers like "1.875 cups... Total cost = $4.50"
+        if "$" in text or "cost" in text.lower() or "cups" in text.lower():
+            result.answer = text
+            return result
+            
         try:
             val = ast.literal_eval(text)
             if isinstance(val, (int, float)):
@@ -135,7 +140,7 @@ class MathValidator(BaseValidator):
             if len(matches) == 1:
                 result.answer = matches[0]
             else:
-                result.answer = ", ".join(matches)
+                result.answer = text # Keep original text instead of joining with commas
         else:
             result.answer = text
             

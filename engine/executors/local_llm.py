@@ -60,9 +60,7 @@ class LocalLLMExecutor(BaseExecutor):
 
     def _get_grammar(self, category: str):
         try:
-            if category == "sentiment":
-                return LlamaGrammar.from_string(SENTIMENT_GRAMMAR)
-            elif category == "ner":
+            if category == "ner":
                 return LlamaGrammar.from_string(NER_GRAMMAR)
         except Exception as e:
             logger.warning(f"Failed to compile grammar for {category}: {e}")
@@ -72,9 +70,9 @@ class LocalLLMExecutor(BaseExecutor):
         # Few-shot prompting for strict adherence
         if category == "sentiment":
             return [
-                {"role": "system", "content": "Classify sentiment as Positive, Negative, Neutral, or Mixed."},
-                {"role": "user", "content": "I hate this late delivery."},
-                {"role": "assistant", "content": "Negative"},
+                {"role": "system", "content": "Classify sentiment as Positive, Negative, Neutral, or Mixed, and provide a one-sentence reason."},
+                {"role": "user", "content": "I hate this late delivery, but the customer service was nice."},
+                {"role": "assistant", "content": "Mixed - The delivery was late but the customer service was nice."},
                 {"role": "user", "content": prompt}
             ]
         elif category == "ner":
@@ -135,7 +133,7 @@ class LocalLLMExecutor(BaseExecutor):
         max_tokens = 256
         if context.profile and context.profile.estimated_output_tokens:
             max_tokens = int(context.profile.estimated_output_tokens * 1.2)
-            max_tokens = min(max_tokens, 512)
+            max_tokens = min(max(max_tokens, 256), 512)
 
         start_time = time.time()
         try:

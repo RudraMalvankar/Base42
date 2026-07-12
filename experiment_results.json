@@ -1,0 +1,44 @@
+[
+    {
+        "flag": "BASELINE",
+        "accuracy": 100.0,
+        "total_tokens": 2280,
+        "api_fallbacks": 6,
+        "duration": 78.64357662200928
+    },
+    {
+        "flag": "ENABLE_LOCAL_FACTUAL",
+        "accuracy": 100.0,
+        "total_tokens": 2318,
+        "api_fallbacks": 8,
+        "duration": 22.79697036743164
+    },
+    {
+        "flag": "ENABLE_LOCAL_SUMMARIZATION",
+        "accuracy": 100.0,
+        "total_tokens": 2254,
+        "api_fallbacks": 8,
+        "duration": 49.744723320007324
+    },
+    {
+        "flag": "ENABLE_RESERVED_LOCAL_WORKERS",
+        "accuracy": 100.0,
+        "total_tokens": 1898,
+        "api_fallbacks": 4,
+        "duration": 18.261717796325684
+    },
+    {
+        "flag": "ENABLE_SHORT_FIREWORKS_PROMPTS",
+        "accuracy": 100.0,
+        "total_tokens": 2252,
+        "api_fallbacks": 6,
+        "duration": 55.93496775627136
+    },
+    {
+        "flag": "ENABLE_DYNAMIC_MAX_TOKENS",
+        "accuracy": 100.0,
+        "total_tokens": 3835,
+        "api_fallbacks": 6,
+        "duration": 52.778648376464844
+    }
+]

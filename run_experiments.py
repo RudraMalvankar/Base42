@@ -8,28 +8,13 @@ import statistics
 # ENABLE_RESERVED_LOCAL_WORKERS=True, ENABLE_SHORT_FIREWORKS_PROMPTS=True are baked into config.py
 
 EXPERIMENTS = [
-    {"name": "BASELINE", "env": {}},
-    
-    # Phase 1
-    {"name": "ENABLE_RESPONSE_COMPRESSION", "env": {"ENABLE_RESPONSE_COMPRESSION": "True"}},
-    {"name": "ENABLE_ROUTER_FIX", "env": {"ENABLE_ROUTER_FIX": "True"}},
-    {"name": "ENABLE_SMART_ROUTING_V2", "env": {"ENABLE_SMART_ROUTING_V2": "True"}},
-    
-    # Concurrency
-    {"name": "CONCURRENCY_2", "env": {"FIREWORKS_CONCURRENCY": "2"}},
-    {"name": "CONCURRENCY_4", "env": {"FIREWORKS_CONCURRENCY": "4"}},
-    {"name": "CONCURRENCY_6", "env": {"FIREWORKS_CONCURRENCY": "6"}},
-    
-    # Phase 2
-    {"name": "ENABLE_DETERMINISTIC_EXTRACTION", "env": {"ENABLE_DETERMINISTIC_EXTRACTION": "True"}},
-    {"name": "ENABLE_LOCAL_FACTUAL", "env": {"ENABLE_LOCAL_FACTUAL": "True"}},
-    
     # The Kitchen Sink (Best effort combination based on assumptions)
     {"name": "ALL_OPTIMIZATIONS", "env": {
         "ENABLE_RESPONSE_COMPRESSION": "True",
         "ENABLE_ROUTER_FIX": "True",
         "ENABLE_SMART_ROUTING_V2": "True",
         "ENABLE_DETERMINISTIC_EXTRACTION": "True",
+        "ENABLE_LOCAL_FACTUAL": "True",
         "FIREWORKS_CONCURRENCY": "4"
     }}
 ]
@@ -49,7 +34,7 @@ def run_experiment(exp):
     for k, v in exp["env"].items():
         cmd.extend(["-e", f"{k}={v}"])
         
-    cmd.append("base42:latest")
+    cmd.append("base42_local:latest")
     cmd.append("python")
     cmd.append("main.py")
     
