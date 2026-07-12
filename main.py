@@ -54,11 +54,14 @@ class Base42Orchestrator:
                 from engine.executors.math_word_solver import solve_word_problem
                 import asyncio
                 
-                def llm_call(p):
-                    return self.local_exec._invoke_sync(p, 256)
+                def math_worker():
+                    def llm_call(p):
+                        return self.local_exec._invoke_sync(p, 256)
+                    return solve_word_problem(context.request.prompt, llm_call)
                     
                 try:
-                    ans = await asyncio.to_thread(solve_word_problem, context.request.prompt, llm_call)
+                    loop = asyncio.get_running_loop()
+                    ans = await loop.run_in_executor(self.local_exec.executor, math_worker)
                     if ans:
                         result.answer = str(ans)
                         result.fallback_triggered = False
