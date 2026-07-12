@@ -43,7 +43,7 @@ class FireworksExecutor(BaseExecutor):
         system_prompt = "You are a highly efficient AI. Output ONLY the final answer. Do not use conversational filler, do not say 'Here is...', and do not explain your steps unless explicitly requested."
         
         if getattr(context, "failed_attempts", 0) > 0:
-            system_prompt += " NOTE: Your previous attempt failed validation. Think carefully, but ensure the final output strictly adheres to the requested format without extra conversational text."
+            system_prompt += " Retry: Follow format strictly. No filler."
         
         # Static max_tokens allocation to prevent truncation retries and latency spikes
         max_tokens = 4096

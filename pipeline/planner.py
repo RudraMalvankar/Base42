@@ -95,7 +95,7 @@ class ResultAggregator:
         total_tokens = 0
         
         for idx, res in enumerate(results):
-            combined_answer += f"[{res.route_taken.value.upper()} Output {idx+1}]:\n{res.answer}\n\n"
+            combined_answer += f"{res.answer}\n\n"
             total_tokens += res.fireworks_tokens
             
         final_route = results[0].route_taken 

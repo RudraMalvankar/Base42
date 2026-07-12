@@ -21,6 +21,8 @@ class StructuralFeatures(BaseModel):
     has_code_block: bool
     has_math_expression: bool
     has_ner_signal: bool
+    has_sentiment_signal: bool = False
+    has_summary_signal: bool = False
     logical_operator_count: int
     question_type: QuestionType
     structural_confidence: float

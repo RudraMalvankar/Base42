@@ -135,7 +135,7 @@ class MathValidator(BaseValidator):
             if len(matches) == 1:
                 result.answer = matches[0]
             else:
-                result.answer = matches[-1]
+                result.answer = ", ".join(matches)
         else:
             result.answer = text
             

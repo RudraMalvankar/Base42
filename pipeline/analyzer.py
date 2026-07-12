@@ -62,6 +62,10 @@ class PromptAnalyzer:
                 primary_category = TaskCategory.MATH
             elif features.has_ner_signal:
                 primary_category = TaskCategory.NER
+            elif features.has_sentiment_signal:
+                primary_category = TaskCategory.SENTIMENT
+            elif features.has_summary_signal:
+                primary_category = TaskCategory.SUMMARIZATION
             task_types = [(primary_category.value, features.structural_confidence)]
             method = ClassificationMethod.STRUCTURAL
         else:

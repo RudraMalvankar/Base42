@@ -20,6 +20,14 @@ class StructuralExtractor:
         r'(extract|entities|named entity|who is|find all|list all people|locations|organizations)',
         re.IGNORECASE
     )
+    _SENTIMENT_PATTERN = re.compile(
+        r'(sentiment|positive.{0,10}negative|classify.*review|classify.*tweet|tone of this)',
+        re.IGNORECASE
+    )
+    _SUMMARY_PATTERN = re.compile(
+        r'(summar|condense|tl;?dr|in (exactly )?\w+ (sentence|bullet|word)s?)',
+        re.IGNORECASE
+    )
     _LOGIC_OPS = re.compile(
         r'\b(if|not|and|or|only if|therefore|implies|unless|neither|either)\b',
         re.IGNORECASE
@@ -39,6 +47,8 @@ class StructuralExtractor:
         has_code_block = bool(self._CODE_PATTERN.search(prompt))
         has_math = bool(self._MATH_PATTERN.search(prompt))
         has_ner = bool(self._NER_PATTERN.search(prompt))
+        has_sentiment = bool(self._SENTIMENT_PATTERN.search(prompt))
+        has_summary = bool(self._SUMMARY_PATTERN.search(prompt))
         logic_count = len(self._LOGIC_OPS.findall(prompt))
 
         # Attempt AST parse for code detection
@@ -60,7 +70,7 @@ class StructuralExtractor:
 
         # Compute structural confidence
         # High confidence = strong, unambiguous single-domain signal
-        signals = sum([has_code_block, has_math, has_ner, logic_count > 1])
+        signals = sum([has_code_block, has_math, has_ner, has_sentiment, has_summary, logic_count > 1])
         if signals == 1:
             structural_confidence = 0.90  # Single clear signal
         elif signals == 0:
@@ -74,6 +84,8 @@ class StructuralExtractor:
             has_code_block=has_code_block,
             has_math_expression=has_math,
             has_ner_signal=has_ner,
+            has_sentiment_signal=has_sentiment,
+            has_summary_signal=has_summary,
             logical_operator_count=logic_count,
             question_type=question_type,
             structural_confidence=structural_confidence,

@@ -42,8 +42,13 @@ class MathSandbox:
             if not re.search(r'(?i)(calculate|compute|solve|\+)', prompt):
                 return ""
 
-        clean = re.sub(r'(?i)(what is|calculate|compute|solve|find the value of|equals|answer to)', '', prompt)
+        clean = re.sub(r'(?i)(what is|calculate|compute|solve|find the value of|equals|answer to)', '', prompt).strip()
         
+        # If there are many alphabetical characters remaining, it's a word problem. Fallback to API.
+        text_only = re.sub(r'(?i)(math|sqrt|sin|cos|tan|log|pow|abs)', '', clean)
+        if len(re.findall(r'[a-z]', text_only, re.IGNORECASE)) > 3:
+            return ""
+            
         # Match function calls like math.sqrt(144) or pure equations
         match = re.search(r'((?:math\.)?[a-z]{3,5}\s*\([\d\s\+\-\*\/\.\%]+\)|[\d\s\+\-\*\/\(\)\.\%]{3,})', clean, re.IGNORECASE)
         if match:
