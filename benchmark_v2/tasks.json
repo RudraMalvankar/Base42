@@ -1,0 +1,1922 @@
+[
+    {
+        "task_id": "factual-easy-1",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of France?",
+        "expected_output": "Paris",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-2",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of Japan?",
+        "expected_output": "Tokyo",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-3",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of Brazil?",
+        "expected_output": "Brasilia",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-4",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of Canada?",
+        "expected_output": "Ottawa",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-5",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of Australia?",
+        "expected_output": "Canberra",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-6",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of Germany?",
+        "expected_output": "Berlin",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-7",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of Italy?",
+        "expected_output": "Rome",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-8",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of Spain?",
+        "expected_output": "Madrid",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-9",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of South Korea?",
+        "expected_output": "Seoul",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-easy-10",
+        "category": "factual",
+        "difficulty": "easy",
+        "prompt": "What is the capital city of India?",
+        "expected_output": "New Delhi",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-1",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Mars?",
+        "expected_output": "4th",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-2",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Jupiter?",
+        "expected_output": "5th",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-3",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Saturn?",
+        "expected_output": "6th",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-4",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Venus?",
+        "expected_output": "2nd",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-5",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Neptune?",
+        "expected_output": "8th",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-6",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Uranus?",
+        "expected_output": "7th",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-7",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Earth?",
+        "expected_output": "3rd",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-8",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Mercury?",
+        "expected_output": "1st",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-9",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Mars?",
+        "expected_output": "4th",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-medium-10",
+        "category": "factual",
+        "difficulty": "medium",
+        "prompt": "Which planet from the sun is Jupiter?",
+        "expected_output": "5th",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "factual-hard-1",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Telephone?",
+        "expected_output": "Alexander Graham Bell",
+        "grading_rubric": "contains: Bell"
+    },
+    {
+        "task_id": "factual-hard-2",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Lightbulb?",
+        "expected_output": "Thomas Edison",
+        "grading_rubric": "contains: Edison"
+    },
+    {
+        "task_id": "factual-hard-3",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Airplane?",
+        "expected_output": "Wright Brothers",
+        "grading_rubric": "contains: Brothers"
+    },
+    {
+        "task_id": "factual-hard-4",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Penicillin?",
+        "expected_output": "Alexander Fleming",
+        "grading_rubric": "contains: Fleming"
+    },
+    {
+        "task_id": "factual-hard-5",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the World Wide Web?",
+        "expected_output": "Tim Berners-Lee",
+        "grading_rubric": "contains: Berners-Lee"
+    },
+    {
+        "task_id": "factual-hard-6",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Telephone?",
+        "expected_output": "Alexander Graham Bell",
+        "grading_rubric": "contains: Bell"
+    },
+    {
+        "task_id": "factual-hard-7",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Lightbulb?",
+        "expected_output": "Thomas Edison",
+        "grading_rubric": "contains: Edison"
+    },
+    {
+        "task_id": "factual-hard-8",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Airplane?",
+        "expected_output": "Wright Brothers",
+        "grading_rubric": "contains: Brothers"
+    },
+    {
+        "task_id": "factual-hard-9",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the Penicillin?",
+        "expected_output": "Alexander Fleming",
+        "grading_rubric": "contains: Fleming"
+    },
+    {
+        "task_id": "factual-hard-10",
+        "category": "factual",
+        "difficulty": "hard",
+        "prompt": "Who is credited with the invention of the World Wide Web?",
+        "expected_output": "Tim Berners-Lee",
+        "grading_rubric": "contains: Berners-Lee"
+    },
+    {
+        "task_id": "math-easy-1",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 13 + 29?",
+        "expected_output": "42",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-2",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 12 + 10?",
+        "expected_output": "22",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-3",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 17 + 41?",
+        "expected_output": "58",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-4",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 41 + 23?",
+        "expected_output": "64",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-5",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 27 + 35?",
+        "expected_output": "62",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-6",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 31 + 24?",
+        "expected_output": "55",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-7",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 39 + 21?",
+        "expected_output": "60",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-8",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 41 + 40?",
+        "expected_output": "81",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-9",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 46 + 44?",
+        "expected_output": "90",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-easy-10",
+        "category": "math",
+        "difficulty": "easy",
+        "prompt": "What is 32 + 38?",
+        "expected_output": "70",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-1",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 208 * 10.",
+        "expected_output": "2080",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-2",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 412 * 16.",
+        "expected_output": "6592",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-3",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 326 * 5.",
+        "expected_output": "1630",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-4",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 398 * 16.",
+        "expected_output": "6368",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-5",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 474 * 18.",
+        "expected_output": "8532",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-6",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 154 * 11.",
+        "expected_output": "1694",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-7",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 437 * 7.",
+        "expected_output": "3059",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-8",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 289 * 11.",
+        "expected_output": "3179",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-9",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 297 * 15.",
+        "expected_output": "4455",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-medium-10",
+        "category": "math",
+        "difficulty": "medium",
+        "prompt": "Calculate 239 * 17.",
+        "expected_output": "4063",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-1",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 10 apples and 11 oranges. They divide all fruit equally into 2 baskets. How many total fruits are in each basket?",
+        "expected_output": "10.5",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-2",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 13 apples and 30 oranges. They divide all fruit equally into 4 baskets. How many total fruits are in each basket?",
+        "expected_output": "10.75",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-3",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 20 apples and 39 oranges. They divide all fruit equally into 3 baskets. How many total fruits are in each basket?",
+        "expected_output": "19.666666666666668",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-4",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 37 apples and 12 oranges. They divide all fruit equally into 5 baskets. How many total fruits are in each basket?",
+        "expected_output": "9.8",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-5",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 21 apples and 25 oranges. They divide all fruit equally into 5 baskets. How many total fruits are in each basket?",
+        "expected_output": "9.2",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-6",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 39 apples and 23 oranges. They divide all fruit equally into 3 baskets. How many total fruits are in each basket?",
+        "expected_output": "20.666666666666668",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-7",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 14 apples and 34 oranges. They divide all fruit equally into 3 baskets. How many total fruits are in each basket?",
+        "expected_output": "16",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-8",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 44 apples and 44 oranges. They divide all fruit equally into 2 baskets. How many total fruits are in each basket?",
+        "expected_output": "44",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-9",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 48 apples and 38 oranges. They divide all fruit equally into 2 baskets. How many total fruits are in each basket?",
+        "expected_output": "43",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "math-hard-10",
+        "category": "math",
+        "difficulty": "hard",
+        "prompt": "A store has 42 apples and 26 oranges. They divide all fruit equally into 5 baskets. How many total fruits are in each basket?",
+        "expected_output": "13.6",
+        "grading_rubric": "exact_match"
+    },
+    {
+        "task_id": "sentiment-easy-1",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'I love this product, it works perfectly!'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-2",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Absolutely fantastic experience.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-3",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Highly recommend to everyone.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-4",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Best purchase ever.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-5",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Amazing quality and fast shipping.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-6",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'I love this product, it works perfectly!'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-7",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Absolutely fantastic experience.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-8",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Highly recommend to everyone.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-9",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Best purchase ever.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-easy-10",
+        "category": "sentiment",
+        "difficulty": "easy",
+        "prompt": "Classify the sentiment: 'Amazing quality and fast shipping.'",
+        "expected_output": "positive",
+        "grading_rubric": "contains: positive"
+    },
+    {
+        "task_id": "sentiment-medium-1",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Terrible service, completely broken.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-2",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Do not buy this, it is a scam.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-3",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'I hate it, worst thing I've ever used.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-4",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Awful quality.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-5",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Disappointed with the results.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-6",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Terrible service, completely broken.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-7",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Do not buy this, it is a scam.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-8",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'I hate it, worst thing I've ever used.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-9",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Awful quality.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-medium-10",
+        "category": "sentiment",
+        "difficulty": "medium",
+        "prompt": "Classify the sentiment: 'Disappointed with the results.'",
+        "expected_output": "negative",
+        "grading_rubric": "contains: negative"
+    },
+    {
+        "task_id": "sentiment-hard-1",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'The item arrived on Tuesday.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-2",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'It is a standard tool.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-3",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'The color is blue.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-4",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'It functions as described.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-5",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'I have no strong feelings about it.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-6",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'The item arrived on Tuesday.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-7",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'It is a standard tool.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-8",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'The color is blue.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-9",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'It functions as described.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "sentiment-hard-10",
+        "category": "sentiment",
+        "difficulty": "hard",
+        "prompt": "Classify the sentiment: 'I have no strong feelings about it.'",
+        "expected_output": "neutral",
+        "grading_rubric": "contains: neutral"
+    },
+    {
+        "task_id": "summarization-easy-1",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-2",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-3",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-4",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-5",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-6",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-7",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-8",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-9",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-easy-10",
+        "category": "summarization",
+        "difficulty": "easy",
+        "prompt": "Summarize in 3 words: The quick brown fox jumps over the lazy dog.",
+        "expected_output": "fox jumps dog",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-1",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-2",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-3",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-4",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-5",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-6",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-7",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-8",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-9",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-medium-10",
+        "category": "summarization",
+        "difficulty": "medium",
+        "prompt": "Summarize this: AI is transforming industries by automating tasks, improving data analysis, and enhancing customer experiences.",
+        "expected_output": "AI automates tasks and improves industries.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-1",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-2",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-3",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-4",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-5",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-6",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-7",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-8",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-9",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "summarization-hard-10",
+        "category": "summarization",
+        "difficulty": "hard",
+        "prompt": "Provide a concise summary: Photosynthesis is the process used by plants, algae and certain bacteria to harness energy from sunlight and turn it into chemical energy.",
+        "expected_output": "Plants convert sunlight into chemical energy.",
+        "grading_rubric": "semantic_similarity"
+    },
+    {
+        "task_id": "ner-easy-1",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-2",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-3",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-4",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-5",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-6",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-7",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-8",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-9",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-easy-10",
+        "category": "ner",
+        "difficulty": "easy",
+        "prompt": "Extract the person name: John went to the store.",
+        "expected_output": "John",
+        "grading_rubric": "contains: John"
+    },
+    {
+        "task_id": "ner-medium-1",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-2",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-3",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-4",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-5",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-6",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-7",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-8",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-9",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-medium-10",
+        "category": "ner",
+        "difficulty": "medium",
+        "prompt": "Extract the organization: Google announced a new product today.",
+        "expected_output": "Google",
+        "grading_rubric": "contains: Google"
+    },
+    {
+        "task_id": "ner-hard-1",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-2",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-3",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-4",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-5",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-6",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-7",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-8",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-9",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "ner-hard-10",
+        "category": "ner",
+        "difficulty": "hard",
+        "prompt": "Extract the location: The conference will be held in San Francisco, California next year.",
+        "expected_output": "San Francisco, California",
+        "grading_rubric": "contains: San Francisco"
+    },
+    {
+        "task_id": "logic-easy-1",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-2",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-3",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-4",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-5",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-6",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-7",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-8",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-9",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-easy-10",
+        "category": "logic",
+        "difficulty": "easy",
+        "prompt": "If A > B and B > C, is A > C? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-medium-1",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-2",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-3",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-4",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-5",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-6",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-7",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-8",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-9",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-medium-10",
+        "category": "logic",
+        "difficulty": "medium",
+        "prompt": "All blips are blops. Some blops are bloops. Are all blips bloops? Answer Yes, No, or Unknown.",
+        "expected_output": "Unknown",
+        "grading_rubric": "contains: Unknown"
+    },
+    {
+        "task_id": "logic-hard-1",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-2",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-3",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-4",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-5",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-6",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-7",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-8",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-9",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "logic-hard-10",
+        "category": "logic",
+        "difficulty": "hard",
+        "prompt": "There are 3 doors. Behind one is a car, behind two are goats. You pick Door 1. The host opens Door 3 to reveal a goat. Should you switch to Door 2? Answer Yes or No.",
+        "expected_output": "Yes",
+        "grading_rubric": "contains: Yes"
+    },
+    {
+        "task_id": "code_generation-easy-1",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-2",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-3",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-4",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-5",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-6",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-7",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-8",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-9",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-easy-10",
+        "category": "code_generation",
+        "difficulty": "easy",
+        "prompt": "Write a Python function to add two numbers a and b.",
+        "expected_output": "def add(a, b): return a + b",
+        "grading_rubric": "contains: return a + b"
+    },
+    {
+        "task_id": "code_generation-medium-1",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-2",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-3",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-4",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-5",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-6",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-7",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-8",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-9",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-medium-10",
+        "category": "code_generation",
+        "difficulty": "medium",
+        "prompt": "Write a Python function to reverse a string s.",
+        "expected_output": "return s[::-1]",
+        "grading_rubric": "contains: [::-1]"
+    },
+    {
+        "task_id": "code_generation-hard-1",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-2",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-3",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-4",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-5",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-6",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-7",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-8",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-9",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_generation-hard-10",
+        "category": "code_generation",
+        "difficulty": "hard",
+        "prompt": "Write a Python function to check if a number n is prime.",
+        "expected_output": "n % i == 0",
+        "grading_rubric": "contains: %"
+    },
+    {
+        "task_id": "code_debugging-easy-1",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-2",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-3",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-4",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-5",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-6",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-7",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-8",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-9",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-easy-10",
+        "category": "code_debugging",
+        "difficulty": "easy",
+        "prompt": "Fix this code: def add(a, b) return a + b",
+        "expected_output": "def add(a, b):",
+        "grading_rubric": "contains: :"
+    },
+    {
+        "task_id": "code_debugging-medium-1",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-2",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-3",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-4",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-5",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-6",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-7",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-8",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-9",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-medium-10",
+        "category": "code_debugging",
+        "difficulty": "medium",
+        "prompt": "Fix the loop bounds: for i in range(len(arr) + 1): print(arr[i])",
+        "expected_output": "range(len(arr))",
+        "grading_rubric": "contains: range(len(arr))"
+    },
+    {
+        "task_id": "code_debugging-hard-1",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-2",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-3",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-4",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-5",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-6",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-7",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-8",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-9",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    },
+    {
+        "task_id": "code_debugging-hard-10",
+        "category": "code_debugging",
+        "difficulty": "hard",
+        "prompt": "Fix the recursion limit issue: def fact(n): return n * fact(n-1)",
+        "expected_output": "if n == 0",
+        "grading_rubric": "contains: if"
+    }
+]
