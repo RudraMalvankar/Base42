@@ -23,6 +23,7 @@ COPY download_model.py .
 # Install dependencies
 # Install dependencies using pre-compiled universal CPU wheels to prevent hardware mismatch
 RUN pip install --no-cache-dir -r requirements.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+RUN python -m spacy download en_core_web_md || python -m spacy download en_core_web_sm
 
 # Pre-download the LLM weights into the image to achieve 0ms runtime network latency
 RUN python download_model.py

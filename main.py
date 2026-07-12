@@ -16,6 +16,7 @@ from core.telemetry import TelemetryService, TaskTrace
 from engine.executors.python import PythonExecutor
 from engine.executors.fireworks import FireworksExecutor
 from engine.executors.local_llm import LocalLLMExecutor
+from engine.executors.spacy_ner import SpacyNERExecutor
 from core.logger import setup_logger
 
 logger = setup_logger("base42_main")
@@ -34,10 +35,27 @@ class Base42Orchestrator:
         self.local_exec = LocalLLMExecutor(model_path=model_path)
         self.api_exec = FireworksExecutor()
         
+        from config import FeatureFlags
+        if FeatureFlags.ENABLE_SPACY_NER:
+            self.spacy_exec = SpacyNERExecutor()
+        else:
+            self.spacy_exec = None
+            
     async def _execute_single_route(self, context: TaskContext) -> ExecutionResult:
         """Helper to execute a single atomic task."""
         route = context.route
         fallback_triggered = False
+        
+        from config import FeatureFlags
+        if context.category and context.category.value == "ner" and FeatureFlags.ENABLE_SPACY_NER and self.spacy_exec:
+            result = await self.spacy_exec.execute(context)
+            if not result.fallback_triggered:
+                final_result = ResultValidator.sanitize(result, context.category)
+                if ConfidenceEngine.evaluate(final_result, context):
+                    final_result.fallback_triggered = False
+                    return final_result
+                else:
+                    logger.warning(f"Task {context.request.task_id}: Low confidence in spaCy output. Falling back to routed engine.")
         
         if route == ExecutionRoute.FIREWORKS:
             result = await self.api_exec.execute(context)
