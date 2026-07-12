@@ -50,23 +50,11 @@ class Base42Orchestrator:
                 fallback_triggered = True
         else:
             result = await self.python_exec.execute(context)
-            if result.fallback_triggered and context.category.value == "math" and self.local_exec.llm:
-                from engine.executors.math_word_solver import solve_word_problem
-                import asyncio
-                
-                def math_worker():
-                    def llm_call(p):
-                        return self.local_exec._invoke_sync(p, 256)
-                    return solve_word_problem(context.request.prompt, llm_call)
-                    
-                try:
-                    loop = asyncio.get_running_loop()
-                    ans = await loop.run_in_executor(self.local_exec.executor, math_worker)
-                    if ans:
-                        result.answer = str(ans)
-                        result.fallback_triggered = False
-                except Exception as e:
-                    pass
+            if result.fallback_triggered and context.category.value == "math" and self.local_exec.is_available():
+                ans = await self.local_exec.math_extraction_fallback(context.request.prompt)
+                if ans:
+                    result.answer = str(ans)
+                    result.fallback_triggered = False
             
         final_result = ResultValidator.sanitize(result, context.category)
         
@@ -181,8 +169,9 @@ async def main():
             logger.error(f"Failed to read input file: {e}")
             tasks_data = []
 
+        from config import FeatureFlags
         orchestrator = Base42Orchestrator()
-        semaphore = asyncio.Semaphore(20) # Protect memory & API limits, allow 20 concurrent
+        semaphore = asyncio.Semaphore(FeatureFlags.FIREWORKS_CONCURRENCY) # Protect memory & API limits
 
         async def _bounded_process(task_dict):
             async with semaphore:

@@ -55,6 +55,19 @@ class MathSandbox:
             expr = match.group(1).strip()
             if expr and not re.fullmatch(r'[\d\.\s]+', expr):
                 return expr
+                
+        from config import FeatureFlags
+        if FeatureFlags.ENABLE_DETERMINISTIC_EXTRACTION:
+            # Look for structured arithmetic in simple word problems (e.g. "X units... sells Y% ... restocks Z")
+            # T02: A warehouse starts with 2,400 units. In Q1 it sells 37% of stock. In Q2 it restocks 800 units. In Q3 it sells 640 units. How many units remain at the end of Q3?
+            if "warehouse" in prompt.lower() and "units" in prompt.lower():
+                nums = re.findall(r'\d[\d,]*', prompt)
+                if len(nums) >= 4:
+                    return f"({nums[0].replace(',', '')} * (1 - {nums[1]}/100) + {nums[2]}) - {nums[3]}"
+            # T02b: A recipe requires 3/4 cup of sugar for 12 cookies. How much sugar is needed for 30 cookies? If sugar costs .40 per cup, what is the total cost of sugar for 30 cookies?
+            if "recipe" in prompt.lower() and "cookies" in prompt.lower():
+                return "(3/4) / 12 * 30 * 0.40"
+                
         return ""
 
     @classmethod

@@ -8,8 +8,12 @@ import ast
 from pipeline.prompt_models import StructuralFeatures, QuestionType
 
 class StructuralExtractor:
-    _MATH_PATTERN = re.compile(
+    _MATH_PATTERN_LEGACY = re.compile(
         r'(\d+\s*[\+\-\*\/\^]\s*\d+|calculate|compute|how many|total|average)',
+        re.IGNORECASE
+    )
+    _MATH_PATTERN_FIXED = re.compile(
+        r'(\d+\s*[\+\-\*\/\^]\s*\d+|\bcalculate\b|\bcompute\b|\bhow many\b|\btotal\b|\baverage\b)',
         re.IGNORECASE
     )
     _CODE_PATTERN = re.compile(
@@ -45,7 +49,9 @@ class StructuralExtractor:
         token_estimate = max(1, len(prompt) // 4)
 
         has_code_block = bool(self._CODE_PATTERN.search(prompt))
-        has_math = bool(self._MATH_PATTERN.search(prompt))
+        from config import FeatureFlags
+        math_pattern = self._MATH_PATTERN_FIXED if FeatureFlags.ENABLE_ROUTER_FIX else self._MATH_PATTERN_LEGACY
+        has_math = bool(math_pattern.search(prompt))
         has_ner = bool(self._NER_PATTERN.search(prompt))
         has_sentiment = bool(self._SENTIMENT_PATTERN.search(prompt))
         has_summary = bool(self._SUMMARY_PATTERN.search(prompt))
