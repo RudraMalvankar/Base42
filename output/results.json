@@ -5,11 +5,11 @@
     },
     {
         "task_id": "T01b",
-        "answer": "Machine learning is a broader field that involves algorithms improving their performance on a specific task through experience. Deep learning is a subset of machine learning that uses neural networks with multiple layers to learn and make decisions."
+        "answer": "Machine learning uses algorithms that learn patterns from data with manually engineered features, while deep learning uses multi-layered neural networks to automatically learn hierarchical feature representations directly from raw data."
     },
     {
         "task_id": "T01c",
-        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or system instructions, like the BIOS."
+        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or system instructions, like the BIOS or bootloader."
     },
     {
         "task_id": "T02",
@@ -17,11 +17,11 @@
     },
     {
         "task_id": "T02b",
-        "answer": "1.875 cups, $4.50"
+        "answer": "15/8 cups, $4.50"
     },
     {
         "task_id": "T03",
-        "answer": "Positive. Despite late delivery and damaged packaging, the product functioned well and customer support resolved the issue quickly, leaving an overall positive impression."
+        "answer": "Positive: The product functioned perfectly and customer support resolved the issue quickly, outweighing the minor delivery and packaging problems."
     },
     {
         "task_id": "T03b",
@@ -29,14 +29,14 @@
     },
     {
         "task_id": "T04",
-        "answer": "Machine learning is used in healthcare for diagnosis, treatment planning, and patient monitoring by analyzing medical data to detect patterns that humans might miss. However, concerns about interpretability, privacy, liability, and algorithmic bias persist, while regulatory frameworks struggle to keep pace with deployment."
+        "answer": "Machine learning is widely used in healthcare for diagnosis, treatment planning, and patient monitoring, analyzing medical images, predicting patient deterioration, and detecting patterns in electronic health records. However, concerns about model interpretability, data privacy, liability, and algorithmic bias persist, leading to regulatory uncertainty for healthcare providers and technology developers."
     },
     {
         "task_id": "T04b",
-        "answer": "- Remote work offers flexibility and better work-life balance.\n- Challenges include collaboration, culture, and blurred boundaries.\n- Companies invest in digital tools and rethink office spaces."
+        "answer": "- Remote work enhances flexibility and work-life balance.\n- Challenges include collaboration and personal-professional boundaries.\n- Companies are investing in digital tools and rethinking office spaces."
     },
     {
         "task_id": "T05",
-        "answer": "March 15 2023: DATE, Sundar Pichai: PERSON, Google: ORGANIZATION, Zurich: LOCATION, ETH Zurich: ORGANIZATION"
+        "answer": "[{\"entity\":\"March 15 2023\",\"type\":\"DATE\"},{\"entity\":\"Sundar Pichai\",\"type\":\"PERSON\"},{\"entity\":\"Google\",\"type\":\"ORGANIZATION\"},{\"entity\":\"Zurich\",\"type\":\"LOCATION\"},{\"entity\":\"ETH Zurich\",\"type\":\"ORGANIZATION\"}]"
     }
 ]

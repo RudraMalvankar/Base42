@@ -57,6 +57,23 @@ class Base42Orchestrator:
                 else:
                     logger.warning(f"Task {context.request.task_id}: Low confidence in spaCy output. Falling back to routed engine.")
         
+        # Intercept Sentiment and Summarization for Local LLM experiment
+        if context.category:
+            cat_val = context.category.value
+            if (cat_val == "sentiment" and FeatureFlags.ENABLE_LOCAL_SENTIMENT_QWEN) or \
+               (cat_val == "summarization" and FeatureFlags.ENABLE_LOCAL_SUMMARIZATION_QWEN):
+                try:
+                    local_result = await self.local_exec.execute(context)
+                    if not local_result.fallback_triggered:
+                        final_result = ResultValidator.sanitize(local_result, context.category)
+                        if ConfidenceEngine.evaluate(final_result, context):
+                            final_result.fallback_triggered = False
+                            return final_result
+                        else:
+                            logger.warning(f"Task {context.request.task_id}: Low confidence in local Qwen output. Falling back to routed engine.")
+                except Exception as e:
+                    logger.warning(f"Task {context.request.task_id}: Local LLM crashed during experiment ({e}). Falling back.")
+
         if route == ExecutionRoute.FIREWORKS:
             result = await self.api_exec.execute(context)
         elif route == ExecutionRoute.LOCAL_LLM:

@@ -1,54 +1,33 @@
-import json
-import time
 import asyncio
+import json
+from models.schemas import TaskRequest, TaskContext
 from engine.executors.local_llm import LocalLLMExecutor
-from engine.executors.fireworks import FireworksExecutor
-import config
-from models.schemas import TaskRequest, TaskContext, ExecutionResult
-from models.enums import TaskCategory, ExecutionRoute
+from core.logger import setup_logger
 
-async def test_sentiment():
-    print("\n" + "="*50)
-    print("SENTIMENT TASK BENCHMARK: LOCAL VS FIREWORKS")
-    print("="*50 + "\n")
+logger = setup_logger("test")
 
-    # Load tasks
-    with open("input_samples/tasks.json", "r") as f:
+async def run():
+    executor = LocalLLMExecutor(model_path='/model/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf')
+    
+    with open('input_samples/tasks.json') as f:
         tasks = json.load(f)
         
-    sentiment_tasks = [t for t in tasks if t['task_id'] in ['T03', 'T03b']]
+    t03 = next(t for t in tasks if t['task_id'] == 'T03')
+    t03b = next(t for t in tasks if t['task_id'] == 'T03b')
     
-    local_executor = LocalLLMExecutor(model_path="/model/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf")
-    fireworks = FireworksExecutor()
+    from pipeline.analyzer import TaskCategory
+    ctx3 = TaskContext(request=TaskRequest(**t03), profile=None)
+    ctx3.category = TaskCategory.SENTIMENT
+    ctx3b = TaskContext(request=TaskRequest(**t03b), profile=None)
+    ctx3b.category = TaskCategory.SENTIMENT
     
-    # Let the model warm up
-    await asyncio.sleep(1)
+    print("Executing T03...")
+    r3 = await executor.execute(ctx3)
+    print('T03 Local Output:', r3.answer)
     
-    for t in sentiment_tasks:
-        print(f"--- Task {t['task_id']} ---")
-        prompt = t['prompt']
-        
-        req = TaskRequest(task_id=t['task_id'], prompt=prompt)
-        ctx = TaskContext(request=req, category=TaskCategory.SENTIMENT)
-        
-        # LOCAL TEST
-        start = time.time()
-        res_local = await local_executor.execute(ctx)
-        time_local = time.time() - start
-        
-        print(f"[TinyLlama (Local)]")
-        print(f"Latency: {time_local:.2f}s")
-        print(f"Output: {res_local.answer}")
-        
-        # FIREWORKS TEST
-        start = time.time()
-        res_fw = await fireworks.execute(ctx)
-        time_fw = time.time() - start
-        
-        print(f"\n[Fireworks API]")
-        print(f"Latency: {time_fw:.2f}s")
-        print(f"Output: {res_fw.answer}")
-        print("-" * 50 + "\n")
+    print("Executing T03b...")
+    r3b = await executor.execute(ctx3b)
+    print('T03b Local Output:', r3b.answer)
 
 if __name__ == "__main__":
-    asyncio.run(test_sentiment())
+    asyncio.run(run())
