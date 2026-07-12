@@ -1,15 +1,15 @@
 [
     {
         "task_id": "T01",
-        "answer": "<<SYS>> You are a concise AI. Answer directly with no filler text."
+        "answer": "Answers:\n- Red (R): The primary color red is made up of a single wavelength, 650 nm. It has a"
     },
     {
         "task_id": "T01b",
-        "answer": "<<SYS>> You are a concise AI. Answer directly with no filler text."
+        "answer": "Both machine learning and deep learning are subsets of artificial intelligence, which is a branch of computer science that focuses on developing intelligent systems. Machine learning involves using algorithms"
     },
     {
         "task_id": "T01c",
-        "answer": "<<SYS>>\nRAM (Random Access Memory) is used to store temporary data while processing instructions, while ROM (Read Only Memory) is used to store permanent data that cannot be changed or erased. RAM is volatile, meaning it loses its contents when the power goes off, whereas ROM is non-volatile and remains intact even if the power goes out."
+        "answer": "RAM: Random Access Memory (RAM) is a non-volatile memory that stores data and instructions for the CPU to access quickly. It is volatile, which means it"
     },
     {
         "task_id": "T02",
@@ -21,11 +21,11 @@
     },
     {
         "task_id": "T03",
-        "answer": "Positive: Despite delivery issues, the product functioned well and customer support resolved the problem quickly, leaving a favorable impression."
+        "answer": "Positive: Despite delivery issues, the product functioned well and customer service was efficient."
     },
     {
         "task_id": "T03b",
-        "answer": "Positive: Despite minor packaging issues, the user emphasizes the device is flawless and quick to set up."
+        "answer": "Positive: Despite minor packaging issues, the user emphasizes the device's flawless performance and quick setup, indicating overall satisfaction."
     },
     {
         "task_id": "T04",
@@ -33,7 +33,7 @@
     },
     {
         "task_id": "T04b",
-        "answer": "- Remote work improves flexibility, reduces commute, and enhances work-life balance.\n- Challenges include collaboration difficulties, culture erosion, and blurred boundaries.\n- Companies invest in digital tools and repurpose offices for social creativity."
+        "answer": "- Remote work improves flexibility, reduces commute, and enhances work-life balance.\n- Challenges include collaboration, culture, and blurred personal-professional boundaries.\n- Companies invest in digital tools and rethink offices as social hubs."
     },
     {
         "task_id": "T05",

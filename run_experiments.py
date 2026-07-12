@@ -24,8 +24,9 @@ def run_experiment(exp):
     
     cmd = [
         "docker", "run", "--rm",
-        "-v", f"{os.getcwd().replace(chr(92), '/')}/input_samples:/input",
-        "-v", f"{os.getcwd().replace(chr(92), '/')}/output:/output",
+        "-v", f"{os.path.abspath('input_samples')}:/input",
+        "-v", f"{os.path.abspath('output')}:/output",
+        "-v", f"{os.path.abspath('engine')}:/app/engine",
         "-e", "FIREWORKS_API_KEY=fw_84W1aV4dLEnLReJ3noVXRh",
         "-e", "FIREWORKS_BASE_URL=https://api.fireworks.ai/inference/v1",
         "-e", "ALLOWED_MODELS=accounts/fireworks/models/deepseek-v4-flash,accounts/fireworks/models/deepseek-v4-pro"
@@ -34,12 +35,12 @@ def run_experiment(exp):
     for k, v in exp["env"].items():
         cmd.extend(["-e", f"{k}={v}"])
         
-    cmd.append("base42_local:latest")
+    cmd.append("ghcr.io/rudramalvankar/base42:latest")
     cmd.append("python")
     cmd.append("main.py")
     
     start = time.perf_counter()
-    subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(cmd)
     duration = time.perf_counter() - start
     
     # Read telemetry
