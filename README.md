@@ -28,7 +28,7 @@ graph TD
     subgraph Decision Engine
     E --> F{Mathematical Utility Routing}
     F -->|Utility > 0.9| G[Python AST Sandbox]
-    F -->|Utility > 0.3| H[Local LLM: Gemma 2B GGUF]
+    F -->|Utility > 0.3| H[Local LLM: Qwen2.5-1.5B GGUF]
     F -->|Utility < 0| I[Fireworks API: DeepSeek-V4-Flash]
     end
     
@@ -103,16 +103,27 @@ Passing simple math equations to a 70B LLM is an inexcusable waste of tokens and
 
 ---
 
-## 📊 Track 1 Token Benchmarking
+## 📈 The Optimization Journey & Token Progress
 
-In extreme-difficulty benchmarking against standard API-only routing architecture, the Base42 Hybrid Orchestrator delivered exceptional enterprise value by trapping basic requests locally:
+Base42's development has been a systematic process of shifting workloads away from expensive API models to zero-token local options, driving the total tokens consumed on the 10 AMD prompts down by **over 50%** from the original baseline:
 
-| Architecture | Tasks Routed to Fireworks API | Tasks Resolved Locally (0 Tokens) | Total Benchmark Token Usage | Average System Latency |
+### Token Consumption Evolution (10 AMD Prompts)
+
+```
+[Phase 1: API-First Baseline]        ██████████████████████████████  ~1,200 tokens
+[Phase 2: Math AST Sandbox]          ████████████████████████        ~1,000 tokens
+[Phase 3: spaCy NER Offloading]      ████████████████████            ~845 tokens
+[Phase 4: Local Qwen2.5-1.5B (GGUF)] ██████████████                  558 - 577 tokens (100% Accuracy)
+```
+
+| Phase / Optimization | Total Tokens Consumed (10 Tasks) | Accuracy | Token Reductions | Key Enhancements |
 | :--- | :--- | :--- | :--- | :--- |
-| **Standard API-First** | 100% | 0% | ~1,200 tokens | ~2.6s |
-| **Base42 Hybrid Cascade** | **12.5%** | **87.5%** | **176 tokens** | **~722ms** |
+| **Phase 1: API-First Baseline** | ~1,200 tokens | 100.0% | *Baseline* | All tasks routed directly to Fireworks API. |
+| **Phase 2: Math AST Sandbox** | ~1,000 tokens | 100.0% | **-16.7%** | Implemented a secure Python math expression compiler to solve arithmetic requests locally for 0 tokens. |
+| **Phase 3: spaCy NER Integration** | ~845 tokens | 100.0% | **-29.6%** | Offloaded Named Entity Recognition to a local spaCy pipeline, completely removing API dependencies for NER. |
+| **Phase 4: Local Qwen2.5-1.5B GGUF** | **558 - 577 tokens** | **100.0%** | **-51.9%** | Integrated Qwen2.5-1.5B-Instruct running locally in the container to absorb factual and summarization tasks. |
 
-**Total Impact: 85.3% reduction in Fireworks API token consumption.**
+**Total Impact: 53.5% reduction in Fireworks API token consumption while maintaining a perfect 100% accuracy gate.**
 
 ---
 
@@ -170,9 +181,9 @@ Because the Local LLM was strictly locked to a **single thread** to prevent C++ 
 
 ## ⚙️ Advanced Configuration (Changing the Local LLM)
 
-By default, Base42 uses **TinyLlama-1.1B** because it guarantees 100% thread-safety and cross-hardware compatibility on universally stable `llama.cpp` binaries without exceeding the 4GB RAM limit. 
+By default, Base42 is configured with **Qwen2.5-1.5B-Instruct** (using the `Q4_K_M` GGUF quantization format) because it guarantees 100% thread-safety, high instruction-following accuracy, and cross-hardware compatibility on universally stable `llama.cpp` binaries without exceeding the 4GB RAM limit. 
 
-If you wish to change the local model to something more powerful (like Google's **Gemma-2** or **Qwen-1.5**), you can easily do so:
+If you wish to change the local model to something else (like Google's **Gemma-2-2B** or **Llama-3.2-1B**), you can easily do so:
 
 1. Open `download_model.py`
 2. Change the HuggingFace `REPO_ID` and `FILENAME` variables:
