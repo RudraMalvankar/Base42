@@ -9,7 +9,7 @@
     },
     {
         "task_id": "T01c",
-        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or boot instructions that do not change."
+        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or system instructions, like the BIOS, that are not changed during normal operation."
     },
     {
         "task_id": "T02",
@@ -17,15 +17,15 @@
     },
     {
         "task_id": "T02b",
-        "answer": "1.875 cups, $4.50"
+        "answer": "4.5"
     },
     {
         "task_id": "T03",
-        "answer": "Positive: Despite delivery issues, the product functioned well and support resolved the problem quickly."
+        "answer": "Positive. Despite the late delivery and damaged packaging, the product worked perfectly and customer support resolved the issue quickly."
     },
     {
         "task_id": "T03b",
-        "answer": "Positive. Despite minor packaging issues, the user emphasizes the device's flawless performance and quick setup, indicating overall satisfaction."
+        "answer": "Positive: Despite minor packaging issues, the user emphasizes the device itself is flawless and easy to set up, indicating overall satisfaction."
     },
     {
         "task_id": "T04",

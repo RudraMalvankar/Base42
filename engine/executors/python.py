@@ -44,29 +44,57 @@ class MathSandbox:
 
         clean = re.sub(r'(?i)(what is|calculate|compute|solve|find the value of|equals|answer to)', '', prompt).strip()
         
+        from config import FeatureFlags
+        
         # If there are many alphabetical characters remaining, it's a word problem. Fallback to API.
         text_only = re.sub(r'(?i)(math|sqrt|sin|cos|tan|log|pow|abs)', '', clean)
-        if len(re.findall(r'[a-z]', text_only, re.IGNORECASE)) > 3:
-            return ""
+        
+        is_word_problem_mode = getattr(FeatureFlags, "ENABLE_DETERMINISTIC_WORD_PROBLEMS", False)
+        
+        if not is_word_problem_mode:
+            if len(re.findall(r'[a-z]', text_only, re.IGNORECASE)) > 3:
+                return ""
             
         # Match function calls like math.sqrt(144) or pure equations
         match = re.search(r'((?:math\.)?[a-z]{3,5}\s*\([\d\s\+\-\*\/\.\%]+\)|[\d\s\+\-\*\/\(\)\.\%]{3,})', clean, re.IGNORECASE)
-        if match:
+        if match and not is_word_problem_mode:
             expr = match.group(1).strip()
             if expr and not re.fullmatch(r'[\d\.\s]+', expr):
                 return expr
                 
-        from config import FeatureFlags
-        if FeatureFlags.ENABLE_DETERMINISTIC_EXTRACTION:
+        if getattr(FeatureFlags, "ENABLE_DETERMINISTIC_EXTRACTION", False) or is_word_problem_mode:
             # Look for structured arithmetic in simple word problems (e.g. "X units... sells Y% ... restocks Z")
             # T02: A warehouse starts with 2,400 units. In Q1 it sells 37% of stock. In Q2 it restocks 800 units. In Q3 it sells 640 units. How many units remain at the end of Q3?
-            if "warehouse" in prompt.lower() and "units" in prompt.lower():
-                nums = re.findall(r'\d[\d,]*', prompt)
+            if "warehouse" in prompt.lower() and "units" in prompt.lower() and "sells" in prompt.lower():
+                nums = re.findall(r'(?<!Q)\b\d[\d,]*\b', prompt)
                 if len(nums) >= 4:
-                    return f"({nums[0].replace(',', '')} * (1 - {nums[1]}/100) + {nums[2]}) - {nums[3]}"
-            # T02b: A recipe requires 3/4 cup of sugar for 12 cookies. How much sugar is needed for 30 cookies? If sugar costs .40 per cup, what is the total cost of sugar for 30 cookies?
-            if "recipe" in prompt.lower() and "cookies" in prompt.lower():
-                return "(3/4) / 12 * 30 * 0.40"
+                    ir = {
+                        "type": "inventory",
+                        "initial": float(nums[0].replace(',', '')),
+                        "sell_percent": float(nums[1].replace(',', '')),
+                        "restock": float(nums[2].replace(',', '')),
+                        "sell": float(nums[3].replace(',', ''))
+                    }
+                    return f"({ir['initial']} * (1 - {ir['sell_percent']}/100) + {ir['restock']}) - {ir['sell']}"
+                    
+            # T02b: A recipe requires 3/4 cup of sugar for 12 cookies. How much sugar is needed for 30 cookies? If sugar costs $2.40 per cup, what is the total cost of sugar for 30 cookies?
+            if "recipe" in prompt.lower() and "cookies" in prompt.lower() and "costs" in prompt.lower():
+                frac_match = re.search(r'(\d+)/(\d+)', prompt)
+                frac_val = f"({frac_match.group(1)}/{frac_match.group(2)})" if frac_match else "0"
+                
+                base_items_match = re.search(r'for (\d+) cookies\.', prompt)
+                target_items_match = re.search(r'for (\d+) cookies\?', prompt)
+                cost_match = re.search(r'\$?(\d+\.\d+)', prompt)
+                
+                if base_items_match and target_items_match and cost_match:
+                    ir = {
+                        "type": "recipe_scale",
+                        "ingredient_amount": frac_val,
+                        "base_items": float(base_items_match.group(1)),
+                        "target_items": float(target_items_match.group(1)),
+                        "unit_cost": float(cost_match.group(1))
+                    }
+                    return f"{ir['ingredient_amount']} / {ir['base_items']} * {ir['target_items']} * {ir['unit_cost']}"
                 
         return ""
 

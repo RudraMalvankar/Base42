@@ -1,59 +1,59 @@
 {
     "summary": {
         "total_tasks": 10,
-        "api_fallbacks": 3,
-        "total_tokens": 1059,
+        "api_fallbacks": 1,
+        "total_tokens": 556,
         "routes": {
-            "fireworks": 5,
-            "local_llm": 4,
-            "python": 1
+            "python": 3,
+            "fireworks": 3,
+            "local_llm": 4
         }
     },
     "traces": [
         {
-            "task_id": "T01c",
-            "category": "math",
-            "latency_ms": 1332.9171010009304,
-            "route": "fireworks",
-            "fallback_triggered": true,
-            "tokens": 129
-        },
-        {
             "task_id": "T02",
             "category": "math",
-            "latency_ms": 2528.8103169987153,
-            "route": "fireworks",
-            "fallback_triggered": true,
-            "tokens": 188
+            "latency_ms": 204.71720499699586,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
         },
         {
             "task_id": "T02b",
             "category": "math",
-            "latency_ms": 2341.773160002049,
+            "latency_ms": 9.980359998735366,
+            "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "T01c",
+            "category": "math",
+            "latency_ms": 2004.7611170011805,
             "route": "fireworks",
             "fallback_triggered": true,
-            "tokens": 348
+            "tokens": 137
         },
         {
             "task_id": "T03",
             "category": "sentiment",
-            "latency_ms": 1599.1843479969248,
+            "latency_ms": 2084.901026002626,
             "route": "fireworks",
             "fallback_triggered": false,
-            "tokens": 189
+            "tokens": 212
         },
         {
             "task_id": "T03b",
             "category": "sentiment",
-            "latency_ms": 1435.4888729976665,
+            "latency_ms": 1665.435451999656,
             "route": "fireworks",
             "fallback_triggered": false,
-            "tokens": 205
+            "tokens": 207
         },
         {
             "task_id": "T01",
             "category": "factual",
-            "latency_ms": 7315.667783001118,
+            "latency_ms": 5856.612733001384,
             "route": "local_llm",
             "fallback_triggered": false,
             "tokens": 0
@@ -61,15 +61,23 @@
         {
             "task_id": "T05",
             "category": "ner",
-            "latency_ms": 51.218048996815924,
+            "latency_ms": 151.53155100051663,
             "route": "python",
+            "fallback_triggered": false,
+            "tokens": 0
+        },
+        {
+            "task_id": "T04",
+            "category": "summarization",
+            "latency_ms": 16147.265136998612,
+            "route": "local_llm",
             "fallback_triggered": false,
             "tokens": 0
         },
         {
             "task_id": "T04b",
             "category": "summarization",
-            "latency_ms": 10471.396761000506,
+            "latency_ms": 24618.573133997415,
             "route": "local_llm",
             "fallback_triggered": false,
             "tokens": 0
@@ -77,15 +85,7 @@
         {
             "task_id": "T01b",
             "category": "factual",
-            "latency_ms": 20377.69588499941,
-            "route": "local_llm",
-            "fallback_triggered": false,
-            "tokens": 0
-        },
-        {
-            "task_id": "T04",
-            "category": "summarization",
-            "latency_ms": 28063.209825999365,
+            "latency_ms": 34009.9868239995,
             "route": "local_llm",
             "fallback_triggered": false,
             "tokens": 0
