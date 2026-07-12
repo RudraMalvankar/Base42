@@ -70,9 +70,9 @@ class StructuralExtractor:
 
         # Compute structural confidence
         # High confidence = strong, unambiguous single-domain signal
-        signals = sum([has_code_block, has_math, has_ner, has_sentiment, has_summary, logic_count > 1])
+        signals = sum([has_code_block, has_math, has_ner, has_sentiment, has_summary])
         if signals == 1:
-            structural_confidence = 0.90  # Single clear signal
+            structural_confidence = 0.95  # Single clear signal
         elif signals == 0:
             structural_confidence = 0.30  # No structural signals — ambiguous
         else:

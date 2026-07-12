@@ -1,92 +1,9 @@
 {
     "summary": {
-        "total_tasks": 10,
-        "api_fallbacks": 3,
-        "total_tokens": 2253,
-        "routes": {
-            "fireworks": 10
-        }
+        "total_tasks": 0,
+        "api_fallbacks": 0,
+        "total_tokens": 0,
+        "routes": {}
     },
-    "traces": [
-        {
-            "task_id": "T01c",
-            "category": "math",
-            "latency_ms": 1962.6882990000922,
-            "route": "fireworks",
-            "fallback_triggered": true,
-            "tokens": 145
-        },
-        {
-            "task_id": "T01",
-            "category": "factual",
-            "latency_ms": 2147.8300869998748,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 169
-        },
-        {
-            "task_id": "T04",
-            "category": "factual",
-            "latency_ms": 2157.9831270000795,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 271
-        },
-        {
-            "task_id": "T02",
-            "category": "math",
-            "latency_ms": 2230.3180980002253,
-            "route": "fireworks",
-            "fallback_triggered": true,
-            "tokens": 203
-        },
-        {
-            "task_id": "T05",
-            "category": "factual",
-            "latency_ms": 2251.4783390001867,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 249
-        },
-        {
-            "task_id": "T03b",
-            "category": "factual",
-            "latency_ms": 2710.3499919999194,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 216
-        },
-        {
-            "task_id": "T03",
-            "category": "factual",
-            "latency_ms": 2979.097703000207,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 216
-        },
-        {
-            "task_id": "T02b",
-            "category": "math",
-            "latency_ms": 3323.1074049999734,
-            "route": "fireworks",
-            "fallback_triggered": true,
-            "tokens": 325
-        },
-        {
-            "task_id": "T01b",
-            "category": "factual",
-            "latency_ms": 3559.083124999688,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 127
-        },
-        {
-            "task_id": "T04b",
-            "category": "factual",
-            "latency_ms": 4835.254148999866,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 332
-        }
-    ]
+    "traces": []
 }

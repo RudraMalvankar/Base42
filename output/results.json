@@ -1,42 +1,42 @@
 [
     {
         "task_id": "T01",
-        "answer": "Red, Green, Blue. Displays use RGB because it is an additive color model where light is emitted directly, combining red, green, and blue light to create colors; RYB is a subtractive model for pigments, not suitable for light-emitting screens."
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T01b",
-        "answer": "Machine learning (ML) uses algorithms to learn patterns from data, often requiring manual feature extraction. Deep learning (DL) is a subset of ML using multi-layered neural networks to automatically learn hierarchical features from raw data."
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T01c",
-        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or system instructions, like the BIOS."
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T02",
-        "answer": "1672"
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T02b",
-        "answer": "15, 8, 1.875, 0.75"
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T03",
-        "answer": "Positive: Despite minor delivery issues, the product's perfect functionality and swift customer support resolution create an overall positive experience."
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T03b",
-        "answer": "Positive: Despite minor issues with packaging, the user emphasizes the device's flawless performance and quick setup."
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T04",
-        "answer": "Machine learning is used in healthcare for diagnosis, treatment planning, and monitoring, analyzing medical images and electronic health records to detect patterns. However, concerns about interpretability, privacy, liability, and algorithmic bias persist, while regulatory frameworks lag behind deployment."
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T04b",
-        "answer": "- Remote work improves flexibility, reduces commute, and boosts work-life balance.\n- Challenges include collaboration, culture, and blurred personal-professional boundaries.\n- Organizations invest in digital tools and rethink office as social hub."
+        "answer": "Timeout Error"
     },
     {
         "task_id": "T05",
-        "answer": "March 15 2023: DATE\nSundar Pichai: PERSON\nGoogle: ORGANIZATION\nZurich: LOCATION\nETH Zurich: ORGANIZATION"
+        "answer": "Timeout Error"
     }
 ]
