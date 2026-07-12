@@ -36,6 +36,10 @@ class ExecutorScorer(ABC):
 
 class PythonScorer(ExecutorScorer):
     def calculate_utility(self, context: TaskContext) -> float:
+        from config import FeatureFlags
+        if getattr(FeatureFlags, "ENABLE_LOCAL_MATH_QWEN", False):
+            return -1.0
+            
         profile = context.profile
         if not profile.has_math:
             return -1.0
@@ -75,6 +79,10 @@ class LocalLLMScorer(ExecutorScorer):
             allowed_categories.append(TaskCategory.FACTUAL)
         if FeatureFlags.ENABLE_LOCAL_SUMMARIZATION:
             allowed_categories.append(TaskCategory.SUMMARIZATION)
+        if getattr(FeatureFlags, "ENABLE_LOCAL_MATH_QWEN", False):
+            allowed_categories.append(TaskCategory.MATH)
+        if getattr(FeatureFlags, "ENABLE_LOCAL_SENTIMENT_QWEN", False):
+            allowed_categories.append(TaskCategory.SENTIMENT)
             
         if context.category not in allowed_categories:
             return -1.0

@@ -34,11 +34,13 @@ class LocalLLMWorker:
         self.llm = None
         load_start = time.time()
         try:
+            from config import FeatureFlags
+            n_threads = 2 if getattr(FeatureFlags, "ENABLE_FIXED_LLAMA_THREADS", False) else 1
             self.llm = Llama(
                 model_path=model_path,
                 n_ctx=512, # Qwen2.5 benefits from larger context for complex prompts
                 n_batch=512,
-                n_threads=1, 
+                n_threads=n_threads, 
                 verbose=False
             )
             load_time = time.time() - load_start
@@ -50,24 +52,29 @@ class LocalLLMExecutor(BaseExecutor):
     def __init__(self, model_path: str = "./weights/model.gguf"):
         self.model_path = model_path
         self.workers = []
+        self.circuit_breaker_tripped = False
         if HAS_LLAMA:
             logger.info("Initializing SINGLETON Qwen2.5 Worker with n_threads=2 for max CPU utilization...")
             w1 = LocalLLMWorker(1, model_path)
-            # Override n_threads to 2 for the singleton worker
-            if w1.llm:
+            # Override n_threads to 2 for the singleton worker if flag is not set
+            from config import FeatureFlags
+            if w1.llm and not getattr(FeatureFlags, "ENABLE_FIXED_LLAMA_THREADS", False):
                 w1.llm.n_threads = 2
-                self.workers.append(w1)
-                # Model warm-up
-                try:
-                    logger.info("Warming up model with empty prompt...")
-                    w1.llm.create_chat_completion([{"role": "user", "content": "hi"}], max_tokens=2, temperature=0.0)
-                    logger.info("Model warm-up complete.")
-                except:
-                    pass
+            self.workers.append(w1)
+            # Model warm-up
+            try:
+                logger.info("Warming up model with empty prompt...")
+                w1.llm.create_chat_completion([{"role": "user", "content": "hi"}], max_tokens=2, temperature=0.0)
+                logger.info("Model warm-up complete.")
+            except:
+                pass
         else:
             logger.warning("llama-cpp-python is not installed.")
 
     def is_available(self) -> bool:
+        from config import FeatureFlags
+        if getattr(FeatureFlags, "ENABLE_LONG_LOCAL_QUEUE", False) and self.circuit_breaker_tripped:
+            return False
         return len(self.workers) > 0
 
     def _get_grammar(self, category: str):
@@ -136,12 +143,27 @@ class LocalLLMExecutor(BaseExecutor):
                 
         from config import FeatureFlags
         wait_time = 0.0
-        if not idle_worker and FeatureFlags.ENABLE_SMART_ROUTING_V2:
+        experiment_mode = getattr(FeatureFlags, "ENABLE_LOCAL_QUEUE_EXPERIMENT", False)
+        breaker_mode = getattr(FeatureFlags, "ENABLE_LONG_LOCAL_QUEUE", False)
+        
+        if not idle_worker and (FeatureFlags.ENABLE_SMART_ROUTING_V2 or experiment_mode or breaker_mode):
             wait_start = time.time()
-            logger.info(f"Task {context.request.task_id}: Local workers busy. Entering wait queue (max 12s)...")
+            if experiment_mode:
+                logger.info(f"Task {context.request.task_id}: Local workers busy. Entering INFINITE wait queue (experiment)...")
+            elif breaker_mode:
+                logger.info(f"Task {context.request.task_id}: Local workers busy. Entering wait queue (max 60s breaker)...")
+            else:
+                logger.info(f"Task {context.request.task_id}: Local workers busy. Entering wait queue (max 12s)...")
+                
             try:
-                while not idle_worker and (time.time() - wait_start) < 12.0:
-                    await asyncio.sleep(0.5)
+                while not idle_worker:
+                    elapsed = time.time() - wait_start
+                    if breaker_mode and elapsed >= 60.0:
+                        break
+                    elif not experiment_mode and not breaker_mode and elapsed >= 12.0:
+                        break
+                    sleep_time = 0.05 if getattr(FeatureFlags, "ENABLE_QUEUE_SLEEP", False) else 0.5
+                    await asyncio.sleep(sleep_time)
                     for w in self.workers:
                         if not w.lock.locked():
                             idle_worker = w
@@ -153,6 +175,9 @@ class LocalLLMExecutor(BaseExecutor):
                 return self._fallback(context.request.task_id)
 
         if not idle_worker:
+            if breaker_mode:
+                logger.warning(f"Circuit Breaker tripped for {context.request.task_id} during queue!")
+                self.circuit_breaker_tripped = True
             logger.warning(f"[DIAGNOSTIC] Task {context.request.task_id}: Timeout occurred while WAITING. Admission Control REJECT. Routing to Fireworks.")
             return self._fallback(context.request.task_id)
 
@@ -169,9 +194,11 @@ class LocalLLMExecutor(BaseExecutor):
             logger.info(f"Task {context.request.task_id}: Routing to Local Worker {idle_worker.worker_id}")
             loop = asyncio.get_running_loop()
             
+            inf_timeout = 60.0 if getattr(FeatureFlags, "ENABLE_LONG_LOCAL_QUEUE", False) else 18.0
+            
             answer = await asyncio.wait_for(
                 loop.run_in_executor(idle_worker.executor, self._invoke_sync, idle_worker, context.request.prompt, max_tokens, context.category.value),
-                timeout=18.0
+                timeout=inf_timeout
             )
             
             latency = time.time() - start_time
@@ -184,9 +211,14 @@ class LocalLLMExecutor(BaseExecutor):
                 latency=latency
             )
         except asyncio.TimeoutError:
+            if getattr(FeatureFlags, "ENABLE_LONG_LOCAL_QUEUE", False):
+                self.circuit_breaker_tripped = True
+                logger.warning(f"Circuit breaker TRIPPED! Task {context.request.task_id} inference timeout.")
             logger.error(f"Task {context.request.task_id}: Local Worker {idle_worker.worker_id} timed out")
             return self._fallback(context.request.task_id)
         except Exception as e:
+            if getattr(FeatureFlags, "ENABLE_LONG_LOCAL_QUEUE", False):
+                self.circuit_breaker_tripped = True
             logger.error(f"Task {context.request.task_id}: Local LLM error - {e}")
             return self._fallback(context.request.task_id)
         finally:

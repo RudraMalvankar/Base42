@@ -1,6 +1,19 @@
+import os
+
+def _apply_cpu_limits():
+    try:
+        from config import FeatureFlags
+        if getattr(FeatureFlags, "ENABLE_CPU_THREAD_LIMITS", False):
+            os.environ["OMP_NUM_THREADS"] = "1"
+            os.environ["OPENBLAS_NUM_THREADS"] = "1"
+            os.environ["MKL_NUM_THREADS"] = "1"
+            os.environ["NUMEXPR_NUM_THREADS"] = "1"
+    except ImportError:
+        pass
+_apply_cpu_limits()
+
 import asyncio
 import json
-import os
 from typing import List
 from models.schemas import TaskRequest, TaskContext, ExecutionResult
 from models.enums import ExecutionRoute
@@ -214,9 +227,10 @@ async def main():
                 try:
                     # AMD Hackathon imposes a strict 30-second time limit per task.
                     # We enforce a 28-second hard timeout to guarantee we never stall the pipeline.
+                    global_timeout = 70.0 if getattr(FeatureFlags, "ENABLE_LONG_LOCAL_QUEUE", False) else 28.0
                     return await asyncio.wait_for(
                         orchestrator.process_task(request),
-                        timeout=28.0
+                        timeout=global_timeout
                     )
                 except asyncio.TimeoutError:
                     logger.error(f"Task {request.task_id} TIMED OUT globally (>28s). Forcing API fallback state.")

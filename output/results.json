@@ -5,11 +5,11 @@
     },
     {
         "task_id": "T01b",
-        "answer": "Machine learning uses algorithms that learn patterns from data with manually engineered features, while deep learning uses multi-layered neural networks to automatically learn hierarchical feature representations directly from raw data."
+        "answer": "Machine learning is a broader field that involves algorithms improving their performance on a specific task through experience. Deep learning is a subset of machine learning that uses neural networks with multiple layers to learn and make decisions."
     },
     {
         "task_id": "T01c",
-        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or system instructions, like the BIOS or bootloader."
+        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or boot instructions that do not change."
     },
     {
         "task_id": "T02",
@@ -17,15 +17,15 @@
     },
     {
         "task_id": "T02b",
-        "answer": "15/8 cups, $4.50"
+        "answer": "1.875 cups, $4.50"
     },
     {
         "task_id": "T03",
-        "answer": "Positive: The product functioned perfectly and customer support resolved the issue quickly, outweighing the minor delivery and packaging problems."
+        "answer": "Positive: Despite delivery issues, the product functioned well and support resolved the problem quickly."
     },
     {
         "task_id": "T03b",
-        "answer": "Positive: Despite minor issues with packaging, the user emphasizes the device's flawless performance and quick setup, indicating overall satisfaction."
+        "answer": "Positive. Despite minor packaging issues, the user emphasizes the device's flawless performance and quick setup, indicating overall satisfaction."
     },
     {
         "task_id": "T04",
