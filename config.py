@@ -4,7 +4,7 @@ def get_flag(name: str, default: bool = False) -> bool:
     return os.environ.get(name, str(default)).lower() in ('true', '1', 'yes')
 
 class FeatureFlags:
-    ENABLE_LOCAL_FACTUAL = get_flag("ENABLE_LOCAL_FACTUAL", False)
+    ENABLE_LOCAL_FACTUAL = get_flag("ENABLE_LOCAL_FACTUAL", True)
     ENABLE_LOCAL_SUMMARIZATION = get_flag("ENABLE_LOCAL_SUMMARIZATION", False)
     ENABLE_RESERVED_LOCAL_WORKERS = get_flag("ENABLE_RESERVED_LOCAL_WORKERS", True)
     ENABLE_SHORT_FIREWORKS_PROMPTS = get_flag("ENABLE_SHORT_FIREWORKS_PROMPTS", True)
