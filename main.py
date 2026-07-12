@@ -50,6 +50,19 @@ class Base42Orchestrator:
                 fallback_triggered = True
         else:
             result = await self.python_exec.execute(context)
+            if result.fallback_triggered and context.category.value == "math" and self.local_exec.llm:
+                from engine.executors.math_word_solver import solve_word_problem
+                def llm_call(p):
+                    import concurrent.futures
+                    with concurrent.futures.ThreadPoolExecutor() as pool:
+                        return pool.submit(self.local_exec._invoke_sync, p, 256).result()
+                try:
+                    ans = solve_word_problem(context.request.prompt, llm_call)
+                    if ans:
+                        result.answer = str(ans)
+                        result.fallback_triggered = False
+                except Exception as e:
+                    pass
             
         final_result = ResultValidator.sanitize(result, context.category)
         

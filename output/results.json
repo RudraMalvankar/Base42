@@ -1,7 +1,7 @@
 [
     {
         "task_id": "T01",
-        "answer": "Red, green, blue. Displays use RGB because they emit light, and RGB is an additive color model where combining these colors produces white, matching how screens create colors. RYB is subtractive, used for pigments, not light."
+        "answer": "Red, Green, Blue. Displays use RGB because it is an additive color model where light is emitted directly, combining red, green, and blue light to create colors; RYB is a subtractive model for pigments, not suitable for light-emitting screens."
     },
     {
         "task_id": "T01b",
@@ -9,7 +9,7 @@
     },
     {
         "task_id": "T01c",
-        "answer": "RAM (Random Access Memory) is volatile memory used for temporary data storage while the computer is running; it holds the operating system, applications, and active data. ROM (Read-Only Memory) is non-volatile memory that retains data without power; it stores firmware or BIOS instructions needed to boot the computer."
+        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running, such as running programs and active data. ROM (Read-Only Memory) is non-volatile, used for permanent storage of firmware or system instructions, like the BIOS."
     },
     {
         "task_id": "T02",
@@ -17,11 +17,11 @@
     },
     {
         "task_id": "T02b",
-        "answer": "0.75"
+        "answer": "15, 8, 1.875, 0.75"
     },
     {
         "task_id": "T03",
-        "answer": "Positive: Despite minor delivery issues, the product functioned perfectly and customer support resolved the problem quickly, resulting in an overall positive experience."
+        "answer": "Positive: Despite minor delivery issues, the product's perfect functionality and swift customer support resolution create an overall positive experience."
     },
     {
         "task_id": "T03b",
@@ -29,11 +29,11 @@
     },
     {
         "task_id": "T04",
-        "answer": "Machine learning is used in healthcare for diagnosis, treatment planning, and monitoring, analyzing medical images and electronic health records to detect patterns. However, concerns about interpretability, privacy, liability, and algorithmic bias persist, while regulatory frameworks struggle to keep pace with deployment."
+        "answer": "Machine learning is used in healthcare for diagnosis, treatment planning, and monitoring, analyzing medical images and electronic health records to detect patterns. However, concerns about interpretability, privacy, liability, and algorithmic bias persist, while regulatory frameworks lag behind deployment."
     },
     {
         "task_id": "T04b",
-        "answer": "- Remote work improves flexibility, reduces commute, and enhances work-life balance.\n- Challenges include collaboration, company culture, and blurred personal-professional boundaries.\n- Organizations invest in digital tools and rethink offices for social work."
+        "answer": "- Remote work improves flexibility, reduces commute, and boosts work-life balance.\n- Challenges include collaboration, culture, and blurred personal-professional boundaries.\n- Organizations invest in digital tools and rethink office as social hub."
     },
     {
         "task_id": "T05",
