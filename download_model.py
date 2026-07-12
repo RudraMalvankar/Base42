@@ -1,10 +1,10 @@
 import os
 from huggingface_hub import hf_hub_download
 
-# Using TinyLlama to guarantee 100% compatibility with the universal CPU binaries
-# Q4_K_M fits well within the 4GB RAM limit.
-REPO_ID = "TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF"
-FILENAME = "tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
+# Using Qwen2.5-1.5B-Instruct for superior instruction following and factual accuracy.
+# Q4_K_M quantization (~0.99 GB) fits well within the 4GB RAM limit.
+REPO_ID = "bartowski/Qwen2.5-1.5B-Instruct-GGUF"
+FILENAME = "Qwen2.5-1.5B-Instruct-Q4_K_M.gguf"
 MODEL_DIR = "/model"
 
 def main():

@@ -1,15 +1,15 @@
 [
     {
         "task_id": "T01",
-        "answer": "Answers:\n- Red (R): The primary color red is made up of a single wavelength, 650 nm. It has a"
+        "answer": "Answers:\n- Red (R): The primary color red is made up of a single wavelength, 650 nm. It is used to create the brightest colors in the visible spectrum.\n- Blue (RYB): The primary color blue is made up of three wavelengths, 420, 438,"
     },
     {
         "task_id": "T01b",
-        "answer": "Both machine learning and deep learning are subsets of artificial intelligence, which is a branch of computer science that focuses on developing intelligent systems. Machine learning involves using algorithms"
+        "answer": "Both machine learning and deep learning are subsets of artificial intelligence, which is a branch of computer science that focuses on developing intelligent systems using algorithms and data analysis. Machine learning involves training models to make predictions based on data, while deep learning involves creating neural networks that can learn complex patterns from data. Here's how each works:\n\nMachine Learning:\nMachine learning is the process of using algorithms"
     },
     {
         "task_id": "T01c",
-        "answer": "RAM: Random Access Memory (RAM) is a non-volatile memory that stores data and instructions for the CPU to access quickly. It is volatile, which means it"
+        "answer": "RAM (Random Access Memory) is volatile, used for temporary data storage while the computer is running; ROM (Read-Only Memory) is non-volatile, used for permanent firmware like BIOS."
     },
     {
         "task_id": "T02",
@@ -21,11 +21,11 @@
     },
     {
         "task_id": "T03",
-        "answer": "Positive: Despite delivery issues, the product functioned well and customer service was efficient."
+        "answer": "Positive: Despite delivery issues, the product's functionality and excellent customer support left a favorable impression."
     },
     {
         "task_id": "T03b",
-        "answer": "Positive: Despite minor packaging issues, the user emphasizes the device's flawless performance and quick setup, indicating overall satisfaction."
+        "answer": "Positive: The user highlights a flawless device and quick setup, outweighing the minor packaging issues."
     },
     {
         "task_id": "T04",
@@ -33,7 +33,7 @@
     },
     {
         "task_id": "T04b",
-        "answer": "- Remote work improves flexibility, reduces commute, and enhances work-life balance.\n- Challenges include collaboration, culture, and blurred personal-professional boundaries.\n- Companies invest in digital tools and rethink offices as social hubs."
+        "answer": "- Remote work improves flexibility, reduces commute, and enhances work-life balance.\n- Challenges include collaboration, culture, and blurred personal-professional boundaries.\n- Companies invest in digital tools and repurpose offices for social work."
     },
     {
         "task_id": "T05",

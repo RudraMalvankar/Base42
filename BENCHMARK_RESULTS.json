@@ -2,11 +2,11 @@
     {
         "flag": "ALL_OPTIMIZATIONS",
         "accuracy": 100.0,
-        "total_tokens": 1949,
-        "api_fallbacks": 2,
-        "duration": 23.73549200000707,
-        "avg_latency": 6287.300447000234,
-        "p95_latency": 16865.018501999657,
-        "local_routes": 3
+        "total_tokens": 2013,
+        "api_fallbacks": 3,
+        "duration": 22.033535499998834,
+        "avg_latency": 5662.605223599712,
+        "p95_latency": 16902.46911900067,
+        "local_routes": 2
     }
 ]

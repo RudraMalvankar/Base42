@@ -1,93 +1,93 @@
 {
     "summary": {
         "total_tasks": 10,
-        "api_fallbacks": 2,
-        "total_tokens": 1949,
+        "api_fallbacks": 3,
+        "total_tokens": 2013,
         "routes": {
-            "fireworks": 7,
-            "local_llm": 3
+            "fireworks": 8,
+            "local_llm": 2
         }
     },
     "traces": [
         {
             "task_id": "T02",
             "category": "math",
-            "latency_ms": 1575.3268949993071,
+            "latency_ms": 2866.0688799991476,
             "route": "fireworks",
             "fallback_triggered": true,
             "tokens": 209
         },
         {
-            "task_id": "T01",
-            "category": "factual",
-            "latency_ms": 6694.253177000064,
-            "route": "local_llm",
-            "fallback_triggered": false,
-            "tokens": 0
+            "task_id": "T02b",
+            "category": "math",
+            "latency_ms": 2683.174615000098,
+            "route": "fireworks",
+            "fallback_triggered": true,
+            "tokens": 334
         },
         {
             "task_id": "T03",
             "category": "sentiment",
-            "latency_ms": 3641.581388001214,
+            "latency_ms": 1535.9770969989768,
             "route": "fireworks",
             "fallback_triggered": false,
-            "tokens": 196
-        },
-        {
-            "task_id": "T01b",
-            "category": "factual",
-            "latency_ms": 10998.893558000418,
-            "route": "local_llm",
-            "fallback_triggered": false,
-            "tokens": 0
+            "tokens": 246
         },
         {
             "task_id": "T03b",
             "category": "sentiment",
-            "latency_ms": 2086.010709999755,
+            "latency_ms": 1332.8266610005812,
             "route": "fireworks",
             "fallback_triggered": false,
-            "tokens": 190
+            "tokens": 192
         },
         {
-            "task_id": "T04",
-            "category": "summarization",
-            "latency_ms": 1864.3492560004233,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 279
-        },
-        {
-            "task_id": "T05",
-            "category": "ner",
-            "latency_ms": 1546.8862540001282,
-            "route": "fireworks",
-            "fallback_triggered": false,
-            "tokens": 177
-        },
-        {
-            "task_id": "T01c",
+            "task_id": "T01",
             "category": "factual",
-            "latency_ms": 14985.83151100138,
+            "latency_ms": 8636.61306100039,
             "route": "local_llm",
             "fallback_triggered": false,
             "tokens": 0
         },
         {
-            "task_id": "T04b",
+            "task_id": "T04",
             "category": "summarization",
-            "latency_ms": 2614.853218999997,
+            "latency_ms": 1619.8725799986278,
             "route": "fireworks",
             "fallback_triggered": false,
-            "tokens": 387
+            "tokens": 274
         },
         {
-            "task_id": "T02b",
-            "category": "math",
-            "latency_ms": 16865.018501999657,
+            "task_id": "T05",
+            "category": "ner",
+            "latency_ms": 1399.208243999965,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 225
+        },
+        {
+            "task_id": "T04b",
+            "category": "summarization",
+            "latency_ms": 3087.067164999098,
+            "route": "fireworks",
+            "fallback_triggered": false,
+            "tokens": 393
+        },
+        {
+            "task_id": "T01c",
+            "category": "factual",
+            "latency_ms": 16562.774813999567,
             "route": "fireworks",
             "fallback_triggered": true,
-            "tokens": 511
+            "tokens": 140
+        },
+        {
+            "task_id": "T01b",
+            "category": "factual",
+            "latency_ms": 16902.46911900067,
+            "route": "local_llm",
+            "fallback_triggered": false,
+            "tokens": 0
         }
     ]
 }

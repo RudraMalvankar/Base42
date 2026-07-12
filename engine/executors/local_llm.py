@@ -36,8 +36,8 @@ class LocalLLMWorker:
         try:
             self.llm = Llama(
                 model_path=model_path,
-                n_ctx=128, # Aggressively reduced for Factual Tasks
-                n_batch=128, # Match context to prevent memory fragmentation
+                n_ctx=512, # Qwen2.5 benefits from larger context for complex prompts
+                n_batch=512,
                 n_threads=1, 
                 verbose=False
             )
@@ -51,7 +51,7 @@ class LocalLLMExecutor(BaseExecutor):
         self.model_path = model_path
         self.workers = []
         if HAS_LLAMA:
-            logger.info("Initializing SINGLETON TinyLlama Worker with n_threads=2 for max CPU utilization...")
+            logger.info("Initializing SINGLETON Qwen2.5 Worker with n_threads=2 for max CPU utilization...")
             w1 = LocalLLMWorker(1, model_path)
             # Override n_threads to 2 for the singleton worker
             if w1.llm:
@@ -109,12 +109,12 @@ class LocalLLMExecutor(BaseExecutor):
         # Performance optimizations for Factual
         stop_seqs = ["User:", "user:", "<|im_end|>"]
         if category == "factual":
-            max_tokens = min(max_tokens, 36) # Cap factual generation at 36 tokens
+            max_tokens = min(max_tokens, 128) # Qwen2.5 generates concise factual answers
             
         response = worker.llm.create_chat_completion(
             messages=messages,
             max_tokens=max_tokens,
-            temperature=0.1, # 0.1 prevents looping, 0.0 causes degenerate repetition in TinyLlama
+            temperature=0.0, # Qwen2.5 handles deterministic decoding well unlike TinyLlama
             grammar=grammar,
             stop=stop_seqs
         )
@@ -211,7 +211,7 @@ class LocalLLMExecutor(BaseExecutor):
             
         idle_worker = None
         for w in self.workers:
-            if not w.is_busy:
+            if not w.lock.locked():
                 idle_worker = w
                 break
                 

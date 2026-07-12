@@ -26,10 +26,10 @@ class Base42Orchestrator:
         self.decision_engine = DecisionEngine()
         self.python_exec = PythonExecutor()
         
-        # Point to the TinyLlama model (Supports both Docker and Local dev paths)
-        model_path = "/model/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
+        # Point to the Qwen2.5 model (Supports both Docker and Local dev paths)
+        model_path = "/model/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf"
         if not os.path.exists(model_path):
-            model_path = "./model/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
+            model_path = "./model/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf"
             
         self.local_exec = LocalLLMExecutor(model_path=model_path)
         self.api_exec = FireworksExecutor()
